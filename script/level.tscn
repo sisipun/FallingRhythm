@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://86lcygb4yuk"]
+
+[ext_resource type="PackedScene" uid="uid://x8bc6uupgl3l" path="res://script/player.tscn" id="1_blxhr"]
+[ext_resource type="Script" path="res://script/level.gd" id="1_uhfuk"]
+[ext_resource type="PackedScene" uid="uid://bv37kisaqdtm4" path="res://script/player_area.tscn" id="3_hboss"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_uhfuk")
+_player_area_path = NodePath("PlayerArea")
+
+[node name="PlayerArea" parent="." instance=ExtResource("3_hboss")]
+position = Vector2(581, 340)
+_player_path = NodePath("Player")
+
+[node name="Player" parent="PlayerArea" instance=ExtResource("1_blxhr")]
