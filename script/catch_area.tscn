@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf4l5tjcywnpn"]
+
+[ext_resource type="Script" path="res://script/catch_area.gd" id="1_5xbha"]
+[ext_resource type="PackedScene" uid="uid://x8bc6uupgl3l" path="res://script/player.tscn" id="2_h2ohu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osqet"]
+size = Vector2(300, 20)
+
+[node name="CatchArea" type="Area2D"]
+script = ExtResource("1_5xbha")
+_player_path = NodePath("Player")
+_body_path = NodePath("Body")
+
+[node name="Body" type="CollisionShape2D" parent="."]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_osqet")
+
+[node name="Player" parent="." instance=ExtResource("2_h2ohu")]
