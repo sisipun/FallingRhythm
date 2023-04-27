@@ -8,11 +8,8 @@ size = Vector2(300, 20)
 
 [node name="SpawnArea" type="Area2D"]
 script = ExtResource("1_3mwfm")
-_spawn_timer_path = NodePath("SpawnTimer")
 _body_path = NodePath("Body")
 _pickup_scene = ExtResource("2_tp2mc")
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_343pm")
-
-[node name="SpawnTimer" type="Timer" parent="."]

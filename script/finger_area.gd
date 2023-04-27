@@ -7,15 +7,25 @@ signal pickup_lost(pickup)
 
 
 @export_node_path("CatchArea") var _catch_area_path: NodePath
+@export_node_path("SpawnArea") var _spawn_area_path: NodePath
 
 @onready var _catch_area: CatchArea = get_node(_catch_area_path)
+@onready var _spawn_area: SpawnArea = get_node(_spawn_area_path)
 
 var touch_event_index: int = -1
+
+
+func init(timings: Array[MusicTiming.Timing]) -> void:
+	_spawn_area.init(timings)
 
 
 func _ready() -> void:
 	_catch_area.pickup_caught.connect(_on_pickup_caught)
 	_catch_area.pickup_lost.connect(_on_pickup_lost)
+
+
+func check_timing(current_timing: float) -> void:
+	_spawn_area.check_timing(current_timing)
 
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:

@@ -1,0 +1,17 @@
+[
+	{
+	  "type": "PICKUP",
+	  "value": 1.0,
+	  "position": -1.0
+	},
+	{
+	  "type": "PICKUP",
+	  "value": 3.0,
+	  "position": 0.0
+	},
+	{
+	  "type": "PICKUP",
+	  "value": 5.0,
+	  "position": -1.0
+	}
+  ]
