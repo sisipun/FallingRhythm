@@ -2,9 +2,14 @@ class_name Pickup
 extends Area2D
 
 
-@export_range(0, 10000) var velocity: float
+var velocity: float
+var caught: bool
 
-var caught: bool = false
+
+func init(_velocity: float, _position: float) -> void:
+	self.velocity = _velocity
+	self.position.x = _position
+	self.caught = false
 
 
 func _physics_process(delta: float) -> void:

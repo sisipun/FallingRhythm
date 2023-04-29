@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf4l5tjcywnpn"]
 
 [ext_resource type="Script" path="res://script/catch_area.gd" id="1_5xbha"]
-[ext_resource type="PackedScene" uid="uid://x8bc6uupgl3l" path="res://script/player.tscn" id="2_h2ohu"]
+[ext_resource type="PackedScene" path="res://script/player.tscn" id="2_h2ohu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osqet"]
 size = Vector2(300, 20)

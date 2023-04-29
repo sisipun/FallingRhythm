@@ -13,10 +13,13 @@ signal pickup_lost(pickup)
 @onready var _spawn_area: SpawnArea = get_node(_spawn_area_path)
 
 var touch_event_index: int = -1
+var spawn_to_catch_time: float = 0
 
 
 func init(timings: Array[MusicTiming.Timing]) -> void:
 	_spawn_area.init(timings)
+	var spawn_to_catch_distance: float = _catch_area.position.y - _spawn_area.position.y
+	self.spawn_to_catch_time = spawn_to_catch_distance / _spawn_area.pickup_velocity
 
 
 func _ready() -> void:
@@ -25,7 +28,7 @@ func _ready() -> void:
 
 
 func check_timing(current_timing: float) -> void:
-	_spawn_area.check_timing(current_timing)
+	_spawn_area.check_timing(current_timing + spawn_to_catch_time)
 
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:

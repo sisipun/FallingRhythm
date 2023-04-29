@@ -10,7 +10,7 @@ signal pickup_lost(pickup)
 @export_node_path("CollisionShape2D") var _body_path: NodePath
 
 @onready var _player: Player = get_node(_player_path)
-@onready var _body: CollisionShape2D = get_node(_body_path) 
+@onready var _body: CollisionShape2D = get_node(_body_path)
 
 
 func _ready() -> void:
