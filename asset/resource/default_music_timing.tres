@@ -6,5 +6,4 @@
 [resource]
 script = ExtResource("1_3olhb")
 music = ExtResource("1_wepbs")
-left_timings_file_path = "res://asset/data/timing/default_left_timings.json"
-right_timings_file_path = "res://asset/data/timing/default_right_timings.json"
+timings_file_path = "res://asset/data/timing/default_timings.json"

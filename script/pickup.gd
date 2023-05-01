@@ -2,13 +2,20 @@ class_name Pickup
 extends Area2D
 
 
+@export_node_path("CollisionShape2D") var _body_path: NodePath
+
+@onready var _body: CollisionShape2D = get_node(_body_path)
+
+var half_body_size: float
 var velocity: float
 var caught: bool
 
 
-func init(_velocity: float, _position: float) -> void:
+func init(_velocity: float, _position_x: float, offset_y: int = 0) -> void:
+	self.half_body_size = _body.shape.get_rect().size.x / 2.0
 	self.velocity = _velocity
-	self.position.x = _position
+	self.position.x = _position_x
+	self.position.y = -offset_y * half_body_size
 	self.caught = false
 
 
