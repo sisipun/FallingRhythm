@@ -32,10 +32,11 @@ func _process(_delta: float) -> void:
 
 
 func _on_pickup_caught(pickup: Pickup) -> void:
-	print('caught')
+	EventStorage.emit_signal("pickup_caught", pickup)
 	pickup.queue_free()
 
 
 func _on_pickup_lost(pickup: Pickup) -> void:
+	EventStorage.emit_signal("pickup_lost", pickup)
 	print('lost')
 	pickup.queue_free()

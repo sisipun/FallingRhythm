@@ -15,6 +15,10 @@ run/main_scene="res://script/level.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://asset/sprite/common/icon.svg"
 
+[autoload]
+
+EventStorage="*res://script/event_storage.gd"
+
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true

@@ -1,20 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvjr6018etjbo"]
+[gd_scene load_steps=5 format=3 uid="uid://cvjr6018etjbo"]
 
+[ext_resource type="PackedScene" uid="uid://iok053y44kef" path="res://script/score.tscn" id="1_k63xp"]
 [ext_resource type="Script" path="res://script/level.gd" id="1_uhfuk"]
 [ext_resource type="PackedScene" uid="uid://1ps430sp4qk6" path="res://script/finger_area.tscn" id="2_1whnv"]
 [ext_resource type="Resource" uid="uid://bj3jpddsbhqer" path="res://asset/resource/default_music_timing.tres" id="2_f81gj"]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node"]
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Interface" type="Control" parent="InterfaceLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Score" parent="InterfaceLayer/Interface" instance=ExtResource("1_k63xp")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 40.0
+offset_right = 20.0
+offset_bottom = 66.0
+grow_horizontal = 2
+
+[node name="LevelAreaLevel" type="CanvasLayer" parent="."]
+
+[node name="LevelArea" type="Node2D" parent="LevelAreaLevel"]
 script = ExtResource("1_uhfuk")
 left_finger_area_path = NodePath("LeftFingerArea")
 right_finger_area_path = NodePath("RightFingerArea")
 music_player_path = NodePath("MusicPlayer")
 music_timing = ExtResource("2_f81gj")
 
-[node name="LeftFingerArea" parent="." instance=ExtResource("2_1whnv")]
+[node name="LeftFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
 position = Vector2(309, 319)
 
-[node name="RightFingerArea" parent="." instance=ExtResource("2_1whnv")]
+[node name="RightFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
 position = Vector2(845, 319)
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]
