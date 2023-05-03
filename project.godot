@@ -13,11 +13,17 @@ config_version=5
 config/name="FallingRhythm"
 run/main_scene="res://script/level.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
-config/icon="res://asset/sprite/common/icon.svg"
+config/icon="res://asset/sprite/icon/icon.svg"
 
 [autoload]
 
 EventStorage="*res://script/event_storage.gd"
+
+[display]
+
+window/size/viewport_width=1000
+window/size/viewport_height=2000
+window/handheld/orientation=1
 
 [input_devices]
 

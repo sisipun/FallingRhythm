@@ -12,7 +12,7 @@ var caught: bool
 
 
 func init(_velocity: float, _position_x: float, offset_y: int = 0) -> void:
-	self.half_body_size = _body.shape.get_rect().size.x / 2.0
+	self.half_body_size = _body.shape.radius * _body.global_scale.x
 	self.velocity = _velocity
 	self.position.x = _position_x
 	self.position.y = -offset_y * half_body_size

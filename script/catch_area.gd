@@ -19,7 +19,7 @@ func _ready() -> void:
 
 
 func move_player(relative_movement: float) -> void:
-	var half_size: float = _body.shape.get_rect().size.x / 2.0
+	var half_size: float = _body.shape.size.x * _body.global_scale.x / 2.0
 	var new_position: float = _player.position.x + relative_movement
 	var body_right_border: float = _body.position.x + half_size
 	var body_left_border: float = _body.position.x - half_size

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvjr6018etjbo"]
+[gd_scene load_steps=6 format=3 uid="uid://c6qxnbpo16x6b"]
 
-[ext_resource type="PackedScene" uid="uid://iok053y44kef" path="res://script/score.tscn" id="1_k63xp"]
+[ext_resource type="Theme" uid="uid://c6u1gn1ikli6m" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
+[ext_resource type="PackedScene" uid="uid://8umb2eo8xlyb" path="res://script/score.tscn" id="1_k63xp"]
 [ext_resource type="Script" path="res://script/level.gd" id="1_uhfuk"]
 [ext_resource type="PackedScene" uid="uid://1ps430sp4qk6" path="res://script/finger_area.tscn" id="2_1whnv"]
 [ext_resource type="Resource" uid="uid://bj3jpddsbhqer" path="res://asset/resource/default_music_timing.tres" id="2_f81gj"]
@@ -18,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("1_6kpxg")
 
 [node name="Score" parent="InterfaceLayer/Interface" instance=ExtResource("1_k63xp")]
 layout_mode = 1
@@ -33,6 +35,7 @@ grow_horizontal = 2
 [node name="LevelAreaLevel" type="CanvasLayer" parent="."]
 
 [node name="LevelArea" type="Node2D" parent="LevelAreaLevel"]
+position = Vector2(500, 1000)
 script = ExtResource("1_uhfuk")
 left_finger_area_path = NodePath("LeftFingerArea")
 right_finger_area_path = NodePath("RightFingerArea")
@@ -40,9 +43,9 @@ music_player_path = NodePath("MusicPlayer")
 music_timing = ExtResource("2_f81gj")
 
 [node name="LeftFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
-position = Vector2(309, 319)
+position = Vector2(-250, 0)
 
 [node name="RightFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
-position = Vector2(845, 319)
+position = Vector2(250, 0)
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]

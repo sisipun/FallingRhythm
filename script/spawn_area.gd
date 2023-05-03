@@ -17,7 +17,7 @@ var _half_body_size: float
 func init(timings: Array[MusicTiming.Timing]) -> void:
 	self._timings = timings
 	self._last_timing_value = -1.0 if timings.is_empty() else timings[0].start_second
-	self._half_body_size = _body.shape.get_rect().size.x / 2.0
+	self._half_body_size = _body.shape.size.x * _body.global_scale.x / 2.0
 
 
 func check_timing(current_timing: float) -> void:
