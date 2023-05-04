@@ -1,12 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6qxnbpo16x6b"]
+[gd_scene load_steps=7 format=3 uid="uid://c6qxnbpo16x6b"]
 
 [ext_resource type="Theme" uid="uid://c6u1gn1ikli6m" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
 [ext_resource type="PackedScene" uid="uid://8umb2eo8xlyb" path="res://script/score.tscn" id="1_k63xp"]
 [ext_resource type="Script" path="res://script/level.gd" id="1_uhfuk"]
 [ext_resource type="PackedScene" uid="uid://1ps430sp4qk6" path="res://script/finger_area.tscn" id="2_1whnv"]
 [ext_resource type="Resource" uid="uid://bj3jpddsbhqer" path="res://asset/resource/default_music_timing.tres" id="2_f81gj"]
+[ext_resource type="Script" path="res://script/pause_button.gd" id="6_7hqpx"]
 
 [node name="Level" type="Node"]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Background" type="ColorRect" parent="BackgroundLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.894118, 0.756863, 0.976471, 1)
+
+[node name="LevelAreaLevel" type="CanvasLayer" parent="."]
+
+[node name="LevelArea" type="Node2D" parent="LevelAreaLevel"]
+position = Vector2(500, 1000)
+script = ExtResource("1_uhfuk")
+left_finger_area_path = NodePath("LeftFingerArea")
+right_finger_area_path = NodePath("RightFingerArea")
+music_player_path = NodePath("MusicPlayer")
+music_timing = ExtResource("2_f81gj")
+
+[node name="LeftFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
+position = Vector2(-250, 0)
+
+[node name="RightFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
+position = Vector2(250, 0)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -32,20 +62,14 @@ offset_right = 20.0
 offset_bottom = 66.0
 grow_horizontal = 2
 
-[node name="LevelAreaLevel" type="CanvasLayer" parent="."]
-
-[node name="LevelArea" type="Node2D" parent="LevelAreaLevel"]
-position = Vector2(500, 1000)
-script = ExtResource("1_uhfuk")
-left_finger_area_path = NodePath("LeftFingerArea")
-right_finger_area_path = NodePath("RightFingerArea")
-music_player_path = NodePath("MusicPlayer")
-music_timing = ExtResource("2_f81gj")
-
-[node name="LeftFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
-position = Vector2(-250, 0)
-
-[node name="RightFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
-position = Vector2(250, 0)
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]
+[node name="PauseButton" type="Button" parent="InterfaceLayer/Interface"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 50.0
+offset_right = -70.0
+offset_bottom = 80.0
+grow_horizontal = 0
+script = ExtResource("6_7hqpx")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ty113tdw7wx"
-path="res://.godot/imported/player.png-c691f1325fcc2be72eed7a28ab460010.ctex"
+uid="uid://dhanjuvyqv5bo"
+path="res://.godot/imported/catch_line.png-a532bf5261836467b5be06912c11b16f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprite/player/player.png"
-dest_files=["res://.godot/imported/player.png-c691f1325fcc2be72eed7a28ab460010.ctex"]
+source_file="res://asset/sprite/level/catch_line.png"
+dest_files=["res://.godot/imported/catch_line.png-a532bf5261836467b5be06912c11b16f.ctex"]
 
 [params]
 

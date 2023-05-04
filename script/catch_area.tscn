@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf4l5tjcywnpn"]
+[gd_scene load_steps=5 format=3 uid="uid://cx02jsclmx7vd"]
 
 [ext_resource type="Script" path="res://script/catch_area.gd" id="1_5xbha"]
-[ext_resource type="PackedScene" uid="uid://r0lqcroy1asv" path="res://script/player.tscn" id="2_h2ohu"]
+[ext_resource type="Texture2D" uid="uid://dhanjuvyqv5bo" path="res://asset/sprite/level/catch_line.png" id="2_de8lx"]
+[ext_resource type="PackedScene" uid="uid://bgpexol4elfba" path="res://script/player.tscn" id="2_h2ohu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osqet"]
-size = Vector2(400, 20)
+size = Vector2(350, 20)
 
 [node name="CatchArea" type="Area2D"]
 script = ExtResource("1_5xbha")
@@ -14,5 +15,9 @@ _body_path = NodePath("Body")
 [node name="Body" type="CollisionShape2D" parent="."]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_osqet")
+
+[node name="CatchLine" type="Sprite2D" parent="Body"]
+scale = Vector2(0.3, 0.5)
+texture = ExtResource("2_de8lx")
 
 [node name="Player" parent="." instance=ExtResource("2_h2ohu")]
