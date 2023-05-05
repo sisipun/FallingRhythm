@@ -1,5 +1,5 @@
 class_name PauseButton
-extends Button
+extends TextureButton
 
 
 func _ready():

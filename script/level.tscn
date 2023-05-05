@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6qxnbpo16x6b"]
+[gd_scene load_steps=9 format=3 uid="uid://c6qxnbpo16x6b"]
 
 [ext_resource type="Theme" uid="uid://c6u1gn1ikli6m" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
 [ext_resource type="PackedScene" uid="uid://8umb2eo8xlyb" path="res://script/score.tscn" id="1_k63xp"]
 [ext_resource type="Script" path="res://script/level.gd" id="1_uhfuk"]
 [ext_resource type="PackedScene" uid="uid://1ps430sp4qk6" path="res://script/finger_area.tscn" id="2_1whnv"]
 [ext_resource type="Resource" uid="uid://bj3jpddsbhqer" path="res://asset/resource/default_music_timing.tres" id="2_f81gj"]
+[ext_resource type="Texture2D" uid="uid://2sqsefu6vkpm" path="res://asset/image/sprite/level/split_line.png" id="4_d6jht"]
 [ext_resource type="Script" path="res://script/pause_button.gd" id="6_7hqpx"]
+[ext_resource type="Texture2D" uid="uid://b0eveko3awqau" path="res://asset/image/texture/button/pause_button.png" id="6_dx0kv"]
 
 [node name="Level" type="Node"]
 
@@ -23,7 +25,7 @@ color = Color(0.894118, 0.756863, 0.976471, 1)
 [node name="LevelAreaLevel" type="CanvasLayer" parent="."]
 
 [node name="LevelArea" type="Node2D" parent="LevelAreaLevel"]
-position = Vector2(500, 1000)
+position = Vector2(540, 960)
 script = ExtResource("1_uhfuk")
 left_finger_area_path = NodePath("LeftFingerArea")
 right_finger_area_path = NodePath("RightFingerArea")
@@ -31,10 +33,14 @@ music_player_path = NodePath("MusicPlayer")
 music_timing = ExtResource("2_f81gj")
 
 [node name="LeftFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
-position = Vector2(-250, 0)
+position = Vector2(-270, 0)
 
 [node name="RightFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
-position = Vector2(250, 0)
+position = Vector2(270, 0)
+
+[node name="SplitLine" type="Sprite2D" parent="LevelAreaLevel/LevelArea"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_d6jht")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]
 
@@ -62,14 +68,20 @@ offset_right = 20.0
 offset_bottom = 66.0
 grow_horizontal = 2
 
-[node name="PauseButton" type="Button" parent="InterfaceLayer/Interface"]
+[node name="PauseButton" type="TextureButton" parent="InterfaceLayer/Interface"]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-offset_left = -100.0
-offset_top = 50.0
-offset_right = -70.0
-offset_bottom = 80.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -150.0
+offset_right = -50.0
+offset_bottom = -50.0
 grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("6_dx0kv")
+ignore_texture_size = true
+stretch_mode = 5
 script = ExtResource("6_7hqpx")

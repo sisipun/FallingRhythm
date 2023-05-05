@@ -18,6 +18,9 @@ func _ready() -> void:
 	left_finger.init(music_timing.get_left_timings())
 	right_finger.init(music_timing.get_right_timings())
 	
+	_on_window_size_changed()
+	
+	get_viewport().size_changed.connect(_on_window_size_changed)
 	EventStorage.level_pause_request.connect(_on_level_pause_request)
 	
 	left_finger.pickup_caught.connect(_on_pickup_caught)
@@ -31,6 +34,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	left_finger.check_timing(music_player.get_playback_position())
 	right_finger.check_timing(music_player.get_playback_position())
+
+
+func _on_window_size_changed() -> void:
+	position = get_viewport_rect().size / 2
 
 
 func _on_level_pause_request() -> void:

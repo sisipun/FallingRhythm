@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dac33v0rhdpiw"
-path="res://.godot/imported/icon.svg-4d274a3c7fb75f6a5051219a38de2ef4.ctex"
+uid="uid://dhanjuvyqv5bo"
+path="res://.godot/imported/catch_line.png-d8b04380a2aaf581b6c97f8b4bb60e97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprite/icon/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-4d274a3c7fb75f6a5051219a38de2ef4.ctex"]
+source_file="res://asset/image/sprite/level/catch_line.png"
+dest_files=["res://.godot/imported/catch_line.png-d8b04380a2aaf581b6c97f8b4bb60e97.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://1ps430sp4qk6"]
 
-[ext_resource type="PackedScene" uid="uid://cx02jsclmx7vd" path="res://script/catch_area.tscn" id="1_6r1mg"]
+[ext_resource type="PackedScene" path="res://script/catch_area.tscn" id="1_6r1mg"]
 [ext_resource type="Script" path="res://script/finger_area.gd" id="1_b4t7l"]
 [ext_resource type="PackedScene" uid="uid://dsaj0vifeidlh" path="res://script/spawn_area.tscn" id="2_624ca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2cqf"]
-size = Vector2(500, 2000)
+size = Vector2(540, 1920)
 
 [node name="FingerArea" type="Area2D"]
 script = ExtResource("1_b4t7l")
@@ -16,7 +16,7 @@ _spawn_area_path = NodePath("SpawnArea")
 shape = SubResource("RectangleShape2D_u2cqf")
 
 [node name="SpawnArea" parent="." instance=ExtResource("2_624ca")]
-position = Vector2(0, -1000)
+position = Vector2(0, -960)
 
 [node name="CatchArea" parent="." instance=ExtResource("1_6r1mg")]
-position = Vector2(0, 500)
+position = Vector2(0, 480)
