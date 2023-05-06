@@ -1,4 +1,4 @@
-class_name Score
+class_name ScoreLabel
 extends Label
 
 var value: int:

@@ -3,6 +3,7 @@ extends Node
 
 # LEVEL
 signal level_pause_request
+signal level_resume_request
 
 
 # PICKUP

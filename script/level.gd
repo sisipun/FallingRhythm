@@ -2,38 +2,39 @@ class_name Level
 extends Node2D
 
 
-@export_node_path("FingerArea") var left_finger_area_path: NodePath
-@export_node_path("FingerArea") var right_finger_area_path: NodePath
-@export_node_path("AudioStreamPlayer") var music_player_path: NodePath
+@export_node_path("FingerArea") var _left_finger_area_path: NodePath
+@export_node_path("FingerArea") var _right_finger_area_path: NodePath
+@export_node_path("AudioStreamPlayer") var _music_player_path: NodePath
 
-@export var music_timing: MusicTiming
+@export var _music_timing: MusicTiming
 
-@onready var left_finger: FingerArea = get_node(left_finger_area_path)
-@onready var right_finger: FingerArea = get_node(right_finger_area_path)
-@onready var music_player: AudioStreamPlayer = get_node(music_player_path)
+@onready var _left_finger: FingerArea = get_node(_left_finger_area_path)
+@onready var _right_finger: FingerArea = get_node(_right_finger_area_path)
+@onready var _music_player: AudioStreamPlayer = get_node(_music_player_path)
 
 
 func _ready() -> void:
-	music_player.stream = music_timing.music
-	left_finger.init(music_timing.get_left_timings())
-	right_finger.init(music_timing.get_right_timings())
+	_music_player.stream = _music_timing.music
+	_left_finger.init(_music_timing.get_left_timings())
+	_right_finger.init(_music_timing.get_right_timings())
 	
 	_on_window_size_changed()
 	
 	get_viewport().size_changed.connect(_on_window_size_changed)
 	EventStorage.level_pause_request.connect(_on_level_pause_request)
+	EventStorage.level_resume_request.connect(_on_level_resume_request)
 	
-	left_finger.pickup_caught.connect(_on_pickup_caught)
-	left_finger.pickup_lost.connect(_on_pickup_lost)
-	right_finger.pickup_caught.connect(_on_pickup_caught)
-	right_finger.pickup_lost.connect(_on_pickup_lost)
+	_left_finger.pickup_caught.connect(_on_pickup_caught)
+	_left_finger.pickup_lost.connect(_on_pickup_lost)
+	_right_finger.pickup_caught.connect(_on_pickup_caught)
+	_right_finger.pickup_lost.connect(_on_pickup_lost)
 	
-	music_player.play()
+	_music_player.play()
 
 
 func _process(_delta: float) -> void:
-	left_finger.check_timing(music_player.get_playback_position())
-	right_finger.check_timing(music_player.get_playback_position())
+	_left_finger.check_timing(_music_player.get_playback_position())
+	_right_finger.check_timing(_music_player.get_playback_position())
 
 
 func _on_window_size_changed() -> void:
@@ -42,6 +43,10 @@ func _on_window_size_changed() -> void:
 
 func _on_level_pause_request() -> void:
 	get_tree().paused = true
+
+
+func _on_level_resume_request() -> void:
+	get_tree().paused = false
 
 
 func _on_pickup_caught(pickup: Pickup) -> void:
