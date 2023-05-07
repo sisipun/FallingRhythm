@@ -45,9 +45,10 @@ func spawn_pickup_line(_position: float, _length: float) -> void:
 	var pickup: Pickup = _pickup_scene.instantiate()
 	add_child(pickup)
 	pickup.init(pickup_velocity, denormalized_position)
-
-	var spawn_count: int = int(_length / pickup.half_body_size) - 1
+	
+	var pickup_offset: float = pickup.half_body_size * 1.5
+	var spawn_count: int = int(_length / pickup_offset) - 1
 	for i in range(spawn_count):
 		pickup = _pickup_scene.instantiate()
 		add_child(pickup)
-		pickup.init(pickup_velocity, denormalized_position, i + 1)
+		pickup.init(pickup_velocity, denormalized_position, (i + 1) * -pickup_offset)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://dnd0hsofdiqf8"]
 
 [ext_resource type="Texture2D" uid="uid://de1ke77ocg37s" path="res://asset/image/sprite/pickup/pickup.png" id="1_a1mdt"]
 [ext_resource type="Script" path="res://script/pickup.gd" id="1_mlnna"]

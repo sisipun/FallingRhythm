@@ -29,6 +29,8 @@ func _ready() -> void:
 	_right_finger.pickup_caught.connect(_on_pickup_caught)
 	_right_finger.pickup_lost.connect(_on_pickup_lost)
 	
+	_music_player.finished.connect(_on_music_finished)
+	
 	_music_player.play()
 
 
@@ -55,6 +57,11 @@ func _on_pickup_caught(pickup: Pickup) -> void:
 
 
 func _on_pickup_lost(pickup: Pickup) -> void:
-	EventStorage.emit_signal("pickup_lost", pickup)
 	print('lost')
+	EventStorage.emit_signal("pickup_lost", pickup)
 	pickup.queue_free()
+
+
+func _on_music_finished() -> void:
+	print('finished')
+	EventStorage.emit_signal("level_finished")

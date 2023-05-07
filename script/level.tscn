@@ -1,36 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbf1nvvg37dgm"]
+[gd_scene load_steps=11 format=3 uid="uid://bbf1nvvg37dgm"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
-[ext_resource type="PackedScene" uid="uid://3dtj44qnocbi" path="res://script/score.tscn" id="1_k63xp"]
+[ext_resource type="PackedScene" uid="uid://jtf5aqqhmntn" path="res://script/score.tscn" id="1_k63xp"]
 [ext_resource type="Script" path="res://script/level.gd" id="1_uhfuk"]
 [ext_resource type="PackedScene" uid="uid://1ps430sp4qk6" path="res://script/finger_area.tscn" id="2_1whnv"]
 [ext_resource type="Resource" uid="uid://bj3jpddsbhqer" path="res://asset/resource/default_music_timing.tres" id="2_f81gj"]
 [ext_resource type="Texture2D" uid="uid://2sqsefu6vkpm" path="res://asset/image/sprite/level/split_line.png" id="4_d6jht"]
-[ext_resource type="FontFile" uid="uid://byoyrfr1ymiyt" path="res://asset/text/default_font.ttf" id="5_4nu3j"]
 [ext_resource type="Script" path="res://script/pause_button.gd" id="6_7hqpx"]
 [ext_resource type="Texture2D" uid="uid://b0eveko3awqau" path="res://asset/image/texture/button/pause_button.png" id="6_dx0kv"]
 [ext_resource type="Script" path="res://script/interface.gd" id="6_peorx"]
-[ext_resource type="Script" path="res://script/pause_popup.gd" id="10_m2n5b"]
-[ext_resource type="Script" path="res://script/resume_button.gd" id="11_438b2"]
-[ext_resource type="StyleBox" uid="uid://cc0vbbtbfteh" path="res://asset/theme/default_button_style.tres" id="11_ra5t7"]
-
-[sub_resource type="Theme" id="Theme_wa0dy"]
-default_font = ExtResource("5_4nu3j")
-default_font_size = 50
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_disabled_color = Color(0, 0, 0, 1)
-Button/colors/font_focus_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
-Button/styles/disabled = ExtResource("11_ra5t7")
-Button/styles/focus = ExtResource("11_ra5t7")
-Button/styles/hover = ExtResource("11_ra5t7")
-Button/styles/normal = ExtResource("11_ra5t7")
-Button/styles/pressed = ExtResource("11_ra5t7")
-Label/colors/font_color = Color(0, 0, 0, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://d13k10053ej10" path="res://script/pause_popup.tscn" id="10_0q1jc"]
 
 [node name="Level" type="Node"]
 
@@ -80,10 +59,9 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_6kpxg")
 script = ExtResource("6_peorx")
-_pause_button_path = NodePath("PauseButton")
 _pause_popup_path = NodePath("PausePopup")
 
-[node name="ScoreLabel" parent="InterfaceLayer/Interface" instance=ExtResource("1_k63xp")]
+[node name="Score" parent="InterfaceLayer/Interface" instance=ExtResource("1_k63xp")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -112,39 +90,6 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("6_7hqpx")
 
-[node name="PausePopup" type="Control" parent="InterfaceLayer/Interface"]
-process_mode = 2
+[node name="PausePopup" parent="InterfaceLayer/Interface" instance=ExtResource("10_0q1jc")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("10_m2n5b")
-
-[node name="Background" type="ColorRect" parent="InterfaceLayer/Interface/PausePopup"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.87, 0.76, 0.96, 0.9)
-
-[node name="ResumeButton" type="Button" parent="InterfaceLayer/Interface/PausePopup"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -37.5
-offset_right = 150.0
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_wa0dy")
-text = "Resume"
-script = ExtResource("11_438b2")

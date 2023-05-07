@@ -1,32 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://3dtj44qnocbi"]
+[gd_scene load_steps=3 format=3 uid="uid://jtf5aqqhmntn"]
 
-[ext_resource type="Script" path="res://script/score.gd" id="1_h8yi8"]
-[ext_resource type="StyleBox" uid="uid://cc0vbbtbfteh" path="res://asset/theme/default_button_style.tres" id="1_lam45"]
-[ext_resource type="FontFile" uid="uid://byoyrfr1ymiyt" path="res://asset/text/default_font.ttf" id="2_jax82"]
+[ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_aic4g"]
+[ext_resource type="Script" path="res://script/score_value_label.gd" id="2_cka4r"]
 
-[sub_resource type="Theme" id="Theme_wa0dy"]
-default_font = ExtResource("2_jax82")
-default_font_size = 50
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_disabled_color = Color(0, 0, 0, 1)
-Button/colors/font_focus_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
-Button/styles/disabled = ExtResource("1_lam45")
-Button/styles/focus = ExtResource("1_lam45")
-Button/styles/hover = ExtResource("1_lam45")
-Button/styles/normal = ExtResource("1_lam45")
-Button/styles/pressed = ExtResource("1_lam45")
-Label/colors/font_color = Color(0, 0, 0, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
-
-[node name="Score" type="Label"]
+[node name="Score" type="HBoxContainer"]
 offset_right = 40.0
-offset_bottom = 26.0
-theme = SubResource("Theme_wa0dy")
+offset_bottom = 40.0
+theme = ExtResource("1_aic4g")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Score: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreValueLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_h8yi8")
+script = ExtResource("2_cka4r")
