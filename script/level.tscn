@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbf1nvvg37dgm"]
+[gd_scene load_steps=12 format=3 uid="uid://k0f1wm157k0a"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
-[ext_resource type="PackedScene" uid="uid://jtf5aqqhmntn" path="res://script/score.tscn" id="1_k63xp"]
+[ext_resource type="PackedScene" uid="uid://bq4w27pxkmxkd" path="res://script/value_label.tscn" id="1_k63xp"]
 [ext_resource type="Script" path="res://script/level.gd" id="1_uhfuk"]
 [ext_resource type="PackedScene" uid="uid://1ps430sp4qk6" path="res://script/finger_area.tscn" id="2_1whnv"]
 [ext_resource type="Resource" uid="uid://bj3jpddsbhqer" path="res://asset/resource/default_music_timing.tres" id="2_f81gj"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b0eveko3awqau" path="res://asset/image/texture/button/pause_button.png" id="6_dx0kv"]
 [ext_resource type="Script" path="res://script/interface.gd" id="6_peorx"]
 [ext_resource type="PackedScene" uid="uid://d13k10053ej10" path="res://script/pause_popup.tscn" id="10_0q1jc"]
+[ext_resource type="PackedScene" uid="uid://cwgdwc0h4mpia" path="res://script/complete_popup.tscn" id="11_mgxtu"]
 
 [node name="Level" type="Node"]
 
@@ -59,9 +60,12 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_6kpxg")
 script = ExtResource("6_peorx")
+_score_label_path = NodePath("ScoreLabel")
+_pause_button_path = NodePath("PauseButton")
 _pause_popup_path = NodePath("PausePopup")
+_complete_popup_path = NodePath("CompletePopup")
 
-[node name="Score" parent="InterfaceLayer/Interface" instance=ExtResource("1_k63xp")]
+[node name="ScoreLabel" parent="InterfaceLayer/Interface" instance=ExtResource("1_k63xp")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -71,6 +75,7 @@ offset_top = 40.0
 offset_right = 20.0
 offset_bottom = 66.0
 grow_horizontal = 2
+text = "Score:"
 
 [node name="PauseButton" type="TextureButton" parent="InterfaceLayer/Interface"]
 layout_mode = 1
@@ -91,5 +96,9 @@ stretch_mode = 5
 script = ExtResource("6_7hqpx")
 
 [node name="PausePopup" parent="InterfaceLayer/Interface" instance=ExtResource("10_0q1jc")]
+visible = false
+layout_mode = 1
+
+[node name="CompletePopup" parent="InterfaceLayer/Interface" instance=ExtResource("11_mgxtu")]
 visible = false
 layout_mode = 1

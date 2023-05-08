@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d13k10053ej10"]
+[gd_scene load_steps=6 format=3 uid="uid://d13k10053ej10"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_cnt52"]
 [ext_resource type="Script" path="res://script/pause_popup.gd" id="1_svnpp"]
 [ext_resource type="Texture2D" uid="uid://dlrw12r7xowlm" path="res://asset/image/texture/label/pause_label_background.png" id="3_1nmmy"]
-[ext_resource type="Script" path="res://script/resume_button.gd" id="4_8bimr"]
+[ext_resource type="PackedScene" uid="uid://cp1xeoq2ym1ir" path="res://script/resume_button.tscn" id="4_agkmg"]
+[ext_resource type="PackedScene" uid="uid://lb2cn0ey5g3w" path="res://script/home_button.tscn" id="5_bmaig"]
 
 [node name="PausePopup" type="Control"]
 process_mode = 2
@@ -23,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.87, 0.76, 0.96, 0.9)
+color = Color(0.870588, 0.760784, 0.960784, 0.901961)
 
 [node name="Title" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -53,6 +54,7 @@ offset_right = 20.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 90
 text = "Pause"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -73,13 +75,8 @@ grow_vertical = 2
 theme_override_constants/separation = 36
 alignment = 1
 
-[node name="ResumeButton" type="Button" parent="Buttons"]
+[node name="ResumeButton" parent="Buttons" instance=ExtResource("4_agkmg")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "Resume"
-script = ExtResource("4_8bimr")
 
-[node name="HomeButton" type="Button" parent="Buttons"]
+[node name="HomeButton" parent="Buttons" instance=ExtResource("5_bmaig")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "Home"

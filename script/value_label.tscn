@@ -1,24 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://jtf5aqqhmntn"]
+[gd_scene load_steps=3 format=3 uid="uid://bq4w27pxkmxkd"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_aic4g"]
-[ext_resource type="Script" path="res://script/score_value_label.gd" id="2_cka4r"]
+[ext_resource type="Script" path="res://script/value_label.gd" id="2_uaibg"]
 
-[node name="Score" type="HBoxContainer"]
+[node name="ValueLabel" type="HBoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("1_aic4g")
+script = ExtResource("2_uaibg")
+_text_label_path = NodePath("Text")
+_value_label_path = NodePath("Value")
 
-[node name="ScoreLabel" type="Label" parent="."]
+[node name="Text" type="Label" parent="."]
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
-text = "Score: "
+text = "Placeholder: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScoreValueLabel" type="Label" parent="."]
+[node name="Value" type="Label" parent="."]
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_cka4r")

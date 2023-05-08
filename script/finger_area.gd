@@ -31,6 +31,10 @@ func check_timing(current_timing: float) -> void:
 	_spawn_area.check_timing(current_timing + spawn_to_catch_time)
 
 
+func clear_pickups() -> void:
+	_spawn_area.clear_pickups()
+
+
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventScreenTouch and event.is_pressed() and touch_event_index == -1:
 		touch_event_index = event.index

@@ -21,4 +21,4 @@ Button/styles/normal = ExtResource("1_e6n7i")
 Button/styles/pressed = ExtResource("1_e6n7i")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 90
+Label/font_sizes/font_size = 72
