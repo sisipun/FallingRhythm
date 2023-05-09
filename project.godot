@@ -13,6 +13,8 @@ config_version=5
 config/name="FallingRhythm"
 run/main_scene="res://script/level.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
+boot_splash/bg_color=Color(0.894118, 0.756863, 0.976471, 1)
+boot_splash/image="res://asset/image/texture/loading/loading_background.png"
 config/icon="res://asset/image/icon/icon.svg"
 
 [autoload]

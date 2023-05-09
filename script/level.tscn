@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://k0f1wm157k0a"]
+[gd_scene load_steps=13 format=3 uid="uid://cac21iba4c3w2"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
 [ext_resource type="PackedScene" uid="uid://bq4w27pxkmxkd" path="res://script/value_label.tscn" id="1_k63xp"]
-[ext_resource type="Script" path="res://script/level.gd" id="1_uhfuk"]
+[ext_resource type="Script" path="res://script/level_area.gd" id="1_oc85r"]
 [ext_resource type="PackedScene" uid="uid://1ps430sp4qk6" path="res://script/finger_area.tscn" id="2_1whnv"]
-[ext_resource type="Resource" uid="uid://bj3jpddsbhqer" path="res://asset/resource/default_music_timing.tres" id="2_f81gj"]
+[ext_resource type="Resource" uid="uid://bj3jpddsbhqer" path="res://asset/resource/default_music_timing.tres" id="2_6eh4l"]
 [ext_resource type="Texture2D" uid="uid://2sqsefu6vkpm" path="res://asset/image/sprite/level/split_line.png" id="4_d6jht"]
 [ext_resource type="Script" path="res://script/pause_button.gd" id="6_7hqpx"]
 [ext_resource type="Texture2D" uid="uid://b0eveko3awqau" path="res://asset/image/texture/button/pause_button.png" id="6_dx0kv"]
 [ext_resource type="Script" path="res://script/interface.gd" id="6_peorx"]
 [ext_resource type="PackedScene" uid="uid://d13k10053ej10" path="res://script/pause_popup.tscn" id="10_0q1jc"]
 [ext_resource type="PackedScene" uid="uid://cwgdwc0h4mpia" path="res://script/complete_popup.tscn" id="11_mgxtu"]
+[ext_resource type="PackedScene" uid="uid://ct113o78ahjs4" path="res://script/loading_popup.tscn" id="13_pel8c"]
 
 [node name="Level" type="Node"]
 
@@ -29,11 +30,11 @@ color = Color(0.894118, 0.756863, 0.976471, 1)
 
 [node name="LevelArea" type="Node2D" parent="LevelAreaLevel"]
 position = Vector2(540, 960)
-script = ExtResource("1_uhfuk")
+script = ExtResource("1_oc85r")
 _left_finger_area_path = NodePath("LeftFingerArea")
 _right_finger_area_path = NodePath("RightFingerArea")
 _music_player_path = NodePath("MusicPlayer")
-_music_timing = ExtResource("2_f81gj")
+_music_timing = ExtResource("2_6eh4l")
 
 [node name="LeftFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
 position = Vector2(-270, 0)
@@ -101,4 +102,8 @@ layout_mode = 1
 
 [node name="CompletePopup" parent="InterfaceLayer/Interface" instance=ExtResource("11_mgxtu")]
 visible = false
+layout_mode = 1
+
+[node name="LoadingPopup" parent="InterfaceLayer/Interface" instance=ExtResource("13_pel8c")]
+process_mode = 2
 layout_mode = 1
