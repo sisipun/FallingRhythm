@@ -47,6 +47,7 @@ const NAME_TO_TIMING_SIDE: Dictionary = {
 	"RIGHT": TimingSide.RIGHT
 }
 
+@export var id: String
 @export var music: AudioStream
 @export_file("*.json") var timings_file_path: String
 

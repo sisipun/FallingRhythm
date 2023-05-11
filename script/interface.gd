@@ -16,39 +16,37 @@ extends Control
 func _ready() -> void:
 	EventStorage.level_finished.connect(_on_level_finished)
 	EventStorage.level_started.connect(_on_level_started)
+	EventStorage.level_score_updated.connect(_on_level_score_updated)
 	EventStorage.level_paused.connect(_on_level_paused)
 	EventStorage.level_resumed.connect(_on_level_resumed)
-	EventStorage.pickup_caught.connect(_on_pickup_caught)
 
 
-func _on_level_started() -> void:
+func _on_level_started(_music_id: String) -> void:
 	_complete_popup.hide()
 	
 	_score_label.show()
 	_pause_button.show()
 
 
-func _on_level_finished() -> void:
+func _on_level_finished(music_id: String, score: int) -> void:
 	_score_label.hide()
 	_pause_button.hide()
 	
-	_complete_popup.set_value(_score_label.value, 0)
+	_complete_popup.set_value(score, MusicStorage.get_best_score(music_id))
 	_complete_popup.show()
-	
-	_score_label.value = 0
 
 
-func _on_level_paused() -> void:
+func _on_level_score_updated(_music_id: String, score: int) -> void:
+	_score_label.value = score
+
+
+func _on_level_paused(_music_id: String) -> void:
 	_pause_button.hide()
 	
 	_pause_popup.show()
 
 
-func _on_level_resumed() -> void:
+func _on_level_resumed(_music_id: String) -> void:
 	_pause_popup.hide()
 	
 	_pause_button.show()
-
-
-func _on_pickup_caught(_pickup: Pickup) -> void:
-	_score_label.value += 1
