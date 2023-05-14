@@ -2,7 +2,7 @@ class_name ResumeButton
 extends Button
 
 
-func _ready():
+func _ready() -> void:
 	pressed.connect(_on_pressed)
 
 

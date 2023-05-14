@@ -1,4 +1,4 @@
-class_name Interface
+class_name LevelInterface
 extends Control
 
 
@@ -36,17 +36,17 @@ func _on_level_finished(music_id: String, score: int) -> void:
 	_complete_popup.show()
 
 
-func _on_level_score_updated(_music_id: String, score: int) -> void:
+func _on_level_score_updated(score: int) -> void:
 	_score_label.value = score
 
 
-func _on_level_paused(_music_id: String) -> void:
+func _on_level_paused() -> void:
 	_pause_button.hide()
 	
 	_pause_popup.show()
 
 
-func _on_level_resumed(_music_id: String) -> void:
+func _on_level_resumed() -> void:
 	_pause_popup.hide()
 	
 	_pause_button.show()

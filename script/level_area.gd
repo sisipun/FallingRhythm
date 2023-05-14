@@ -4,21 +4,20 @@ extends Node2D
 
 @export_node_path("FingerArea") var _left_finger_area_path: NodePath
 @export_node_path("FingerArea") var _right_finger_area_path: NodePath
-@export_node_path("AudioStreamPlayer") var _music_player_path: NodePath
-
-@export var _music_timing: MusicTiming
+@export_node_path("AudioStreamPlayer") var _music_player_path: NodePath 
 
 @onready var _left_finger: FingerArea = get_node(_left_finger_area_path)
 @onready var _right_finger: FingerArea = get_node(_right_finger_area_path)
 @onready var _music_player: AudioStreamPlayer = get_node(_music_player_path)
 
 
+var _music_timing: MusicTiming
 var _score: int:
 	get:
 		return _score
 	set(new_score):
 		_score = new_score
-		EventStorage.emit_signal("level_score_updated", _music_timing.id, _score)
+		EventStorage.emit_signal("level_score_updated", _score)
 
 
 func _ready() -> void:
@@ -26,6 +25,7 @@ func _ready() -> void:
 	
 	get_viewport().size_changed.connect(_on_window_size_changed)
 	EventStorage.level_start_request.connect(_on_level_start_request)
+	EventStorage.level_restart_request.connect(_on_level_restart_request)
 	EventStorage.level_pause_request.connect(_on_level_pause_request)
 	EventStorage.level_resume_request.connect(_on_level_resume_request)
 	_left_finger.pickup_caught.connect(_on_pickup_caught)
@@ -43,9 +43,11 @@ func _process(_delta: float) -> void:
 	_right_finger.check_timing(playback_position)
 
 
-func start() -> void:
+func start(music_id: String) -> void:
+	_music_timing = MusicStorage.get_music_timing(music_id)
+	
 	_score = 0
-	EventStorage.emit_signal("level_score_updated", _music_timing.id, _score)
+	EventStorage.emit_signal("level_score_updated", _score)
 	
 	_music_player.stream = _music_timing.music
 	_left_finger.init(_music_timing.get_left_timings())
@@ -74,8 +76,13 @@ func _on_window_size_changed() -> void:
 	position = get_viewport_rect().size / 2
 
 
-func _on_level_start_request() -> void:
-	start()
+func _on_level_start_request(music_id: String) -> void:
+	start(music_id)
+	EventStorage.emit_signal("level_started", music_id)
+
+
+func _on_level_restart_request() -> void:
+	start(_music_timing.id)
 	EventStorage.emit_signal("level_started", _music_timing.id)
 
 
@@ -86,12 +93,12 @@ func _on_music_finished() -> void:
 
 func _on_level_pause_request() -> void:
 	pause()
-	EventStorage.emit_signal("level_paused", _music_timing.id)
+	EventStorage.emit_signal("level_paused")
 
 
 func _on_level_resume_request() -> void:
 	unpause()
-	EventStorage.emit_signal("level_resumed", _music_timing.id)
+	EventStorage.emit_signal("level_resumed")
 
 
 func _on_pickup_caught(pickup: Pickup) -> void:

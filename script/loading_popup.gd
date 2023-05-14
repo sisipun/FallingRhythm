@@ -14,4 +14,3 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	hide()
-	EventStorage.emit_signal("level_start_request")
