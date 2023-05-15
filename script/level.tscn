@@ -32,6 +32,8 @@ script = ExtResource("1_oc85r")
 _left_finger_area_path = NodePath("LeftFingerArea")
 _right_finger_area_path = NodePath("RightFingerArea")
 _music_player_path = NodePath("MusicPlayer")
+_max_score_multiplier = 4
+_pickups_percentage_to_increase_multiplier = 0.5
 
 [node name="LeftFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
 position = Vector2(-270, 0)
@@ -59,6 +61,7 @@ mouse_filter = 1
 theme = ExtResource("1_6kpxg")
 script = ExtResource("6_gml3b")
 _score_label_path = NodePath("ScoreLabel")
+_score_multiplier_label_path = NodePath("ScoreMultiplayerLabel")
 _pause_button_path = NodePath("PauseButton")
 _pause_popup_path = NodePath("PausePopup")
 _complete_popup_path = NodePath("CompletePopup")
@@ -74,6 +77,19 @@ offset_right = 20.0
 offset_bottom = 66.0
 grow_horizontal = 2
 text = "Score:"
+
+[node name="ScoreMultiplayerLabel" parent="InterfaceLayer/Interface" instance=ExtResource("1_k63xp")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -198.0
+offset_top = 121.0
+offset_right = 198.0
+offset_bottom = 210.0
+grow_horizontal = 2
+alignment = 1
+text = "X"
 
 [node name="PauseButton" type="TextureButton" parent="InterfaceLayer/Interface"]
 layout_mode = 1

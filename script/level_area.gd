@@ -6,10 +6,12 @@ extends Node2D
 @export_node_path("FingerArea") var _right_finger_area_path: NodePath
 @export_node_path("AudioStreamPlayer") var _music_player_path: NodePath 
 
+@export var _max_score_multiplier: int
+@export_range(0, 1) var _pickups_percentage_to_increase_multiplier: float
+
 @onready var _left_finger: FingerArea = get_node(_left_finger_area_path)
 @onready var _right_finger: FingerArea = get_node(_right_finger_area_path)
 @onready var _music_player: AudioStreamPlayer = get_node(_music_player_path)
-
 
 var _music_timing: MusicTiming
 var _score: int:
@@ -18,6 +20,14 @@ var _score: int:
 	set(new_score):
 		_score = new_score
 		EventStorage.emit_signal("level_score_updated", _score)
+var _score_multiplier: int:
+	get:
+		return _score_multiplier
+	set(new_score_multiplier):
+		_score_multiplier = new_score_multiplier
+		EventStorage.emit_signal("level_score_multiplier_updated", _score_multiplier)
+var _pickups_without_fail: int
+var _pickups_count_to_increase_multiplier: int
 
 
 func _ready() -> void:
@@ -45,13 +55,18 @@ func _process(_delta: float) -> void:
 
 func start(music_id: String) -> void:
 	_music_timing = MusicStorage.get_music_timing(music_id)
+	var left_finger_timings: Array[MusicTiming.Timing] = _music_timing.get_left_timings()
+	var right_finger_timings: Array[MusicTiming.Timing] = _music_timing.get_right_timings()
 	
 	_score = 0
+	_score_multiplier = 1
+	_pickups_without_fail = 0
+	_pickups_count_to_increase_multiplier = (left_finger_timings.size() + right_finger_timings.size()) * _pickups_percentage_to_increase_multiplier
 	EventStorage.emit_signal("level_score_updated", _score)
 	
 	_music_player.stream = _music_timing.music
-	_left_finger.init(_music_timing.get_left_timings())
-	_right_finger.init(_music_timing.get_right_timings())
+	_left_finger.init(left_finger_timings)
+	_right_finger.init(right_finger_timings)
 	
 	_music_player.play()
 	unpause()
@@ -102,10 +117,23 @@ func _on_level_resume_request() -> void:
 
 
 func _on_pickup_caught(pickup: Pickup) -> void:
-	_score += 1
+	_pickups_without_fail += 1
+	_score += _score_multiplier
+	
+	if (
+		_score_multiplier < _max_score_multiplier 
+		and _pickups_without_fail > _pickups_count_to_increase_multiplier
+	):
+		_pickups_without_fail = 0
+		_score_multiplier += 1
+	
 	pickup.queue_free()
 
 
 func _on_pickup_lost(pickup: Pickup) -> void:
 	print('lost')
+	
+	_pickups_without_fail = 0
+	_score_multiplier = 1
+	
 	pickup.queue_free()
