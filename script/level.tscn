@@ -33,7 +33,7 @@ _left_finger_area_path = NodePath("LeftFingerArea")
 _right_finger_area_path = NodePath("RightFingerArea")
 _music_player_path = NodePath("MusicPlayer")
 _max_score_multiplier = 4
-_pickups_percentage_to_increase_multiplier = 0.5
+_pickups_percentage_to_increase_multiplier = 0.1
 
 [node name="LeftFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
 position = Vector2(-270, 0)

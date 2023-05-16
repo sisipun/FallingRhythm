@@ -7,6 +7,8 @@ signal scene_switch_level(music_id)
 # LEVEL
 signal level_finished(music_id, score)
 signal level_started(music_id)
+signal level_pickup_caught(pickup)
+signal level_pickup_lost(pickup)
 signal level_score_updated(score)
 signal level_score_multiplier_updated(score_multiplier)
 signal level_paused

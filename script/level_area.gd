@@ -57,11 +57,13 @@ func start(music_id: String) -> void:
 	_music_timing = MusicStorage.get_music_timing(music_id)
 	var left_finger_timings: Array[MusicTiming.Timing] = _music_timing.get_left_timings()
 	var right_finger_timings: Array[MusicTiming.Timing] = _music_timing.get_right_timings()
+	var timings_count: int = left_finger_timings.size() + right_finger_timings.size()
 	
 	_score = 0
 	_score_multiplier = 1
 	_pickups_without_fail = 0
-	_pickups_count_to_increase_multiplier = (left_finger_timings.size() + right_finger_timings.size()) * _pickups_percentage_to_increase_multiplier
+	_pickups_count_to_increase_multiplier = int(timings_count * _pickups_percentage_to_increase_multiplier)
+	print(timings_count)
 	EventStorage.emit_signal("level_score_updated", _score)
 	
 	_music_player.stream = _music_timing.music
@@ -116,9 +118,9 @@ func _on_level_resume_request() -> void:
 	EventStorage.emit_signal("level_resumed")
 
 
-func _on_pickup_caught(pickup: Pickup) -> void:
+func _on_pickup_caught(pickup: BasePickup) -> void:
 	_pickups_without_fail += 1
-	_score += _score_multiplier
+	_score += pickup.score * _score_multiplier
 	
 	if (
 		_score_multiplier < _max_score_multiplier 
@@ -126,14 +128,8 @@ func _on_pickup_caught(pickup: Pickup) -> void:
 	):
 		_pickups_without_fail = 0
 		_score_multiplier += 1
-	
-	pickup.queue_free()
 
 
-func _on_pickup_lost(pickup: Pickup) -> void:
-	print('lost')
-	
+func _on_pickup_lost(_pickup: BasePickup) -> void:
 	_pickups_without_fail = 0
 	_score_multiplier = 1
-	
-	pickup.queue_free()

@@ -23,8 +23,8 @@ func init(timings: Array[MusicTiming.Timing]) -> void:
 
 
 func _ready() -> void:
-	_catch_area.pickup_caught.connect(_on_pickup_caught)
-	_catch_area.pickup_lost.connect(_on_pickup_lost)
+	_spawn_area.pickup_caught.connect(_on_pickup_caught)
+	_spawn_area.pickup_lost.connect(_on_pickup_lost)
 
 
 func check_timing(current_timing: float) -> void:
@@ -47,9 +47,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		_catch_area.move_player(event.relative.x)
 
 
-func _on_pickup_caught(pickup: Pickup) -> void:
+func _on_pickup_caught(pickup: BasePickup) -> void:
 	emit_signal("pickup_caught", pickup)
 
 
-func _on_pickup_lost(pickup: Pickup) -> void:
+func _on_pickup_lost(pickup: BasePickup) -> void:
 	emit_signal("pickup_lost", pickup)

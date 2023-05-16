@@ -2,10 +2,15 @@ class_name SpawnArea
 extends Area2D
 
 
+signal pickup_caught(pickup)
+signal pickup_lost(pickup)
+
+
 @export_node_path("CollisionShape2D") var _body_path: NodePath
 @export_node_path("Node2D") var _pickups_path: NodePath
 
 @export var _pickup_scene: PackedScene
+@export var _pickup_line_scene: PackedScene
 @export_range(0, 10000) var pickup_velocity: float
 
 @onready var _body: CollisionShape2D = get_node(_body_path)
@@ -27,36 +32,35 @@ func check_timing(current_timing: float) -> void:
 		return
 	
 	var timing: MusicTiming.Timing = _timings.pop_front()
+	var pickup_position: float = _half_body_size * timing.position
 	if timing.type == MusicTiming.TimingType.PICKUP:
-		spawn_pickup(timing.position)
+		var pickup = spawn_pickup(_pickup_scene)
+		pickup.init(pickup_velocity, pickup_position)
 	elif timing.type == MusicTiming.TimingType.PICKUP_LINE:
 		var length: float = pickup_velocity * timing.duration
-		spawn_pickup_line(timing.position, length)
+		var pickup = spawn_pickup(_pickup_line_scene)
+		pickup.init(pickup_velocity, pickup_position, length, _pickup_scene)
 	
 	_last_timing_value = -1.0 if _timings.is_empty() else _timings[0].start_second
 
 
-func spawn_pickup(_position: float) -> void:
-	var pickup: Pickup = _pickup_scene.instantiate()
+func spawn_pickup(_scene: PackedScene) -> BasePickup:
+	var pickup: BasePickup = _scene.instantiate()
 	_pickups.add_child(pickup)
-	pickup.init(pickup_velocity, _half_body_size * _position)
-
-
-func spawn_pickup_line(_position: float, _length: float) -> void:
-	var denormalized_position: float = _half_body_size * _position
-	var pickup: Pickup = _pickup_scene.instantiate()
-	_pickups.add_child(pickup)
-	pickup.init(pickup_velocity, denormalized_position)
-	
-	var pickup_offset: float = pickup.half_body_size * 1.5
-	var spawn_count: int = int(_length / pickup_offset) - 1
-	for i in range(spawn_count):
-		pickup = _pickup_scene.instantiate()
-		_pickups.add_child(pickup)
-		pickup.init(pickup_velocity, denormalized_position, (i + 1) * -pickup_offset)
+	pickup.caught.connect(Callable(_on_pickup_caught).bind(pickup))
+	pickup.lost.connect(Callable(_on_pickup_lost).bind(pickup))
+	return pickup
 
 
 func clear_pickups() -> void:
 	for pickup in _pickups.get_children():
 		_pickups.remove_child(pickup)
 		pickup.queue_free()
+
+
+func _on_pickup_caught(pickup: BasePickup) -> void:
+	emit_signal("pickup_caught", pickup)
+
+
+func _on_pickup_lost(pickup: BasePickup) -> void:
+	emit_signal("pickup_lost", pickup)
