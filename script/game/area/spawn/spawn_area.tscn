@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsaj0vifeidlh"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" path="res://script/spawn_area.gd" id="1_3mwfm"]
-[ext_resource type="PackedScene" uid="uid://dnd0hsofdiqf8" path="res://script/pickup.tscn" id="2_tp2mc"]
-[ext_resource type="PackedScene" uid="uid://bqwnp4chqv2m6" path="res://script/pickup_line.tscn" id="3_5lawc"]
+[ext_resource type="Script" path="res://script/game/area/spawn/spawn_area.gd" id="1_3mwfm"]
+[ext_resource type="PackedScene" path="res://script/game/actor/pickup/pickup.tscn" id="2_tp2mc"]
+[ext_resource type="PackedScene" path="res://script/game/actor/pickup/pickup_line.tscn" id="3_5lawc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_343pm"]
 size = Vector2(400, 20)

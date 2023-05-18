@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://script/interface/button/restart/restart_button.gd" id="1_rv2xr"]
+
+[node name="RestartButton" type="Button"]
+size_flags_vertical = 3
+text = "Resume"
+script = ExtResource("1_rv2xr")

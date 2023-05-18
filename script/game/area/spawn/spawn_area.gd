@@ -34,11 +34,11 @@ func check_timing(current_timing: float) -> void:
 	var timing: MusicTiming.Timing = _timings.pop_front()
 	var pickup_position: float = _half_body_size * timing.position
 	if timing.type == MusicTiming.TimingType.PICKUP:
-		var pickup = spawn_pickup(_pickup_scene)
+		var pickup: Pickup = spawn_pickup(_pickup_scene)
 		pickup.init(pickup_velocity, pickup_position)
 	elif timing.type == MusicTiming.TimingType.PICKUP_LINE:
 		var length: float = pickup_velocity * timing.duration
-		var pickup = spawn_pickup(_pickup_line_scene)
+		var pickup: PickupLine = spawn_pickup(_pickup_line_scene)
 		pickup.init(pickup_velocity, pickup_position, length, _pickup_scene)
 	
 	_last_timing_value = -1.0 if _timings.is_empty() else _timings[0].start_second

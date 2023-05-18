@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwgdwc0h4mpia"]
+[gd_scene load_steps=7 format=3]
 
-[ext_resource type="Script" path="res://script/complete_popup.gd" id="1_1jevk"]
+[ext_resource type="Script" path="res://script/interface/popup/complete/complete_popup.gd" id="1_1jevk"]
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_qdm1u"]
 [ext_resource type="Texture2D" uid="uid://dlrw12r7xowlm" path="res://asset/image/texture/label/pause_label_background.png" id="3_pc7hh"]
-[ext_resource type="PackedScene" uid="uid://bq4w27pxkmxkd" path="res://script/value_label.tscn" id="4_58l7t"]
-[ext_resource type="PackedScene" uid="uid://dgic34715kxpk" path="res://script/restart_button.tscn" id="4_y0dj0"]
-[ext_resource type="PackedScene" uid="uid://lb2cn0ey5g3w" path="res://script/home_button.tscn" id="5_7riuy"]
+[ext_resource type="PackedScene" path="res://script/interface/common/component/valuelabel/value_label.tscn" id="4_58l7t"]
+[ext_resource type="PackedScene" path="res://script/interface/button/restart/restart_button.tscn" id="4_y0dj0"]
+[ext_resource type="PackedScene" path="res://script/interface/button/home/home_button.tscn" id="5_7riuy"]
 
 [node name="CompletePopup" type="Control"]
 process_mode = 2

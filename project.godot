@@ -19,8 +19,8 @@ config/icon="res://asset/image/icon/icon.svg"
 
 [autoload]
 
-EventStorage="*res://script/event_storage.gd"
-MusicStorage="*res://script/music_storage.tscn"
+EventStorage="*res://script/storage/event/event_storage.gd"
+MusicStorage="*res://script/storage/music/music_storage.tscn"
 
 [display]
 

@@ -63,7 +63,6 @@ func start(music_id: String) -> void:
 	_score_multiplier = 1
 	_pickups_without_fail = 0
 	_pickups_count_to_increase_multiplier = int(timings_count * _pickups_percentage_to_increase_multiplier)
-	print(timings_count)
 	EventStorage.emit_signal("level_score_updated", _score)
 	
 	_music_player.stream = _music_timing.music

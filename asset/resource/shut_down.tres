@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="MusicTiming" load_steps=3 format=3 uid="uid://b6hs3hkhvobsq"]
+[gd_resource type="Resource" script_class="MusicTiming" load_steps=3 format=3 uid="uid://da5xpyh85cx2t"]
 
-[ext_resource type="Script" path="res://script/music_timing.gd" id="1_ekpj0"]
+[ext_resource type="Script" path="res://script/storage/music/music_timing.gd" id="1_ekpj0"]
 [ext_resource type="AudioStream" uid="uid://dldj01bocu454" path="res://asset/music/shut_down.mp3" id="1_u0x16"]
 
 [resource]

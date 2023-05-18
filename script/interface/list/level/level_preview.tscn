@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh2waa06emc7u"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://script/level_preview.gd" id="1_0xu5h"]
+[ext_resource type="Script" path="res://script/interface/list/level/level_preview.gd" id="1_0xu5h"]
 
 [node name="LevelPreview" type="ColorRect"]
 custom_minimum_size = Vector2(0, 125)

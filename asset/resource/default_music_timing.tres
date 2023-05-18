@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="MusicTiming" load_steps=3 format=3 uid="uid://bj3jpddsbhqer"]
+[gd_resource type="Resource" script_class="MusicTiming" load_steps=3 format=3 uid="uid://d23suyhm34fys"]
 
-[ext_resource type="Script" path="res://script/music_timing.gd" id="1_3olhb"]
+[ext_resource type="Script" path="res://script/storage/music/music_timing.gd" id="1_3olhb"]
 [ext_resource type="AudioStream" uid="uid://dxtjpirxoywip" path="res://asset/music/default_music_cropped.wav" id="1_6rf23"]
 
 [resource]

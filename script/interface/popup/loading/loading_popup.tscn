@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct113o78ahjs4"]
+[gd_scene load_steps=3 format=3 uid="uid://cbid44w38ou3k"]
 
-[ext_resource type="Script" path="res://script/loading_popup.gd" id="1_q60f2"]
+[ext_resource type="Script" path="res://script/interface/popup/loading/loading_popup.gd" id="1_q60f2"]
 [ext_resource type="Texture2D" uid="uid://d1sfauvhdaymy" path="res://asset/image/texture/loading/loading_background.png" id="1_rlq4k"]
 
 [node name="LoadingPopup" type="Control"]

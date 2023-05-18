@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://byod1fgm5kfap"]
+[gd_scene load_steps=5 format=3 uid="uid://cv7gfiw6po4lq"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_f3fqa"]
-[ext_resource type="PackedScene" uid="uid://dh2waa06emc7u" path="res://script/level_preview.tscn" id="2_2iasm"]
 [ext_resource type="Script" path="res://script/home_interface.gd" id="2_j5npm"]
-[ext_resource type="Script" path="res://script/level_list.gd" id="3_x37ap"]
+[ext_resource type="Script" path="res://script/interface/list/level/level_list.gd" id="3_p30i3"]
+[ext_resource type="PackedScene" path="res://script/interface/list/level/level_preview.tscn" id="4_f8dw6"]
 
 [node name="Home" type="Node"]
 
@@ -54,5 +54,5 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 36
 alignment = 1
-script = ExtResource("3_x37ap")
-level_preview_scene = ExtResource("2_2iasm")
+script = ExtResource("3_p30i3")
+level_preview_scene = ExtResource("4_f8dw6")
