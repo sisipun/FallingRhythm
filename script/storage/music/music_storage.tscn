@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://n16r3s3ca2pp"]
+[gd_scene load_steps=5 format=3 uid="uid://n16r3s3ca2pp"]
 
 [ext_resource type="Script" path="res://script/storage/music/music_storage.gd" id="1_v4hs1"]
 [ext_resource type="Resource" uid="uid://d23suyhm34fys" path="res://asset/resource/default_music_timing.tres" id="2_86ou0"]
 [ext_resource type="Resource" uid="uid://da5xpyh85cx2t" path="res://asset/resource/shut_down.tres" id="3_hc86v"]
+[ext_resource type="Resource" uid="uid://d15mapjps66u2" path="res://asset/resource/generation_test.tres" id="4_i63kp"]
 
 [node name="MusicStorage" type="Node"]
 script = ExtResource("1_v4hs1")
-music_timings = Array[Resource("res://script/storage/music/music_timing.gd")]([ExtResource("2_86ou0"), ExtResource("3_hc86v")])
+music_timings = Array[Resource("res://script/storage/music/music_timing.gd")]([ExtResource("2_86ou0"), ExtResource("3_hc86v"), ExtResource("4_i63kp")])

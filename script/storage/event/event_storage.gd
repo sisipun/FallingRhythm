@@ -11,6 +11,7 @@ signal level_pickup_caught(pickup)
 signal level_pickup_lost(pickup)
 signal level_score_updated(score)
 signal level_score_multiplier_updated(score_multiplier)
+signal level_power_updated(power)
 signal level_paused
 signal level_resumed
 

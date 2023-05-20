@@ -1,14 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://blwx3uvedtw6l"]
+[gd_scene load_steps=11 format=3 uid="uid://p0sy510b3iho"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
-[ext_resource type="PackedScene" path="res://script/interface/common/component/valuelabel/value_label.tscn" id="1_k63xp"]
 [ext_resource type="Script" path="res://script/level_area.gd" id="1_oc85r"]
 [ext_resource type="PackedScene" path="res://script/game/area/finger/finger_area.tscn" id="2_1whnv"]
 [ext_resource type="Texture2D" uid="uid://2sqsefu6vkpm" path="res://asset/image/sprite/level/split_line.png" id="4_d6jht"]
 [ext_resource type="Script" path="res://script/interface/button/pause/pause_button.gd" id="6_7hqpx"]
 [ext_resource type="Texture2D" uid="uid://b0eveko3awqau" path="res://asset/image/texture/button/pause_button.png" id="6_dx0kv"]
 [ext_resource type="Script" path="res://script/level_interface.gd" id="6_gml3b"]
-[ext_resource type="PackedScene" path="res://script/interface/popup/pause/pause_popup.tscn" id="10_0q1jc"]
+[ext_resource type="PackedScene" uid="uid://6vttrcqmb5yy" path="res://script/interface/popup/pause/pause_popup.tscn" id="10_0q1jc"]
+[ext_resource type="PackedScene" uid="uid://8iibpptxy6jw" path="res://script/interface/panel/stats_panel.tscn" id="10_14i1d"]
 [ext_resource type="PackedScene" path="res://script/interface/popup/complete/complete_popup.tscn" id="11_mgxtu"]
 
 [node name="Level" type="Node"]
@@ -32,8 +32,11 @@ script = ExtResource("1_oc85r")
 _left_finger_area_path = NodePath("LeftFingerArea")
 _right_finger_area_path = NodePath("RightFingerArea")
 _music_player_path = NodePath("MusicPlayer")
+_power_timer_path = NodePath("PowerTimer")
 _max_score_multiplier = 4
-_pickups_percentage_to_increase_multiplier = 0.1
+_pickups_percentage_to_increase_multiplier = 10.0
+_power_increase_percentage_on_pickup = 20.0
+_power_duration = 5
 
 [node name="LeftFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
 position = Vector2(-270, 0)
@@ -46,6 +49,8 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_d6jht")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]
+
+[node name="PowerTimer" type="Timer" parent="LevelAreaLevel/LevelArea"]
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -60,36 +65,13 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_6kpxg")
 script = ExtResource("6_gml3b")
-_score_label_path = NodePath("ScoreLabel")
-_score_multiplier_label_path = NodePath("ScoreMultiplayerLabel")
+_stats_panel_path = NodePath("StatsPanel")
 _pause_button_path = NodePath("PauseButton")
 _pause_popup_path = NodePath("PausePopup")
 _complete_popup_path = NodePath("CompletePopup")
 
-[node name="ScoreLabel" parent="InterfaceLayer/Interface" instance=ExtResource("1_k63xp")]
+[node name="StatsPanel" parent="InterfaceLayer/Interface" instance=ExtResource("10_14i1d")]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 40.0
-offset_right = 20.0
-offset_bottom = 66.0
-grow_horizontal = 2
-text = "Score:"
-
-[node name="ScoreMultiplayerLabel" parent="InterfaceLayer/Interface" instance=ExtResource("1_k63xp")]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -198.0
-offset_top = 121.0
-offset_right = 198.0
-offset_bottom = 210.0
-grow_horizontal = 2
-alignment = 1
-text = "X"
 
 [node name="PauseButton" type="TextureButton" parent="InterfaceLayer/Interface"]
 layout_mode = 1

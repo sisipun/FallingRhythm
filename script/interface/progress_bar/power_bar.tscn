@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfkcifu26l18l"]
+
+[ext_resource type="Texture2D" uid="uid://crrjodoxwkrwh" path="res://asset/image/texture/progress_bar/power/power_progress_bar_back.png" id="1_miwng"]
+[ext_resource type="Texture2D" uid="uid://mr7qfsovq0k8" path="res://asset/image/texture/progress_bar/power/power_progress_bar_front.png" id="2_im8dm"]
+[ext_resource type="Script" path="res://script/interface/progress_bar/power_bar.gd" id="3_h4l2t"]
+
+[node name="PowerBar" type="TextureProgressBar"]
+offset_right = 340.0
+offset_bottom = 95.0
+fill_mode = 5
+nine_patch_stretch = true
+texture_under = ExtResource("1_miwng")
+texture_progress = ExtResource("2_im8dm")
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.984314, 0.741176, 0.121569, 1)
+script = ExtResource("3_h4l2t")
