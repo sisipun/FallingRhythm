@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://cief25woemq6u"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_aic4g"]
 [ext_resource type="Script" path="res://script/interface/common/component/valuelabel/value_label.gd" id="2_uaibg"]
@@ -10,6 +10,7 @@ theme = ExtResource("1_aic4g")
 script = ExtResource("2_uaibg")
 _text_label_path = NodePath("Text")
 _value_label_path = NodePath("Value")
+_value_change_duration = 0.2
 
 [node name="Text" type="Label" parent="."]
 layout_mode = 2

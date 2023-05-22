@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://script/interface/panel/stats_panel.gd" id="1_hv54f"]
 [ext_resource type="Texture2D" uid="uid://bmuslo1htum8" path="res://asset/image/texture/score/score_background.png" id="2_b5257"]
-[ext_resource type="PackedScene" path="res://script/interface/common/component/valuelabel/value_label.tscn" id="3_2o2ve"]
-[ext_resource type="PackedScene" uid="uid://bfkcifu26l18l" path="res://script/interface/progress_bar/power_bar.tscn" id="4_6wh4e"]
+[ext_resource type="PackedScene" uid="uid://cief25woemq6u" path="res://script/interface/common/component/valuelabel/value_label.tscn" id="3_2o2ve"]
+[ext_resource type="PackedScene" uid="uid://pxvwc7ovjn5" path="res://script/interface/progress_bar/power_bar.tscn" id="4_6wh4e"]
 
 [node name="StatsPanel" type="Control"]
 layout_mode = 3
@@ -63,8 +63,8 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -170.0
-offset_top = 130.0
-offset_right = 170.0
-offset_bottom = 225.0
+offset_left = -200.0
+offset_top = -170.0
+offset_right = 200.0
+offset_bottom = 230.0
 grow_horizontal = 2

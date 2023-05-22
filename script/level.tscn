@@ -32,10 +32,9 @@ script = ExtResource("1_oc85r")
 _left_finger_area_path = NodePath("LeftFingerArea")
 _right_finger_area_path = NodePath("RightFingerArea")
 _music_player_path = NodePath("MusicPlayer")
-_power_timer_path = NodePath("PowerTimer")
 _max_score_multiplier = 4
 _pickups_percentage_to_increase_multiplier = 10.0
-_power_increase_percentage_on_pickup = 20.0
+_power_increase_percentage_on_pickup = 5.0
 _power_duration = 5
 
 [node name="LeftFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]
@@ -49,8 +48,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_d6jht")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]
-
-[node name="PowerTimer" type="Timer" parent="LevelAreaLevel/LevelArea"]
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 layer = 2

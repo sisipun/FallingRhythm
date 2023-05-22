@@ -7,7 +7,6 @@ const MAX_POWER_VALUE: float = 100.0
 @export_node_path("FingerArea") var _left_finger_area_path: NodePath
 @export_node_path("FingerArea") var _right_finger_area_path: NodePath
 @export_node_path("AudioStreamPlayer") var _music_player_path: NodePath 
-@export_node_path("Timer") var _power_timer_path: NodePath 
 
 @export var _max_score_multiplier: int
 @export_range(0, 100) var _pickups_percentage_to_increase_multiplier: float
@@ -17,8 +16,6 @@ const MAX_POWER_VALUE: float = 100.0
 @onready var _left_finger: FingerArea = get_node(_left_finger_area_path)
 @onready var _right_finger: FingerArea = get_node(_right_finger_area_path)
 @onready var _music_player: AudioStreamPlayer = get_node(_music_player_path)
-@onready var _power_timer: Timer = get_node(_power_timer_path)
-@onready var _power_decrease_on_timout_value: float = MAX_POWER_VALUE * _power_timer.wait_time / _power_duration
 @onready var _power_increase_on_pickup_value: float = MAX_POWER_VALUE * _power_increase_percentage_on_pickup / 100.0
 
 var _music_timing: MusicTiming
@@ -42,6 +39,7 @@ var _power: float:
 		EventStorage.emit_signal("level_power_updated", _power)
 var _pickups_without_fail: int
 var _pickups_count_to_increase_multiplier: int
+var _power_on: bool = false
 
 
 func _ready() -> void:
@@ -57,7 +55,6 @@ func _ready() -> void:
 	_right_finger.pickup_caught.connect(_on_pickup_caught)
 	_right_finger.pickup_lost.connect(_on_pickup_lost)
 	_music_player.finished.connect(_on_music_finished)
-	_power_timer.timeout.connect(_on_power_timer_timeout)
 	
 	pause()
 
@@ -76,6 +73,7 @@ func start(music_id: String) -> void:
 	
 	_score = 0
 	_score_multiplier = 1
+	_power = 0.0
 	_pickups_without_fail = 0
 	_pickups_count_to_increase_multiplier = int(timings_count * _pickups_percentage_to_increase_multiplier / 100.0)
 	EventStorage.emit_signal("level_score_updated", _score)
@@ -91,7 +89,6 @@ func start(music_id: String) -> void:
 func finish() -> void:
 	pause()
 	
-	_power_timer.stop()
 	_left_finger.clear_pickups()
 	_right_finger.clear_pickups()
 
@@ -136,10 +133,8 @@ func _on_level_resume_request() -> void:
 func _on_pickup_caught(pickup: BasePickup) -> void:
 	_pickups_without_fail += 1
 	_score += pickup.score * _score_multiplier
-	if _power_timer.is_stopped():
+	if not _power_on:
 		_power += _power_increase_on_pickup_value
-		if _power >= MAX_POWER_VALUE:
-			_power_timer.start()
 	
 	if (
 		_score_multiplier < _max_score_multiplier 
@@ -154,7 +149,9 @@ func _on_pickup_lost(_pickup: BasePickup) -> void:
 	_score_multiplier = 1
 
 
-func _on_power_timer_timeout() -> void:
-	_power -= _power_decrease_on_timout_value
-	if _power <= 0:
-		_power_timer.stop()
+func _enable_power() -> void:
+	var _tween: Tween = create_tween()
+	_power_on = true
+	_tween.tween_property(self, "_power", 0.0, _power_duration)
+	await _tween.finished
+	_power_on = false
