@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://script/level_interface.gd" id="6_gml3b"]
 [ext_resource type="PackedScene" uid="uid://6vttrcqmb5yy" path="res://script/interface/popup/pause/pause_popup.tscn" id="10_0q1jc"]
 [ext_resource type="PackedScene" uid="uid://8iibpptxy6jw" path="res://script/interface/panel/stats_panel.tscn" id="10_14i1d"]
-[ext_resource type="PackedScene" path="res://script/interface/popup/complete/complete_popup.tscn" id="11_mgxtu"]
+[ext_resource type="PackedScene" uid="uid://dly4vbys0h7dk" path="res://script/interface/popup/complete/complete_popup.tscn" id="11_mgxtu"]
 
 [node name="Level" type="Node"]
 
@@ -31,8 +31,9 @@ position = Vector2(540, 960)
 script = ExtResource("1_oc85r")
 _left_finger_area_path = NodePath("LeftFingerArea")
 _right_finger_area_path = NodePath("RightFingerArea")
-_music_player_path = NodePath("MusicPlayer")
+_song_player_path = NodePath("SongPlayer")
 _max_score_multiplier = 4
+_power_score_multiplier = 2
 _pickups_percentage_to_increase_multiplier = 10.0
 _power_increase_percentage_on_pickup = 5.0
 _power_duration = 5
@@ -47,7 +48,7 @@ position = Vector2(270, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_d6jht")
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]
+[node name="SongPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 layer = 2

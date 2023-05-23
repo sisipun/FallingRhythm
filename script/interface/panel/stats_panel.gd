@@ -11,12 +11,22 @@ extends Control
 @onready var _power_bar: PowerBar = get_node(_power_bar_path)
 
 
+var score_multiplier: int = 1
+var power_score_multiplier: int = 1
+
+
 func update_score(score: int) -> void:
 	_score_label.value = score
 
 
-func update_score_multiplier(score_multiplier: int) -> void:
-	_score_multiplier_label.value = score_multiplier
+func update_score_multiplier(_score_multiplier: int) -> void:
+	self.score_multiplier = _score_multiplier
+	_score_multiplier_label.value = score_multiplier * power_score_multiplier
+
+
+func update_power_score_multiplier(_power_score_multiplier: int) -> void:
+	self.power_score_multiplier = _power_score_multiplier
+	_score_multiplier_label.value = score_multiplier * power_score_multiplier
 
 
 func update_power(power: float) -> void:

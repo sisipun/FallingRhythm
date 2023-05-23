@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dxtjpirxoywip"
-path="res://.godot/imported/default_music_cropped.wav-31ebbe77b61bf7dc76e9930a62f813ec.sample"
+path="res://.godot/imported/default_song_cropped.wav-eeaa23f93b4b11a44b6032512033938b.sample"
 
 [deps]
 
-source_file="res://asset/music/default_music_cropped.wav"
-dest_files=["res://.godot/imported/default_music_cropped.wav-31ebbe77b61bf7dc76e9930a62f813ec.sample"]
+source_file="res://asset/song/default_song_cropped.wav"
+dest_files=["res://.godot/imported/default_song_cropped.wav-eeaa23f93b4b11a44b6032512033938b.sample"]
 
 [params]
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfpy1fb6s30l6"]
+
+[ext_resource type="Script" path="res://script/storage/song/song_storage.gd" id="1_tvvg5"]
+[ext_resource type="Resource" uid="uid://dxpjslqf0mdmg" path="res://asset/resource/timing/default_song_timing.tres" id="2_bp7cd"]
+[ext_resource type="Resource" uid="uid://b17qlu64uydrb" path="res://asset/resource/timing/generation_test.tres" id="3_xrjet"]
+[ext_resource type="Resource" uid="uid://hcgowpb28h2x" path="res://asset/resource/timing/shut_down.tres" id="4_gevhm"]
+
+[node name="SongStorage" type="Node"]
+script = ExtResource("1_tvvg5")
+song_timings = Array[Resource("res://script/storage/song/song_timing.gd")]([ExtResource("2_bp7cd"), ExtResource("3_xrjet"), ExtResource("4_gevhm")])

@@ -6,7 +6,7 @@ extends VBoxContainer
 
 
 func _ready() -> void:
-	for music_timing in MusicStorage.music_timings:
+	for song_timing in SongStorage.song_timings:
 		var level_preview: LevelPreview = level_preview_scene.instantiate()
 		add_child(level_preview)
-		level_preview.init(music_timing.id)
+		level_preview.init(song_timing.id)

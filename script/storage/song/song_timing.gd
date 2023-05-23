@@ -1,4 +1,4 @@
-class_name MusicTiming
+class_name SongTiming
 extends Resource
 
 
@@ -48,7 +48,7 @@ const NAME_TO_TIMING_SIDE: Dictionary = {
 }
 
 @export var id: String
-@export var music: AudioStream
+@export var song: AudioStream
 @export_file("*.json") var timings_file_path: String
 
 

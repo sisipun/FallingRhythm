@@ -16,7 +16,7 @@ var touch_event_index: int = -1
 var spawn_to_catch_time: float = 0
 
 
-func init(timings: Array[MusicTiming.Timing]) -> void:
+func init(timings: Array[SongTiming.Timing]) -> void:
 	_spawn_area.init(timings)
 	var spawn_to_catch_distance: float = _catch_area.position.y - _spawn_area.position.y
 	self.spawn_to_catch_time = spawn_to_catch_distance / _spawn_area.pickup_velocity

@@ -20,9 +20,9 @@ func _on_scene_switch_home() -> void:
 	_change_scene(_home_scene)
 
 
-func _on_scene_switch_level(music_id: String) -> void:
+func _on_scene_switch_level(song_id: String) -> void:
 	_change_scene(_level_scene)
-	EventStorage.emit_signal("level_start_request", music_id)
+	EventStorage.emit_signal("level_start_request", song_id)
 
 
 func _change_scene(scene: PackedScene) -> void:

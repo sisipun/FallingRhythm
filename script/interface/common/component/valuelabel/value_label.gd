@@ -18,13 +18,13 @@ var value: int:
 		return value
 	set(new_value):
 		var change: int = new_value - value
-		if change > 1 or change < -1:
+		if _value_change_duration == 0 or abs(change) == 1:
+			value = new_value
+			_on_tween_set_value(value)
+		elif change != 0:
 			var _tween: Tween = create_tween()
 			_tween.tween_method(_on_tween_set_value, value, new_value, _value_change_duration)
 			value = new_value
-		elif change != 0:
-			value = new_value
-			_on_tween_set_value(value)
 
 
 func _ready() -> void:

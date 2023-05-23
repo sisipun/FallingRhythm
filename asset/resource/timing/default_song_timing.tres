@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SongTiming" load_steps=3 format=3 uid="uid://dxpjslqf0mdmg"]
+
+[ext_resource type="Script" path="res://script/storage/song/song_timing.gd" id="1_g4dcv"]
+[ext_resource type="AudioStream" uid="uid://dxtjpirxoywip" path="res://asset/song/default_song_cropped.wav" id="2_tf6rj"]
+
+[resource]
+script = ExtResource("1_g4dcv")
+id = "default"
+song = ExtResource("2_tf6rj")
+timings_file_path = "res://asset/data/timing/default_timings.json"

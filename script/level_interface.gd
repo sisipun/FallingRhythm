@@ -18,23 +18,30 @@ func _ready() -> void:
 	EventStorage.level_started.connect(_on_level_started)
 	EventStorage.level_score_updated.connect(_on_level_score_updated)
 	EventStorage.level_score_multiplier_updated.connect(_on_level_score_multiplier_updated)
+	EventStorage.level_power_score_multiplier_updated.connect(_on_level_power_score_multiplier_updated)
 	EventStorage.level_power_updated.connect(_on_level_power_updated)
 	EventStorage.level_paused.connect(_on_level_paused)
 	EventStorage.level_resumed.connect(_on_level_resumed)
 
 
-func _on_level_started(_music_id: String) -> void:
+func _on_level_started(_song_id: String) -> void:
 	_complete_popup.hide()
+	
+	_complete_popup.set_value(0, 0)
 	
 	_stats_panel.show()
 	_pause_button.show()
 
 
-func _on_level_finished(music_id: String, score: int) -> void:
+func _on_level_finished(song_id: String, score: int) -> void:
 	_stats_panel.hide()
 	_pause_button.hide()
 	
-	_complete_popup.set_value(score, MusicStorage.get_best_score(music_id))
+	_stats_panel.update_score(0)
+	_stats_panel.update_score_multiplier(0)
+	_stats_panel.update_power(0)
+	
+	_complete_popup.set_value(score, SongStorage.get_best_score(song_id))
 	_complete_popup.show()
 
 
@@ -44,6 +51,10 @@ func _on_level_score_updated(score: int) -> void:
 
 func _on_level_score_multiplier_updated(score_multiplier: int) -> void:
 	_stats_panel.update_score_multiplier(score_multiplier)
+
+
+func _on_level_power_score_multiplier_updated(power_score_multiplier: int) -> void:
+	_stats_panel.update_power_score_multiplier(power_score_multiplier)
 
 
 func _on_level_power_updated(power: float) -> void:
