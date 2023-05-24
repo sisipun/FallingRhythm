@@ -1,15 +1,13 @@
 class_name LevelArea
 extends Node2D
 
-
-const MAX_POWER_VALUE: float = 100.0
-
 @export_node_path("FingerArea") var _left_finger_area_path: NodePath
 @export_node_path("FingerArea") var _right_finger_area_path: NodePath
 @export_node_path("AudioStreamPlayer") var _song_player_path: NodePath 
 
 @export var _max_score_multiplier: int
 @export var _power_score_multiplier: int
+@export var _max_power_value: int
 @export_range(0, 100) var _pickups_percentage_to_increase_multiplier: float
 @export_range(0, 100) var _power_increase_percentage_on_pickup: float
 @export var _power_duration: int
@@ -17,7 +15,7 @@ const MAX_POWER_VALUE: float = 100.0
 @onready var _left_finger: FingerArea = get_node(_left_finger_area_path)
 @onready var _right_finger: FingerArea = get_node(_right_finger_area_path)
 @onready var _song_player: AudioStreamPlayer = get_node(_song_player_path)
-@onready var _power_increase_on_pickup_value: float = MAX_POWER_VALUE * _power_increase_percentage_on_pickup / 100.0
+@onready var _power_increase_on_pickup_value: float = _max_power_value * _power_increase_percentage_on_pickup / 100.0
 
 var _song_timing: SongTiming
 var _score: int:
@@ -36,8 +34,8 @@ var _power: float:
 	get:
 		return _power
 	set(new_power):
-		_power = clamp(new_power, 0, MAX_POWER_VALUE)
-		EventStorage.emit_signal("level_power_updated", _power)
+		_power = clamp(new_power, 0, _max_power_value)
+		EventStorage.emit_signal("level_power_updated", _power, _max_power_value)
 var _pickups_without_fail: int
 var _pickups_count_to_increase_multiplier: int
 var _power_on: bool = false
@@ -51,6 +49,7 @@ func _ready() -> void:
 	EventStorage.level_restart_request.connect(_on_level_restart_request)
 	EventStorage.level_pause_request.connect(_on_level_pause_request)
 	EventStorage.level_resume_request.connect(_on_level_resume_request)
+	EventStorage.level_start_power_request.connect(_on_level_start_power_request)
 	_left_finger.pickup_caught.connect(_on_pickup_caught)
 	_left_finger.pickup_lost.connect(_on_pickup_lost)
 	_right_finger.pickup_caught.connect(_on_pickup_caught)
@@ -136,8 +135,6 @@ func _on_pickup_caught(pickup: BasePickup) -> void:
 	if not _power_on:
 		_score += pickup.score * _score_multiplier
 		_power += _power_increase_on_pickup_value
-		if _power == 100.0:
-			_enable_power()
 	else:
 		_score += pickup.score * _score_multiplier * _power_score_multiplier
 	
@@ -154,11 +151,14 @@ func _on_pickup_lost(_pickup: BasePickup) -> void:
 	_score_multiplier = 1
 
 
-func _enable_power() -> void:
+func _on_level_start_power_request() -> void:
+	if _power < _max_power_value:
+		return
+	
 	var _tween: Tween = create_tween()
 	_power_on = true
-	EventStorage.emit_signal("level_power_score_multiplier_updated", _power_score_multiplier)
+	EventStorage.emit_signal("level_power_started", _power_score_multiplier)
 	_tween.tween_property(self, "_power", 0.0, _power_duration)
 	await _tween.finished
 	_power_on = false
-	EventStorage.emit_signal("level_power_score_multiplier_updated", 1)
+	EventStorage.emit_signal("level_power_ended")

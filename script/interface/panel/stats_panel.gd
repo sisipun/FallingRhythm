@@ -24,10 +24,16 @@ func update_score_multiplier(_score_multiplier: int) -> void:
 	_score_multiplier_label.value = score_multiplier * power_score_multiplier
 
 
-func update_power_score_multiplier(_power_score_multiplier: int) -> void:
+func update_power(power: float, max_power: float) -> void:
+	_power_bar.value = power
+	_power_bar.max_value = max_power
+
+
+func start_power(_power_score_multiplier: int) -> void:
 	self.power_score_multiplier = _power_score_multiplier
 	_score_multiplier_label.value = score_multiplier * power_score_multiplier
 
 
-func update_power(power: float) -> void:
-	_power_bar.value = power
+func end_power() -> void:
+	self.power_score_multiplier = 1
+	_score_multiplier_label.value = score_multiplier

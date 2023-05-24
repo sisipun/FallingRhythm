@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://script/level_area.gd" id="1_oc85r"]
 [ext_resource type="PackedScene" path="res://script/game/area/finger/finger_area.tscn" id="2_1whnv"]
 [ext_resource type="Texture2D" uid="uid://2sqsefu6vkpm" path="res://asset/image/sprite/level/split_line.png" id="4_d6jht"]
-[ext_resource type="Script" path="res://script/interface/button/pause/pause_button.gd" id="6_7hqpx"]
-[ext_resource type="Texture2D" uid="uid://b0eveko3awqau" path="res://asset/image/texture/button/pause_button.png" id="6_dx0kv"]
 [ext_resource type="Script" path="res://script/level_interface.gd" id="6_gml3b"]
+[ext_resource type="PackedScene" uid="uid://bkgouo6ryi7nd" path="res://script/interface/button/pause/pause_button.tscn" id="7_8dwq4"]
+[ext_resource type="PackedScene" uid="uid://ddi0bgike8mdc" path="res://script/interface/button/power/power_button.tscn" id="9_b6clh"]
 [ext_resource type="PackedScene" uid="uid://6vttrcqmb5yy" path="res://script/interface/popup/pause/pause_popup.tscn" id="10_0q1jc"]
 [ext_resource type="PackedScene" uid="uid://8iibpptxy6jw" path="res://script/interface/panel/stats_panel.tscn" id="10_14i1d"]
 [ext_resource type="PackedScene" uid="uid://dly4vbys0h7dk" path="res://script/interface/popup/complete/complete_popup.tscn" id="11_mgxtu"]
@@ -34,6 +34,7 @@ _right_finger_area_path = NodePath("RightFingerArea")
 _song_player_path = NodePath("SongPlayer")
 _max_score_multiplier = 4
 _power_score_multiplier = 2
+_max_power_value = 100
 _pickups_percentage_to_increase_multiplier = 10.0
 _power_increase_percentage_on_pickup = 5.0
 _power_duration = 5
@@ -65,29 +66,41 @@ theme = ExtResource("1_6kpxg")
 script = ExtResource("6_gml3b")
 _stats_panel_path = NodePath("StatsPanel")
 _pause_button_path = NodePath("PauseButton")
+_power_button_path = NodePath("PowerButton")
 _pause_popup_path = NodePath("PausePopup")
 _complete_popup_path = NodePath("CompletePopup")
 
 [node name="StatsPanel" parent="InterfaceLayer/Interface" instance=ExtResource("10_14i1d")]
 layout_mode = 1
 
-[node name="PauseButton" type="TextureButton" parent="InterfaceLayer/Interface"]
+[node name="PauseButton" parent="InterfaceLayer/Interface" instance=ExtResource("7_8dwq4")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -150.0
-offset_right = -50.0
-offset_bottom = -50.0
+offset_left = -180.0
+offset_top = -170.0
+offset_right = -80.0
+offset_bottom = -70.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("6_dx0kv")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("6_7hqpx")
+
+[node name="PowerButton" parent="InterfaceLayer/Interface" instance=ExtResource("9_b6clh")]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -320.0
+offset_right = 100.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="PausePopup" parent="InterfaceLayer/Interface" instance=ExtResource("10_0q1jc")]
 visible = false
