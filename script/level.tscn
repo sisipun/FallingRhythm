@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
 [ext_resource type="Script" path="res://script/level_area.gd" id="1_oc85r"]
-[ext_resource type="PackedScene" path="res://script/game/area/finger/finger_area.tscn" id="2_1whnv"]
+[ext_resource type="PackedScene" uid="uid://bidwcal4tbx3i" path="res://script/game/area/finger/finger_area.tscn" id="2_1whnv"]
 [ext_resource type="Texture2D" uid="uid://2sqsefu6vkpm" path="res://asset/image/sprite/level/split_line.png" id="4_d6jht"]
 [ext_resource type="Script" path="res://script/level_interface.gd" id="6_gml3b"]
 [ext_resource type="PackedScene" uid="uid://bkgouo6ryi7nd" path="res://script/interface/button/pause/pause_button.tscn" id="7_8dwq4"]

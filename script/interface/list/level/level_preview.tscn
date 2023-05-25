@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://c7mv8mdl7ufmq"]
 
 [ext_resource type="Script" path="res://script/interface/list/level/level_preview.gd" id="1_0xu5h"]
 
 [node name="LevelPreview" type="ColorRect"]
-custom_minimum_size = Vector2(0, 125)
+custom_minimum_size = Vector2(605, 125)
 color = Color(0.816667, 0.5, 1, 1)
 script = ExtResource("1_0xu5h")
 _level_name_path = NodePath("Label")

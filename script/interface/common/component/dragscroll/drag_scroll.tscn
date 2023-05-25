@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4he24d83acd8"]
+
+[ext_resource type="Script" path="res://script/interface/common/component/dragscroll/drag_scroll.gd" id="1_xtsl8"]
+
+[node name="DragScroll" type="ScrollContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("1_xtsl8")

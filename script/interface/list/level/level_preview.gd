@@ -14,6 +14,6 @@ func init(_song_id: String) -> void:
 	_level_name.text = song_id
 
 
-func _gui_input(event: InputEvent):
-	if event is InputEventScreenTouch and event.is_pressed():
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventScreenTouch and !event.is_pressed():
 		EventStorage.emit_signal("level_change_request", song_id)

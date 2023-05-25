@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv7gfiw6po4lq"]
+[gd_scene load_steps=6 format=3 uid="uid://dew87uetum1ow"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_f3fqa"]
 [ext_resource type="Script" path="res://script/home_interface.gd" id="2_j5npm"]
 [ext_resource type="Script" path="res://script/interface/list/level/level_list.gd" id="3_p30i3"]
-[ext_resource type="PackedScene" path="res://script/interface/list/level/level_preview.tscn" id="4_f8dw6"]
+[ext_resource type="PackedScene" uid="uid://b4he24d83acd8" path="res://script/interface/common/component/dragscroll/drag_scroll.tscn" id="4_0yqyl"]
+[ext_resource type="PackedScene" uid="uid://c7mv8mdl7ufmq" path="res://script/interface/list/level/level_preview.tscn" id="4_f8dw6"]
 
 [node name="Home" type="Node"]
 
@@ -33,25 +34,25 @@ mouse_filter = 1
 theme = ExtResource("1_f3fqa")
 script = ExtResource("2_j5npm")
 
-[node name="LevelListScroll" type="ScrollContainer" parent="InterfaceLayer/Interface"]
+[node name="DragScroll" parent="InterfaceLayer/Interface" instance=ExtResource("4_0yqyl")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -302.625
-offset_top = -907.875
-offset_right = 302.625
-offset_bottom = 907.875
-grow_horizontal = 2
-grow_vertical = 2
-vertical_scroll_mode = 0
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 60.0
+offset_right = -60.0
+offset_bottom = -60.0
 
-[node name="LevelList" type="VBoxContainer" parent="InterfaceLayer/Interface/LevelListScroll"]
+[node name="Center" type="CenterContainer" parent="InterfaceLayer/Interface/DragScroll"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="LevelList" type="VBoxContainer" parent="InterfaceLayer/Interface/DragScroll/Center"]
+layout_mode = 2
 theme_override_constants/separation = 36
 alignment = 1
 script = ExtResource("3_p30i3")
