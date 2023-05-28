@@ -19,6 +19,7 @@ signal level_power_updated(power, max_power)
 signal level_power_started(power_score_multiplier)
 signal level_power_ended
 signal level_paused
+signal level_resume_countdown_updated(countdown)
 signal level_resumed
 
 signal level_start_request(song_id)

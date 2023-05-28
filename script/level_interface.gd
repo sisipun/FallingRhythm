@@ -6,12 +6,14 @@ extends Control
 @export_node_path("PauseButton") var _pause_button_path: NodePath
 @export_node_path("PowerButton") var _power_button_path: NodePath
 @export_node_path("PausePopup") var _pause_popup_path: NodePath
+@export_node_path("Label") var _resume_countdown_path: NodePath
 @export_node_path("CompletePopup") var _complete_popup_path: NodePath
 
 @onready var _stats_panel: StatsPanel = get_node(_stats_panel_path)
 @onready var _pause_button: PauseButton = get_node(_pause_button_path)
 @onready var _power_button: PowerButton = get_node(_power_button_path)
 @onready var _pause_popup: PausePopup = get_node(_pause_popup_path)
+@onready var _resume_countdown: Label = get_node(_resume_countdown_path)
 @onready var _complete_popup: CompletePopup = get_node(_complete_popup_path)
 
 
@@ -24,6 +26,8 @@ func _ready() -> void:
 	EventStorage.level_power_started.connect(_on_level_power_started)
 	EventStorage.level_power_ended.connect(_on_level_power_ended)
 	EventStorage.level_paused.connect(_on_level_paused)
+	EventStorage.level_resume_request.connect(_on_level_resume_request)
+	EventStorage.level_resume_countdown_updated.connect(_on_level_resume_countdown_updated)
 	EventStorage.level_resumed.connect(_on_level_resumed)
 
 
@@ -70,5 +74,15 @@ func _on_level_paused() -> void:
 	_pause_popup.show()
 
 
+func _on_level_resume_request() -> void:
+	_pause_popup.hide()
+	_resume_countdown.show()
+
+
+func _on_level_resume_countdown_updated(countdown: int) -> void:
+	_resume_countdown.text = str(countdown)
+
+
 func _on_level_resumed() -> void:
+	_resume_countdown.hide()
 	_pause_popup.hide()

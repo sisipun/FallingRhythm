@@ -3,7 +3,8 @@ extends Node2D
 
 @export_node_path("FingerArea") var _left_finger_area_path: NodePath
 @export_node_path("FingerArea") var _right_finger_area_path: NodePath
-@export_node_path("AudioStreamPlayer") var _song_player_path: NodePath 
+@export_node_path("ResumeCountdown") var _resume_countdown_path: NodePath 
+@export_node_path("AudioStreamPlayer") var _song_player_path: NodePath
 
 @export var _max_score_multiplier: int
 @export var _power_score_multiplier: int
@@ -14,6 +15,7 @@ extends Node2D
 
 @onready var _left_finger: FingerArea = get_node(_left_finger_area_path)
 @onready var _right_finger: FingerArea = get_node(_right_finger_area_path)
+@onready var _resume_countdown: ResumeCountdown = get_node(_resume_countdown_path)
 @onready var _song_player: AudioStreamPlayer = get_node(_song_player_path)
 @onready var _power_increase_on_pickup_value: float = _max_power_value * _power_increase_percentage_on_pickup / 100.0
 
@@ -22,20 +24,23 @@ var _score: int:
 	get:
 		return _score
 	set(new_score):
-		_score = new_score
-		EventStorage.emit_signal("level_score_updated", _score)
+		if _score != new_score:
+			_score = new_score
+			EventStorage.emit_signal("level_score_updated", _score)
 var _score_multiplier: int:
 	get:
 		return _score_multiplier
 	set(new_score_multiplier):
-		_score_multiplier = new_score_multiplier
-		EventStorage.emit_signal("level_score_multiplier_updated", _score_multiplier)
+		if _score_multiplier != new_score_multiplier:
+			_score_multiplier = new_score_multiplier
+			EventStorage.emit_signal("level_score_multiplier_updated", _score_multiplier)
 var _power: float:
 	get:
 		return _power
 	set(new_power):
-		_power = clamp(new_power, 0, _max_power_value)
-		EventStorage.emit_signal("level_power_updated", _power, _max_power_value)
+		if _power != new_power:
+			_power = clamp(new_power, 0, _max_power_value)
+			EventStorage.emit_signal("level_power_updated", _power, _max_power_value)
 var _pickups_without_fail: int
 var _pickups_count_to_increase_multiplier: int
 var _power_on: bool = false
@@ -54,6 +59,8 @@ func _ready() -> void:
 	_left_finger.pickup_lost.connect(_on_pickup_lost)
 	_right_finger.pickup_caught.connect(_on_pickup_caught)
 	_right_finger.pickup_lost.connect(_on_pickup_lost)
+	_resume_countdown.updated.connect(_on_resume_countdown_updated)
+	_resume_countdown.finished.connect(_on_resume_countdown_finished)
 	_song_player.finished.connect(_on_song_finished)
 	
 	pause()
@@ -115,19 +122,26 @@ func _on_level_restart_request() -> void:
 	EventStorage.emit_signal("level_started", _song_timing.id)
 
 
-func _on_song_finished() -> void:
-	finish()
-	EventStorage.emit_signal("level_finished", _song_timing.id, _score)
-
-
 func _on_level_pause_request() -> void:
 	pause()
 	EventStorage.emit_signal("level_paused")
 
 
 func _on_level_resume_request() -> void:
-	unpause()
-	EventStorage.emit_signal("level_resumed")
+	_resume_countdown.start()
+
+
+func _on_level_start_power_request() -> void:
+	if _power < _max_power_value:
+		return
+	
+	var _tween: Tween = create_tween()
+	_power_on = true
+	EventStorage.emit_signal("level_power_started", _power_score_multiplier)
+	_tween.tween_property(self, "_power", 0.0, _power_duration)
+	await _tween.finished
+	_power_on = false
+	EventStorage.emit_signal("level_power_ended")
 
 
 func _on_pickup_caught(pickup: BasePickup) -> void:
@@ -151,14 +165,15 @@ func _on_pickup_lost(_pickup: BasePickup) -> void:
 	_score_multiplier = 1
 
 
-func _on_level_start_power_request() -> void:
-	if _power < _max_power_value:
-		return
-	
-	var _tween: Tween = create_tween()
-	_power_on = true
-	EventStorage.emit_signal("level_power_started", _power_score_multiplier)
-	_tween.tween_property(self, "_power", 0.0, _power_duration)
-	await _tween.finished
-	_power_on = false
-	EventStorage.emit_signal("level_power_ended")
+func _on_resume_countdown_updated(value: int) -> void:
+	EventStorage.emit_signal("level_resume_countdown_updated", value)
+
+
+func _on_resume_countdown_finished() -> void:
+	unpause()
+	EventStorage.emit_signal("level_resumed")
+
+
+func _on_song_finished() -> void:
+	finish()
+	EventStorage.emit_signal("level_finished", _song_timing.id, _score)

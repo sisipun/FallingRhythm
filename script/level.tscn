@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://p0sy510b3iho"]
+[gd_scene load_steps=13 format=3 uid="uid://p0sy510b3iho"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
 [ext_resource type="Script" path="res://script/level_area.gd" id="1_oc85r"]
 [ext_resource type="PackedScene" uid="uid://bidwcal4tbx3i" path="res://script/game/area/finger/finger_area.tscn" id="2_1whnv"]
 [ext_resource type="Texture2D" uid="uid://2sqsefu6vkpm" path="res://asset/image/sprite/level/split_line.png" id="4_d6jht"]
+[ext_resource type="PackedScene" uid="uid://cr0wlbjxe2xr3" path="res://script/game/timer/countdown/resume/resume_countdown.tscn" id="4_lgf8t"]
+[ext_resource type="Script" path="res://script/game/timer/countdown/resume/resume_countdown.gd" id="5_2nget"]
 [ext_resource type="Script" path="res://script/level_interface.gd" id="6_gml3b"]
 [ext_resource type="PackedScene" uid="uid://bkgouo6ryi7nd" path="res://script/interface/button/pause/pause_button.tscn" id="7_8dwq4"]
 [ext_resource type="PackedScene" uid="uid://ddi0bgike8mdc" path="res://script/interface/button/power/power_button.tscn" id="9_b6clh"]
@@ -31,6 +33,7 @@ position = Vector2(540, 960)
 script = ExtResource("1_oc85r")
 _left_finger_area_path = NodePath("LeftFingerArea")
 _right_finger_area_path = NodePath("RightFingerArea")
+_resume_countdown_path = NodePath("ResumeCountdown")
 _song_player_path = NodePath("SongPlayer")
 _max_score_multiplier = 4
 _power_score_multiplier = 2
@@ -48,6 +51,11 @@ position = Vector2(270, 0)
 [node name="SplitLine" type="Sprite2D" parent="LevelAreaLevel/LevelArea"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_d6jht")
+
+[node name="ResumeCountdown" parent="LevelAreaLevel/LevelArea" instance=ExtResource("4_lgf8t")]
+process_mode = 2
+script = ExtResource("5_2nget")
+_duration = 3
 
 [node name="SongPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]
 
@@ -68,6 +76,7 @@ _stats_panel_path = NodePath("StatsPanel")
 _pause_button_path = NodePath("PauseButton")
 _power_button_path = NodePath("PowerButton")
 _pause_popup_path = NodePath("PausePopup")
+_resume_countdown_path = NodePath("ResumeCountdown")
 _complete_popup_path = NodePath("CompletePopup")
 
 [node name="StatsPanel" parent="InterfaceLayer/Interface" instance=ExtResource("10_14i1d")]
@@ -101,6 +110,24 @@ offset_right = 100.0
 offset_bottom = -120.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="ResumeCountdown" type="Label" parent="InterfaceLayer/Interface"]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -44.5
+offset_right = 20.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 160
+text = "0"
 
 [node name="PausePopup" parent="InterfaceLayer/Interface" instance=ExtResource("10_0q1jc")]
 visible = false
