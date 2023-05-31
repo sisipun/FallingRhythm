@@ -39,7 +39,7 @@ _max_score_multiplier = 4
 _power_score_multiplier = 2
 _max_power_value = 100
 _pickups_percentage_to_increase_multiplier = 10.0
-_power_increase_percentage_on_pickup = 5.0
+_pickups_percentage_to_increase_full_power = 30.0
 _power_duration = 5
 
 [node name="LeftFingerArea" parent="LevelAreaLevel/LevelArea" instance=ExtResource("2_1whnv")]

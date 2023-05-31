@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SongTiming" load_steps=3 format=3 uid="uid://dblqlwxc86lu5"]
+
+[ext_resource type="Script" path="res://script/storage/song/song_timing.gd" id="1_4n6ms"]
+[ext_resource type="AudioStream" uid="uid://dldj01bocu454" path="res://asset/song/shut_down.mp3" id="2_xawra"]
+
+[resource]
+script = ExtResource("1_4n6ms")
+id = "Generation Test 3"
+song = ExtResource("2_xawra")
+timings_file_path = "res://asset/data/timing/generation_test_3.json"

@@ -10,14 +10,13 @@ extends Node2D
 @export var _power_score_multiplier: int
 @export var _max_power_value: int
 @export_range(0, 100) var _pickups_percentage_to_increase_multiplier: float
-@export_range(0, 100) var _power_increase_percentage_on_pickup: float
+@export_range(0, 100) var _pickups_percentage_to_increase_full_power: float
 @export var _power_duration: int
 
 @onready var _left_finger: FingerArea = get_node(_left_finger_area_path)
 @onready var _right_finger: FingerArea = get_node(_right_finger_area_path)
 @onready var _resume_countdown: ResumeCountdown = get_node(_resume_countdown_path)
 @onready var _song_player: AudioStreamPlayer = get_node(_song_player_path)
-@onready var _power_increase_on_pickup_value: float = _max_power_value * _power_increase_percentage_on_pickup / 100.0
 
 var _song_timing: SongTiming
 var _score: int:
@@ -43,6 +42,7 @@ var _power: float:
 			EventStorage.emit_signal("level_power_updated", _power, _max_power_value)
 var _pickups_without_fail: int
 var _pickups_count_to_increase_multiplier: int
+var _power_increase_on_pickup_value: float
 var _power_on: bool = false
 
 
@@ -82,7 +82,13 @@ func start(song_id: String) -> void:
 	_score_multiplier = 1
 	_power = 0.0
 	_pickups_without_fail = 0
-	_pickups_count_to_increase_multiplier = int(timings_count * _pickups_percentage_to_increase_multiplier / 100.0)
+	
+	var _pickups_share_to_increase_multiplier: float = _pickups_percentage_to_increase_multiplier / 100.0
+	var _pickups_share_to_increase_full_power: float = _pickups_percentage_to_increase_full_power / 100.0
+	_pickups_count_to_increase_multiplier = int(timings_count * _pickups_share_to_increase_multiplier)
+	var _pickups_count_to_increase_full_power: int = int(timings_count * _pickups_share_to_increase_full_power)
+	_power_increase_on_pickup_value = float(_max_power_value) / _pickups_count_to_increase_full_power
+	
 	EventStorage.emit_signal("level_score_updated", _score)
 	
 	_song_player.stream = _song_timing.song
