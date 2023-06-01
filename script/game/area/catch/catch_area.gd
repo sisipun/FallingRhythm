@@ -20,3 +20,11 @@ func move_player(relative_movement: float) -> void:
 		_player.position.x = body_left_border
 	else:
 		_player.position.x = new_position
+
+
+func pickup_caught(_pickup: BasePickup) -> void:
+	_player.pickup_caught()
+
+
+func pickup_lost(_pickup: BasePickup) -> void:
+	_player.pickup_lost()

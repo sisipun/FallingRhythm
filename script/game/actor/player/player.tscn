@@ -1,18 +1,64 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://ce5nelne11iux"]
 
 [ext_resource type="Script" path="res://script/game/actor/player/player.gd" id="1_fo2y6"]
-[ext_resource type="Texture2D" uid="uid://5ty113tdw7wx" path="res://asset/image/sprite/player/player.png" id="2_jenwe"]
+[ext_resource type="Texture2D" uid="uid://mmjeahdjrlbv" path="res://asset/image/sprite/player/player_normal.png" id="2_hhl8b"]
+[ext_resource type="Texture2D" uid="uid://u83nx3uhafoo" path="res://asset/image/sprite/player/player_happy.png" id="3_w6mqs"]
+[ext_resource type="Texture2D" uid="uid://c6mvdvh05xeiw" path="res://asset/image/sprite/player/player_sad.png" id="4_6fy43"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yx5so"]
 radius = 68.3384
 
+[sub_resource type="Animation" id="Animation_dpd5d"]
+resource_name = "sad"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_6fy43"), ExtResource("2_hhl8b")]
+}
+
+[sub_resource type="Animation" id="Animation_30gaf"]
+resource_name = "happy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_w6mqs"), ExtResource("2_hhl8b")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vir2c"]
+_data = {
+"happy": SubResource("Animation_30gaf"),
+"sad": SubResource("Animation_dpd5d")
+}
+
 [node name="Player" type="Area2D"]
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_fo2y6")
+_animation_player_node = NodePath("AnimationPlayer")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("2_jenwe")
+scale = Vector2(0.392157, 0.392157)
+texture = ExtResource("2_hhl8b")
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yx5so")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vir2c")
+}

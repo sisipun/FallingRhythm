@@ -48,8 +48,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_pickup_caught(pickup: BasePickup) -> void:
+	_catch_area.pickup_caught(pickup)
 	emit_signal("pickup_caught", pickup)
 
 
 func _on_pickup_lost(pickup: BasePickup) -> void:
+	_catch_area.pickup_lost(pickup)
 	emit_signal("pickup_lost", pickup)
