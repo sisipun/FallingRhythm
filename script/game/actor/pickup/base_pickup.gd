@@ -10,6 +10,8 @@ signal lost
 
 @onready var _body: CollisionShape2D = get_node(_body_path)
 
+var start_second: float
+var duration: float
 var velocity: float
 var score: int
 var body_size: float
@@ -17,7 +19,15 @@ var half_body_size: float
 var has_caught: bool
 
 
-func base_init(_velocity: float, _position: Vector2, _score: int) -> void:
+func base_init(
+	_start_second: float, 
+	_duration: float, 
+	_velocity: float, 
+	_position: Vector2, 
+	_score: int
+) -> void:
+	self.start_second = _start_second
+	self.duration = _duration
 	self.velocity = _velocity
 	self.position = _position
 	self.score = _score

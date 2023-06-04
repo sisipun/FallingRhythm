@@ -11,8 +11,10 @@ script = ExtResource("1_qhrbk")
 _body_path = NodePath("Body")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
 scale = Vector2(0.355556, 0.355556)
 texture = ExtResource("2_0rjse")
 
 [node name="Body" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
 shape = SubResource("CircleShape2D_60vp7")

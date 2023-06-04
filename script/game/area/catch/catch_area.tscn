@@ -13,7 +13,7 @@ _player_path = NodePath("Player")
 _body_path = NodePath("Body")
 
 [node name="Body" type="CollisionShape2D" parent="."]
-position = Vector2(0, 85)
+position = Vector2(0, 90)
 shape = SubResource("RectangleShape2D_osqet")
 
 [node name="CatchLine" type="Sprite2D" parent="Body"]

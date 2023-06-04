@@ -5,10 +5,23 @@ extends BasePickup
 var _pickups: Array[Pickup] = []
 
 
-func init(_velocity: float, _position_x: float, _length: float, _pickup_scene: PackedScene) -> void:
+func init(
+	_start_second: float, 
+	_duration: float, 
+	_velocity: float, 
+	_position_x: float, 
+	_length: float, 
+	_pickup_scene: PackedScene
+) -> void:
 	var first_pickup: Pickup = _spawn_pickup(_pickup_scene, 0)
 	var pickup_offset: float = first_pickup.body_size
-	super.base_init(_velocity, Vector2(_position_x, 0), int(_length / pickup_offset) - 1)
+	super.base_init(
+		_start_second, 
+		_duration, 
+		_velocity, 
+		Vector2(_position_x, 0), 
+		int(_length / pickup_offset) - 1
+	)
 	
 	for i in range(score):
 		_spawn_pickup(_pickup_scene, (i + 1) * -pickup_offset)
@@ -26,7 +39,7 @@ func _spawn_pickup(
 ) -> Pickup:
 	var pickup: Pickup = _pickup_scene.instantiate()
 	add_child(pickup)
-	pickup.init(0, 0, _position_y)
+	pickup.init(start_second, 0, 0, _position_y)
 	pickup.caught.connect(Callable(_on_pickup_caught).bind(pickup))
 	pickup.lost.connect(Callable(_on_pickup_lost).bind(pickup))
 	_pickups.push_back(pickup)
