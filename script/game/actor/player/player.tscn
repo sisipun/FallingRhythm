@@ -56,7 +56,6 @@ scale = Vector2(0.392157, 0.392157)
 texture = ExtResource("2_hhl8b")
 
 [node name="Body" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13)
 shape = SubResource("CircleShape2D_yx5so")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
