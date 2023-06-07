@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dorrpbu02odoj"]
 
 [ext_resource type="Script" path="res://script/game/area/spawn/spawn_area.gd" id="1_3mwfm"]
-[ext_resource type="PackedScene" uid="uid://ljjr2yplae2w" path="res://script/game/actor/pickup/pickup.tscn" id="2_tp2mc"]
+[ext_resource type="PackedScene" uid="uid://rh0p3rfxtgbv" path="res://script/game/actor/pickup/pickup.tscn" id="2_tp2mc"]
 [ext_resource type="PackedScene" uid="uid://dtqaiyjypm72q" path="res://script/game/actor/pickup/pickup_line.tscn" id="3_5lawc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_343pm"]

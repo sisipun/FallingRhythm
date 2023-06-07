@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://script/interface/popup/complete/complete_popup.gd" id="1_1jevk"]
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_qdm1u"]
-[ext_resource type="Texture2D" uid="uid://dlrw12r7xowlm" path="res://asset/image/texture/label/pause_label_background.png" id="3_pc7hh"]
+[ext_resource type="Texture2D" uid="uid://dtxmgyagn5soi" path="res://asset/image/texture/label/pause_label_background.png" id="3_pc7hh"]
 [ext_resource type="PackedScene" uid="uid://cief25woemq6u" path="res://script/interface/common/component/valuelabel/value_label.tscn" id="4_58l7t"]
 [ext_resource type="PackedScene" path="res://script/interface/button/restart/restart_button.tscn" id="4_y0dj0"]
 [ext_resource type="PackedScene" path="res://script/interface/button/home/home_button.tscn" id="5_7riuy"]
@@ -61,12 +61,10 @@ alignment = 1
 
 [node name="ScoreLabel" parent="Title/VBoxContainer" instance=ExtResource("4_58l7t")]
 layout_mode = 2
-_value_change_duration = 0.0
 text = "Score:"
 
 [node name="BestScoreLabel" parent="Title/VBoxContainer" instance=ExtResource("4_58l7t")]
 layout_mode = 2
-_value_change_duration = 0.0
 text = "Best Score:"
 
 [node name="Buttons" type="VBoxContainer" parent="."]

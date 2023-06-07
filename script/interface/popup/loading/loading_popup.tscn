@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbid44w38ou3k"]
+[gd_scene load_steps=3 format=3 uid="uid://dd7r336uuo6rx"]
 
 [ext_resource type="Script" path="res://script/interface/popup/loading/loading_popup.gd" id="1_q60f2"]
-[ext_resource type="Texture2D" uid="uid://d1sfauvhdaymy" path="res://asset/image/texture/loading/loading_background.png" id="1_rlq4k"]
+[ext_resource type="Texture2D" uid="uid://cykeavjjoi6y3" path="res://asset/image/texture/loading/loading_background.png" id="1_rlq4k"]
 
 [node name="LoadingPopup" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_q60f2")
 _timer_path = NodePath("Timer")
 
-[node name="NinePatchRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_rlq4k")
+expand_mode = 5
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

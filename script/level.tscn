@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://p0sy510b3iho"]
+[gd_scene load_steps=13 format=3 uid="uid://d0lqr5lwvvwls"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
 [ext_resource type="Script" path="res://script/level_area.gd" id="1_oc85r"]
@@ -9,8 +9,8 @@
 [ext_resource type="Script" path="res://script/level_interface.gd" id="6_gml3b"]
 [ext_resource type="PackedScene" uid="uid://bkgouo6ryi7nd" path="res://script/interface/button/pause/pause_button.tscn" id="7_8dwq4"]
 [ext_resource type="PackedScene" uid="uid://ddi0bgike8mdc" path="res://script/interface/button/power/power_button.tscn" id="9_b6clh"]
-[ext_resource type="PackedScene" uid="uid://6vttrcqmb5yy" path="res://script/interface/popup/pause/pause_popup.tscn" id="10_0q1jc"]
-[ext_resource type="PackedScene" uid="uid://8iibpptxy6jw" path="res://script/interface/panel/stats_panel.tscn" id="10_14i1d"]
+[ext_resource type="PackedScene" uid="uid://cowgymf7mujm7" path="res://script/interface/popup/pause/pause_popup.tscn" id="10_0q1jc"]
+[ext_resource type="PackedScene" uid="uid://byt4qrlflwxoj" path="res://script/interface/panel/stats_panel.tscn" id="10_14i1d"]
 [ext_resource type="PackedScene" uid="uid://dly4vbys0h7dk" path="res://script/interface/popup/complete/complete_popup.tscn" id="11_mgxtu"]
 
 [node name="Level" type="Node"]

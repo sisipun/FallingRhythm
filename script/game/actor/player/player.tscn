@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce5nelne11iux"]
+[gd_scene load_steps=9 format=3 uid="uid://c2rt3qe6ypt01"]
 
 [ext_resource type="Script" path="res://script/game/actor/player/player.gd" id="1_fo2y6"]
-[ext_resource type="Texture2D" uid="uid://mmjeahdjrlbv" path="res://asset/image/sprite/player/player_normal.png" id="2_hhl8b"]
-[ext_resource type="Texture2D" uid="uid://u83nx3uhafoo" path="res://asset/image/sprite/player/player_happy.png" id="3_w6mqs"]
-[ext_resource type="Texture2D" uid="uid://c6mvdvh05xeiw" path="res://asset/image/sprite/player/player_sad.png" id="4_6fy43"]
+[ext_resource type="Texture2D" uid="uid://d1d82qtnoe5v1" path="res://asset/image/sprite/player/player_normal.png" id="2_hhl8b"]
+[ext_resource type="Texture2D" uid="uid://c5dp8vrj5dare" path="res://asset/image/sprite/player/player_happy.png" id="3_w6mqs"]
+[ext_resource type="Texture2D" uid="uid://dx5i5hcglrpm7" path="res://asset/image/sprite/player/player_sad.png" id="4_6fy43"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yx5so"]
 radius = 68.3384
@@ -52,7 +52,7 @@ script = ExtResource("1_fo2y6")
 _animation_player_node = NodePath("AnimationPlayer")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.392157, 0.392157)
+scale = Vector2(1.54412, 1.54412)
 texture = ExtResource("2_hhl8b")
 
 [node name="Body" type="CollisionShape2D" parent="."]
