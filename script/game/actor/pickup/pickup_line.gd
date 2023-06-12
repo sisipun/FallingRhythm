@@ -6,20 +6,25 @@ var _pickups: Array[Pickup] = []
 
 
 func init(
-	_start_second: float, 
+	_spawn_second: float,
+	_catch_second: float,
 	_duration: float, 
 	_velocity: float, 
-	_position_x: float, 
+	_position_x: float,
+	_spawn_position_y: float,
+	_catch_position_y: float,
 	_length: float, 
 	_pickup_scene: PackedScene
 ) -> void:
 	var first_pickup: Pickup = _spawn_pickup(_pickup_scene, 0)
 	var pickup_offset: float = first_pickup.body_size
 	super.base_init(
-		_start_second, 
+		_spawn_second,
+		_catch_second,
 		_duration, 
 		_velocity, 
-		Vector2(_position_x, 0), 
+		Vector2(_position_x, _spawn_position_y),
+		Vector2(_position_x, _catch_position_y), 
 		int(_length / pickup_offset) - 1
 	)
 	
@@ -39,7 +44,7 @@ func _spawn_pickup(
 ) -> Pickup:
 	var pickup: Pickup = _pickup_scene.instantiate()
 	add_child(pickup)
-	pickup.init(start_second, 0, 0, _position_y)
+	pickup.init(spawn_second, catch_second, 0, 0, _position_y, 0)
 	pickup.caught.connect(Callable(_on_pickup_caught).bind(pickup))
 	pickup.lost.connect(Callable(_on_pickup_lost).bind(pickup))
 	_pickups.push_back(pickup)

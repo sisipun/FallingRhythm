@@ -14,12 +14,12 @@ signal pickup_lost(pickup)
 
 var touch_event_index: int = -1
 var spawn_to_catch_time: float = 0
+var spawn_to_catch_distance: float = -1
 
 
 func init(timings: Array[SongTiming.Timing]) -> void:
 	_spawn_area.init(timings)
-	var spawn_to_catch_distance: float = _catch_area.position.y - _spawn_area.position.y
-	self.spawn_to_catch_time = spawn_to_catch_distance / _spawn_area.pickup_velocity
+	spawn_to_catch_distance = _catch_area.position.y - _spawn_area.position.y
 
 
 func _ready() -> void:
@@ -28,7 +28,7 @@ func _ready() -> void:
 
 
 func check_timing(current_timing: float) -> void:
-	_spawn_area.check_timing(current_timing + spawn_to_catch_time)
+	_spawn_area.check_timing(current_timing, spawn_to_catch_distance)
 
 
 func clear_pickups() -> void:

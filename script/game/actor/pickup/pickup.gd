@@ -3,16 +3,20 @@ extends BasePickup
 
 
 func init(
-	_start_second: float, 
-	_velocity: float, 
-	_position_x: float, 
-	_position_y: float = 0
+	_spawn_second: float,
+	_catch_second: float,
+	_velocity: float,
+	_position_x: float,
+	_spawn_position_y: float,
+	_catch_position_y: float
 ) -> void:
 	super.base_init(
-		_start_second,
+		_spawn_second,
+		_catch_second,
 		0,
-		_velocity, 
-		Vector2(_position_x, _position_y), 
+		_velocity,
+		Vector2(_position_x, _spawn_position_y),
+		Vector2(_position_x, _catch_position_y),
 		1
 	)
 

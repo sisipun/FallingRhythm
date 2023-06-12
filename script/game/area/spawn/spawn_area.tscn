@@ -13,7 +13,7 @@ _body_path = NodePath("Body")
 _pickups_path = NodePath("Pickups")
 _pickup_scene = ExtResource("2_tp2mc")
 _pickup_line_scene = ExtResource("3_5lawc")
-pickup_velocity = 500.0
+_pickup_velocity = 500.0
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_343pm")

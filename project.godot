@@ -27,6 +27,7 @@ GameStorage="*res://script/storage/game/game_storage.tscn"
 
 window/size/viewport_width=1080
 window/size/viewport_height=1920
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
 window/handheld/orientation=1

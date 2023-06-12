@@ -10,9 +10,13 @@ signal lost
 
 @onready var _body: CollisionShape2D = get_node(_body_path)
 
-var start_second: float
+var spawn_second: float
+var catch_second: float
+var inverse_period: float
 var duration: float
 var velocity: float
+var spawn_position: Vector2
+var catch_position: Vector2
 var score: int
 var body_size: float
 var half_body_size: float
@@ -20,16 +24,22 @@ var has_caught: bool
 
 
 func base_init(
-	_start_second: float, 
+	_spawn_second: float, 
+	_catch_second: float, 
 	_duration: float, 
 	_velocity: float, 
-	_position: Vector2, 
+	_spawn_position: Vector2,
+	_catch_position: Vector2,
 	_score: int
 ) -> void:
-	self.start_second = _start_second
+	self.spawn_second = _spawn_second
+	self.catch_second = _catch_second
+	self.inverse_period = 1 / (_catch_second - _spawn_second)
 	self.duration = _duration
 	self.velocity = _velocity
-	self.position = _position
+	self.position = _spawn_position
+	self.spawn_position = _spawn_position
+	self.catch_position = _catch_position
 	self.score = _score
 	self.body_size = _body.shape.get_rect().size.x * _body.global_scale.x
 	self.half_body_size = body_size / 2.0
@@ -41,7 +51,15 @@ func _ready() -> void:
 	area_exited.connect(_on_area_exited)
 
 
-func _physics_process(delta: float) -> void:
+func move(current_second: float) -> void:
+	self.position.y = lerp(
+		spawn_position.y,
+		catch_position.y,
+		(current_second - spawn_second) * inverse_period
+	)
+
+
+func _process(delta: float) -> void:
 	translate(Vector2(0, velocity) * delta)
 
 

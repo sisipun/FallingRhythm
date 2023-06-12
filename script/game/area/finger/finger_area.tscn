@@ -11,6 +11,7 @@ size = Vector2(540, 1920)
 script = ExtResource("1_b4t7l")
 _catch_area_path = NodePath("CatchArea")
 _spawn_area_path = NodePath("SpawnArea")
+_pickups_path = null
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u2cqf")
@@ -20,3 +21,5 @@ position = Vector2(0, -960)
 
 [node name="CatchArea" parent="." instance=ExtResource("1_6r1mg")]
 position = Vector2(0, 300)
+
+[node name="Pickups" type="Node2D" parent="."]

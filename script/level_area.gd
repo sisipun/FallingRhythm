@@ -151,7 +151,7 @@ func _on_level_start_power_request() -> void:
 
 
 func _on_pickup_caught(pickup: BasePickup) -> void:
-	print('(', pickup.start_second, ',', _song_player.get_playback_position(), ')=', pickup.start_second - _song_player.get_playback_position())
+	print('(', pickup.catch_second, ',', _song_player.get_playback_position(), ')=', pickup.catch_second - _song_player.get_playback_position())
 	_pickups_without_fail += 1
 	if not _power_on:
 		_score += pickup.score * _score_multiplier

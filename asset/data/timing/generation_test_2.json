@@ -1,0 +1,2022 @@
+{
+  "soundFilePath": "C:/Users/sisip/Downloads/test/Drums.mp3",
+  "soundName": "Default",
+  "timings": [
+    {
+      "endSecond": 4.070000171661377,
+      "position": 0.6015003323554993,
+      "side": "LEFT",
+      "startSecond": 4.070000171661377,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 4.885000228881836,
+      "position": -0.5113463997840881,
+      "side": "LEFT",
+      "startSecond": 4.885000228881836,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 6.25600004196167,
+      "position": 0.7802552580833435,
+      "side": "LEFT",
+      "startSecond": 5.980999946594238,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 7.348999977111816,
+      "position": 0.6105794310569763,
+      "side": "LEFT",
+      "startSecond": 7.072000026702881,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 8.170999526977539,
+      "position": -0.3133943974971771,
+      "side": "LEFT",
+      "startSecond": 8.170999526977539,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 9.529999732971191,
+      "position": -0.46664080023765564,
+      "side": "LEFT",
+      "startSecond": 9.255000114440918,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 10.619999885559082,
+      "position": -0.5459571480751038,
+      "side": "LEFT",
+      "startSecond": 10.347000122070312,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 11.432000160217285,
+      "position": -0.5459571480751038,
+      "side": "LEFT",
+      "startSecond": 11.432000160217285,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 12.803000450134277,
+      "position": 0.43885546922683716,
+      "side": "LEFT",
+      "startSecond": 12.529000282287598,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 13.895999908447266,
+      "position": -0.6535249948501587,
+      "side": "LEFT",
+      "startSecond": 13.618000030517578,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 14.706999778747559,
+      "position": -0.6535249948501587,
+      "side": "LEFT",
+      "startSecond": 14.706999778747559,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 16.070999145507812,
+      "position": 0.7537810206413269,
+      "side": "LEFT",
+      "startSecond": 16.070999145507812,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 16.886999130249023,
+      "position": -0.6607239246368408,
+      "side": "LEFT",
+      "startSecond": 16.886999130249023,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 17.996999740600586,
+      "position": 0.8266094923019409,
+      "side": "LEFT",
+      "startSecond": 17.996999740600586,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 19.6200008392334,
+      "position": 0.4801188111305237,
+      "side": "LEFT",
+      "startSecond": 19.347999572753906,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 20.165000915527344,
+      "position": 0.4801188111305237,
+      "side": "LEFT",
+      "startSecond": 20.165000915527344,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 21.250999450683594,
+      "position": -0.10089131444692612,
+      "side": "LEFT",
+      "startSecond": 21.250999450683594,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 22.89900016784668,
+      "position": -0.13259509205818176,
+      "side": "LEFT",
+      "startSecond": 22.617000579833984,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 23.707000732421875,
+      "position": -0.13259509205818176,
+      "side": "LEFT",
+      "startSecond": 23.707000732421875,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 24.54800033569336,
+      "position": 0.39341825246810913,
+      "side": "LEFT",
+      "startSecond": 24.54800033569336,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 26.15999984741211,
+      "position": -0.6411851048469543,
+      "side": "LEFT",
+      "startSecond": 25.891000747680664,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 26.711999893188477,
+      "position": -0.6411851048469543,
+      "side": "LEFT",
+      "startSecond": 26.711999893188477,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 27.81100082397461,
+      "position": 0.8198397159576416,
+      "side": "LEFT",
+      "startSecond": 27.81100082397461,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 29.433000564575195,
+      "position": 0.47372427582740784,
+      "side": "LEFT",
+      "startSecond": 29.16699981689453,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 29.979999542236328,
+      "position": 0.47372427582740784,
+      "side": "LEFT",
+      "startSecond": 29.979999542236328,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 31.06599998474121,
+      "position": 0.615564227104187,
+      "side": "LEFT",
+      "startSecond": 31.06599998474121,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 32.4370002746582,
+      "position": 0.32332372665405273,
+      "side": "LEFT",
+      "startSecond": 32.16299819946289,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 33.53300094604492,
+      "position": 0.1255665421485901,
+      "side": "LEFT",
+      "startSecond": 33.25199890136719,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 34.345001220703125,
+      "position": 0.1255665421485901,
+      "side": "LEFT",
+      "startSecond": 34.345001220703125,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 35.709999084472656,
+      "position": -0.4532248377799988,
+      "side": "LEFT",
+      "startSecond": 35.43899917602539,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 36.80099868774414,
+      "position": -0.4532248377799988,
+      "side": "LEFT",
+      "startSecond": 36.52299880981445,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 37.61199951171875,
+      "position": -0.4532248377799988,
+      "side": "LEFT",
+      "startSecond": 37.61199951171875,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 38.98400115966797,
+      "position": -0.4855889081954956,
+      "side": "LEFT",
+      "startSecond": 38.70899963378906,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 40.07600021362305,
+      "position": 0.42248380184173584,
+      "side": "LEFT",
+      "startSecond": 39.79999923706055,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 40.88399887084961,
+      "position": 0.42248380184173584,
+      "side": "LEFT",
+      "startSecond": 40.88399887084961,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 42.25699996948242,
+      "position": 0.954624354839325,
+      "side": "LEFT",
+      "startSecond": 41.983001708984375,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 43.0880012512207,
+      "position": -0.7403041124343872,
+      "side": "LEFT",
+      "startSecond": 43.0880012512207,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 44.16400146484375,
+      "position": -0.28550511598587036,
+      "side": "LEFT",
+      "startSecond": 44.16400146484375,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 45.81399917602539,
+      "position": -0.7885119915008545,
+      "side": "LEFT",
+      "startSecond": 45.81399917602539,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 47.4370002746582,
+      "position": 0.3951806426048279,
+      "side": "LEFT",
+      "startSecond": 47.4370002746582,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 47.979000091552734,
+      "position": 0.3951806426048279,
+      "side": "LEFT",
+      "startSecond": 47.979000091552734,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 49.06800079345703,
+      "position": -0.5711058378219604,
+      "side": "LEFT",
+      "startSecond": 49.06800079345703,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 49.612998962402344,
+      "position": -0.5711058378219604,
+      "side": "LEFT",
+      "startSecond": 49.612998962402344,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 50.70899963378906,
+      "position": -0.3676052987575531,
+      "side": "LEFT",
+      "startSecond": 50.441001892089844,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 51.52399826049805,
+      "position": -0.09803301095962524,
+      "side": "LEFT",
+      "startSecond": 51.52399826049805,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 52.36600112915039,
+      "position": 0.301670104265213,
+      "side": "LEFT",
+      "startSecond": 52.36600112915039,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 53.435001373291016,
+      "position": 0.301670104265213,
+      "side": "LEFT",
+      "startSecond": 53.16899871826172,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 53.98899841308594,
+      "position": 0.301670104265213,
+      "side": "LEFT",
+      "startSecond": 53.98899841308594,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 56.439998626708984,
+      "position": 0.441915899515152,
+      "side": "LEFT",
+      "startSecond": 56.439998626708984,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 57.25199890136719,
+      "position": 0.441915899515152,
+      "side": "LEFT",
+      "startSecond": 57.25199890136719,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 58.888999938964844,
+      "position": -0.4969356060028076,
+      "side": "LEFT",
+      "startSecond": 58.61800003051758,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 59.43899917602539,
+      "position": -0.4969356060028076,
+      "side": "LEFT",
+      "startSecond": 59.43899917602539,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 60.52799987792969,
+      "position": 0.8310529589653015,
+      "side": "LEFT",
+      "startSecond": 60.52799987792969,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 61.625,
+      "position": -0.2474202662706375,
+      "side": "LEFT",
+      "startSecond": 61.625,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 62.16999816894531,
+      "position": -0.2474202662706375,
+      "side": "LEFT",
+      "startSecond": 62.16999816894531,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 62.981998443603516,
+      "position": -0.2474202662706375,
+      "side": "LEFT",
+      "startSecond": 62.70199966430664,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 63.79199981689453,
+      "position": -0.2474202662706375,
+      "side": "LEFT",
+      "startSecond": 63.79199981689453,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 65.16500091552734,
+      "position": -0.29089388251304626,
+      "side": "LEFT",
+      "startSecond": 64.89099884033203,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 66.26000213623047,
+      "position": -0.4145159125328064,
+      "side": "LEFT",
+      "startSecond": 65.9800033569336,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 67.0790023803711,
+      "position": -0.05789013206958771,
+      "side": "LEFT",
+      "startSecond": 67.0790023803711,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 68.43800354003906,
+      "position": 0.7263213396072388,
+      "side": "LEFT",
+      "startSecond": 68.16400146484375,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 69.52799987792969,
+      "position": 0.7263213396072388,
+      "side": "LEFT",
+      "startSecond": 69.25,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 70.33899688720703,
+      "position": 0.7263213396072388,
+      "side": "LEFT",
+      "startSecond": 70.33899688720703,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 71.43699645996094,
+      "position": -0.45867249369621277,
+      "side": "LEFT",
+      "startSecond": 71.43699645996094,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 71.98200225830078,
+      "position": -0.45867249369621277,
+      "side": "LEFT",
+      "startSecond": 71.98200225830078,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 72.80699920654297,
+      "position": -0.45867249369621277,
+      "side": "LEFT",
+      "startSecond": 72.5270004272461,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 73.625,
+      "position": -0.2390192300081253,
+      "side": "LEFT",
+      "startSecond": 73.625,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 74.70899963378906,
+      "position": -0.25323569774627686,
+      "side": "LEFT",
+      "startSecond": 74.70899963378906,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 75.26000213623047,
+      "position": -0.25323569774627686,
+      "side": "LEFT",
+      "startSecond": 75.26000213623047,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 75.802001953125,
+      "position": -0.25323569774627686,
+      "side": "LEFT",
+      "startSecond": 75.802001953125,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 76.09200286865234,
+      "position": -0.25323569774627686,
+      "side": "LEFT",
+      "startSecond": 76.09200286865234,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 76.9000015258789,
+      "position": -0.25323569774627686,
+      "side": "LEFT",
+      "startSecond": 76.9000015258789,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 78.25800323486328,
+      "position": -0.9529410004615784,
+      "side": "LEFT",
+      "startSecond": 77.98400115966797,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 79.0739974975586,
+      "position": 0.9901589155197144,
+      "side": "LEFT",
+      "startSecond": 79.0739974975586,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 81.80599975585938,
+      "position": -0.6664791703224182,
+      "side": "LEFT",
+      "startSecond": 81.80599975585938,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 82.61599731445312,
+      "position": -0.6664791703224182,
+      "side": "LEFT",
+      "startSecond": 82.61599731445312,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 83.43299865722656,
+      "position": 0.7674129009246826,
+      "side": "LEFT",
+      "startSecond": 83.43299865722656,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 85.06999969482422,
+      "position": 0.3410303592681885,
+      "side": "LEFT",
+      "startSecond": 84.79900360107422,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 85.62000274658203,
+      "position": 0.3410303592681885,
+      "side": "LEFT",
+      "startSecond": 85.62000274658203,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 86.70600128173828,
+      "position": 0.47653108835220337,
+      "side": "LEFT",
+      "startSecond": 86.70600128173828,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 88.34200286865234,
+      "position": -0.27851417660713196,
+      "side": "LEFT",
+      "startSecond": 88.0719985961914,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 89.16200256347656,
+      "position": -0.29843196272850037,
+      "side": "LEFT",
+      "startSecond": 89.16200256347656,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 89.97899627685547,
+      "position": 0.15467235445976257,
+      "side": "LEFT",
+      "startSecond": 89.97899627685547,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 91.62100219726562,
+      "position": 0.7258681058883667,
+      "side": "LEFT",
+      "startSecond": 91.34500122070312,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 92.16600036621094,
+      "position": 0.7258681058883667,
+      "side": "LEFT",
+      "startSecond": 92.16600036621094,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 93.26200103759766,
+      "position": -0.4574657380580902,
+      "side": "LEFT",
+      "startSecond": 93.26200103759766,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 94.61900329589844,
+      "position": 0.6007013916969299,
+      "side": "LEFT",
+      "startSecond": 94.61900329589844,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 94.90899658203125,
+      "position": 0.6007013916969299,
+      "side": "LEFT",
+      "startSecond": 94.90899658203125,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 95.42900085449219,
+      "position": 0.6007013916969299,
+      "side": "LEFT",
+      "startSecond": 95.42900085449219,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 95.73699951171875,
+      "position": 0.6007013916969299,
+      "side": "LEFT",
+      "startSecond": 95.73699951171875,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 96.5199966430664,
+      "position": 0.6007013916969299,
+      "side": "LEFT",
+      "startSecond": 96.5199966430664,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 97.89199829101562,
+      "position": -0.4070168435573578,
+      "side": "LEFT",
+      "startSecond": 97.61699676513672,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 98.98300170898438,
+      "position": -0.4070168435573578,
+      "side": "LEFT",
+      "startSecond": 98.70500183105469,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 99.79900360107422,
+      "position": -0.29559996724128723,
+      "side": "LEFT",
+      "startSecond": 99.79900360107422,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 101.16500091552734,
+      "position": -0.3590230643749237,
+      "side": "LEFT",
+      "startSecond": 100.89099884033203,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 102.25499725341797,
+      "position": 0.17128753662109375,
+      "side": "LEFT",
+      "startSecond": 101.98300170898438,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 103.06700134277344,
+      "position": 0.17128753662109375,
+      "side": "LEFT",
+      "startSecond": 103.06700134277344,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 104.43800354003906,
+      "position": 0.03524606674909592,
+      "side": "LEFT",
+      "startSecond": 104.16400146484375,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 105.53099822998047,
+      "position": 0.4694938659667969,
+      "side": "LEFT",
+      "startSecond": 105.25399780273438,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 106.35099792480469,
+      "position": 0.9633676409721375,
+      "side": "LEFT",
+      "startSecond": 106.35099792480469,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 107.71199798583984,
+      "position": -0.9685569405555725,
+      "side": "LEFT",
+      "startSecond": 107.43699645996094,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 109.61399841308594,
+      "position": -0.2454347163438797,
+      "side": "LEFT",
+      "startSecond": 109.61399841308594,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 111.2509994506836,
+      "position": -0.9809446334838867,
+      "side": "LEFT",
+      "startSecond": 111.2509994506836,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 112.88600158691406,
+      "position": -0.06168705224990845,
+      "side": "LEFT",
+      "startSecond": 112.88600158691406,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 114.52400207519531,
+      "position": -0.5430760383605957,
+      "side": "LEFT",
+      "startSecond": 114.52400207519531,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 116.16400146484375,
+      "position": -0.21042415499687195,
+      "side": "LEFT",
+      "startSecond": 116.16400146484375,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 117.80699920654297,
+      "position": -0.05894246697425842,
+      "side": "LEFT",
+      "startSecond": 117.80699920654297,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 118.62300109863281,
+      "position": -0.4798890948295593,
+      "side": "LEFT",
+      "startSecond": 118.62300109863281,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 119.43299865722656,
+      "position": -0.4798890948295593,
+      "side": "LEFT",
+      "startSecond": 119.43299865722656,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 121.88899993896484,
+      "position": -0.8728343844413757,
+      "side": "LEFT",
+      "startSecond": 121.88899993896484,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 122.70600128173828,
+      "position": -0.49887189269065857,
+      "side": "LEFT",
+      "startSecond": 122.70600128173828,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 124.35199737548828,
+      "position": -0.5654791593551636,
+      "side": "LEFT",
+      "startSecond": 124.072998046875,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 124.89099884033203,
+      "position": -0.5654791593551636,
+      "side": "LEFT",
+      "startSecond": 124.89099884033203,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 125.99199676513672,
+      "position": -0.5747284889221191,
+      "side": "LEFT",
+      "startSecond": 125.99199676513672,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 127.0770034790039,
+      "position": 0.46949493885040283,
+      "side": "LEFT",
+      "startSecond": 127.0770034790039,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 127.625,
+      "position": 0.46949493885040283,
+      "side": "LEFT",
+      "startSecond": 127.625,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 128.43600463867188,
+      "position": 0.46949493885040283,
+      "side": "LEFT",
+      "startSecond": 128.15699768066406,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 129.2480010986328,
+      "position": 0.46949493885040283,
+      "side": "LEFT",
+      "startSecond": 129.2480010986328,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 130.61900329589844,
+      "position": -0.29298123717308044,
+      "side": "LEFT",
+      "startSecond": 130.343994140625,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 131.71099853515625,
+      "position": 0.769201397895813,
+      "side": "LEFT",
+      "startSecond": 131.43499755859375,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 132.531005859375,
+      "position": 0.44516199827194214,
+      "side": "LEFT",
+      "startSecond": 132.531005859375,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 133.89300537109375,
+      "position": -0.100855752825737,
+      "side": "LEFT",
+      "startSecond": 133.61599731445312,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 134.98300170898438,
+      "position": -0.590391993522644,
+      "side": "LEFT",
+      "startSecond": 134.7100067138672,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 135.79400634765625,
+      "position": -0.590391993522644,
+      "side": "LEFT",
+      "startSecond": 135.79400634765625,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 137.16600036621094,
+      "position": 0.710087776184082,
+      "side": "LEFT",
+      "startSecond": 136.88600158691406,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 137.97799682617188,
+      "position": 0.710087776184082,
+      "side": "LEFT",
+      "startSecond": 137.97799682617188,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 138.26100158691406,
+      "position": 0.710087776184082,
+      "side": "LEFT",
+      "startSecond": 138.26100158691406,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 139.09100341796875,
+      "position": 0.2364673614501953,
+      "side": "LEFT",
+      "startSecond": 139.09100341796875,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 140.43899536132812,
+      "position": 0.6616790890693665,
+      "side": "LEFT",
+      "startSecond": 140.16200256347656,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 141.5290069580078,
+      "position": 0.7713750600814819,
+      "side": "LEFT",
+      "startSecond": 141.2570037841797,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 142.35400390625,
+      "position": 0.7906977534294128,
+      "side": "LEFT",
+      "startSecond": 142.35400390625,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 143.70700073242188,
+      "position": 0.5091403722763062,
+      "side": "LEFT",
+      "startSecond": 143.70700073242188,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 144.5279998779297,
+      "position": -0.26585888862609863,
+      "side": "LEFT",
+      "startSecond": 144.5279998779297,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 147.5229949951172,
+      "position": 0.537115752696991,
+      "side": "LEFT",
+      "startSecond": 147.5229949951172,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 148.08700561523438,
+      "position": 0.537115752696991,
+      "side": "LEFT",
+      "startSecond": 148.08700561523438,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 148.88699340820312,
+      "position": 0.537115752696991,
+      "side": "LEFT",
+      "startSecond": 148.88699340820312,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 149.99899291992188,
+      "position": 0.49252063035964966,
+      "side": "LEFT",
+      "startSecond": 149.99899291992188,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 150.5240020751953,
+      "position": 0.49252063035964966,
+      "side": "LEFT",
+      "startSecond": 150.5240020751953,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 151.0959930419922,
+      "position": 0.49252063035964966,
+      "side": "LEFT",
+      "startSecond": 151.0959930419922,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 152.16099548339844,
+      "position": -0.8745409250259399,
+      "side": "LEFT",
+      "startSecond": 152.16099548339844,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 153.7969970703125,
+      "position": -0.17444853484630585,
+      "side": "LEFT",
+      "startSecond": 153.54299926757812,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 154.61300659179688,
+      "position": 0.003787604859098792,
+      "side": "LEFT",
+      "startSecond": 154.61300659179688,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 155.43699645996094,
+      "position": 0.8028486967086792,
+      "side": "LEFT",
+      "startSecond": 155.43699645996094,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 156.2779998779297,
+      "position": 0.3846040368080139,
+      "side": "LEFT",
+      "startSecond": 156.2779998779297,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 157.09500122070312,
+      "position": 0.3846040368080139,
+      "side": "LEFT",
+      "startSecond": 156.8209991455078,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 157.88699340820312,
+      "position": 0.3846040368080139,
+      "side": "LEFT",
+      "startSecond": 157.88699340820312,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 158.7010040283203,
+      "position": 0.0289026889950037,
+      "side": "LEFT",
+      "startSecond": 158.7010040283203,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 159.80599975585938,
+      "position": 0.7611708045005798,
+      "side": "LEFT",
+      "startSecond": 159.531005859375,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 160.88800048828125,
+      "position": 0.26507872343063354,
+      "side": "LEFT",
+      "startSecond": 160.88800048828125,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 161.1820068359375,
+      "position": 0.26507872343063354,
+      "side": "LEFT",
+      "startSecond": 161.1820068359375,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 162.00799560546875,
+      "position": 0.8665823340415955,
+      "side": "LEFT",
+      "startSecond": 162.00799560546875,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 163.36300659179688,
+      "position": -0.758814811706543,
+      "side": "LEFT",
+      "startSecond": 163.08700561523438,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 164.4340057373047,
+      "position": -0.758814811706543,
+      "side": "LEFT",
+      "startSecond": 164.16900634765625,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 165.2530059814453,
+      "position": 0.7346442341804504,
+      "side": "LEFT",
+      "startSecond": 165.2530059814453,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 166.63600158691406,
+      "position": 0.1501457244157791,
+      "side": "LEFT",
+      "startSecond": 166.36599731445312,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 167.42999267578125,
+      "position": 0.1501457244157791,
+      "side": "LEFT",
+      "startSecond": 167.42999267578125,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 167.73399353027344,
+      "position": 0.1501457244157791,
+      "side": "LEFT",
+      "startSecond": 167.73399353027344,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 168.5240020751953,
+      "position": 0.1501457244157791,
+      "side": "LEFT",
+      "startSecond": 168.5240020751953,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 169.9149932861328,
+      "position": 0.8594138622283936,
+      "side": "LEFT",
+      "startSecond": 169.63400268554688,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 170.72999572753906,
+      "position": 0.36420467495918274,
+      "side": "LEFT",
+      "startSecond": 170.72999572753906,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 173.44000244140625,
+      "position": 0.9575120210647583,
+      "side": "LEFT",
+      "startSecond": 173.44000244140625,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 1.934000015258789,
+      "position": -0.5640933513641357,
+      "side": "RIGHT",
+      "startSecond": 1.934000015258789,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 3.1459999084472656,
+      "position": 0.83122718334198,
+      "side": "RIGHT",
+      "startSecond": 3.1459999084472656,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 4.40500020980835,
+      "position": 0.04073606804013252,
+      "side": "RIGHT",
+      "startSecond": 4.177000045776367,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 4.980000019073486,
+      "position": 0.04073606804013252,
+      "side": "RIGHT",
+      "startSecond": 4.980000019073486,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 6.228000164031982,
+      "position": 0.9891257882118225,
+      "side": "RIGHT",
+      "startSecond": 5.763000011444092,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 6.7210001945495605,
+      "position": 0.9891257882118225,
+      "side": "RIGHT",
+      "startSecond": 6.7210001945495605,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 8.265000343322754,
+      "position": -0.2351316213607788,
+      "side": "RIGHT",
+      "startSecond": 7.619999885559082,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 9.392000198364258,
+      "position": -0.2351316213607788,
+      "side": "RIGHT",
+      "startSecond": 8.979999542236328,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 10.133999824523926,
+      "position": -0.2351316213607788,
+      "side": "RIGHT",
+      "startSecond": 10.133999824523926,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 10.727999687194824,
+      "position": -0.2351316213607788,
+      "side": "RIGHT",
+      "startSecond": 10.727999687194824,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 11.53499984741211,
+      "position": -0.34986111521720886,
+      "side": "RIGHT",
+      "startSecond": 11.53499984741211,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 13.345999717712402,
+      "position": -0.5884847044944763,
+      "side": "RIGHT",
+      "startSecond": 13.140999794006348,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 16.690000534057617,
+      "position": -0.6435680985450745,
+      "side": "RIGHT",
+      "startSecond": 14.807999610900879,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 19.614999771118164,
+      "position": -0.5471472144126892,
+      "side": "RIGHT",
+      "startSecond": 19.614999771118164,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 22.88800048828125,
+      "position": -0.12313495576381683,
+      "side": "RIGHT",
+      "startSecond": 22.88800048828125,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 24.524999618530273,
+      "position": -0.489326149225235,
+      "side": "RIGHT",
+      "startSecond": 24.524999618530273,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 25.327999114990234,
+      "position": -0.19422291219234467,
+      "side": "RIGHT",
+      "startSecond": 25.327999114990234,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 28.132999420166016,
+      "position": -0.4499397277832031,
+      "side": "RIGHT",
+      "startSecond": 28.132999420166016,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 31.177000045776367,
+      "position": 0.23818014562129974,
+      "side": "RIGHT",
+      "startSecond": 31.177000045776367,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 33.108001708984375,
+      "position": 0.9851682782173157,
+      "side": "RIGHT",
+      "startSecond": 33.108001708984375,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 34.391998291015625,
+      "position": -0.9005109667778015,
+      "side": "RIGHT",
+      "startSecond": 34.391998291015625,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 37.73699951171875,
+      "position": -0.5552138686180115,
+      "side": "RIGHT",
+      "startSecond": 37.73699951171875,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 41.22600173950195,
+      "position": 0.0781092420220375,
+      "side": "RIGHT",
+      "startSecond": 40.89400100708008,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 42.52299880981445,
+      "position": -0.6042278409004211,
+      "side": "RIGHT",
+      "startSecond": 42.52299880981445,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 44.159000396728516,
+      "position": -0.8145112991333008,
+      "side": "RIGHT",
+      "startSecond": 44.159000396728516,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 45.79600143432617,
+      "position": 0.7766574025154114,
+      "side": "RIGHT",
+      "startSecond": 45.79600143432617,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 47.43199920654297,
+      "position": -0.6817092895507812,
+      "side": "RIGHT",
+      "startSecond": 47.43199920654297,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 48.34199905395508,
+      "position": 0.27272433042526245,
+      "side": "RIGHT",
+      "startSecond": 48.34199905395508,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 49.071998596191406,
+      "position": 0.27272433042526245,
+      "side": "RIGHT",
+      "startSecond": 49.071998596191406,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 49.61600112915039,
+      "position": 0.27272433042526245,
+      "side": "RIGHT",
+      "startSecond": 49.61600112915039,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 50.49300003051758,
+      "position": 0.27272433042526245,
+      "side": "RIGHT",
+      "startSecond": 50.215999603271484,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 51.029998779296875,
+      "position": 0.27272433042526245,
+      "side": "RIGHT",
+      "startSecond": 51.029998779296875,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 51.58300018310547,
+      "position": 0.27272433042526245,
+      "side": "RIGHT",
+      "startSecond": 51.58300018310547,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 52.34199905395508,
+      "position": -0.2111547440290451,
+      "side": "RIGHT",
+      "startSecond": 52.34199905395508,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 53.75600051879883,
+      "position": -0.2111547440290451,
+      "side": "RIGHT",
+      "startSecond": 53.00199890136719,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 54.86199951171875,
+      "position": 0.9830371141433716,
+      "side": "RIGHT",
+      "startSecond": 54.5989990234375,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 55.7599983215332,
+      "position": -0.6887776255607605,
+      "side": "RIGHT",
+      "startSecond": 55.7599983215332,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 56.77899932861328,
+      "position": -0.9558784365653992,
+      "side": "RIGHT",
+      "startSecond": 56.77899932861328,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 57.66699981689453,
+      "position": -0.733669638633728,
+      "side": "RIGHT",
+      "startSecond": 57.66699981689453,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 61.45600128173828,
+      "position": 0.8487740159034729,
+      "side": "RIGHT",
+      "startSecond": 61.45600128173828,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 62.5260009765625,
+      "position": 0.8487740159034729,
+      "side": "RIGHT",
+      "startSecond": 62.1619987487793,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 64.06600189208984,
+      "position": 0.893290638923645,
+      "side": "RIGHT",
+      "startSecond": 64.06600189208984,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 65.71800231933594,
+      "position": 0.637972354888916,
+      "side": "RIGHT",
+      "startSecond": 65.35299682617188,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 67.28099822998047,
+      "position": -0.5101854205131531,
+      "side": "RIGHT",
+      "startSecond": 67.28099822998047,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 69.3280029296875,
+      "position": -0.4945278763771057,
+      "side": "RIGHT",
+      "startSecond": 69.04499816894531,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 69.85199737548828,
+      "position": -0.4945278763771057,
+      "side": "RIGHT",
+      "startSecond": 69.85199737548828,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 70.41400146484375,
+      "position": -0.4945278763771057,
+      "side": "RIGHT",
+      "startSecond": 70.41400146484375,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 72.72799682617188,
+      "position": 0.8996535539627075,
+      "side": "RIGHT",
+      "startSecond": 72.31199645996094,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 73.7229995727539,
+      "position": -0.6450616121292114,
+      "side": "RIGHT",
+      "startSecond": 73.7229995727539,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 75.89700317382812,
+      "position": 0.424331933259964,
+      "side": "RIGHT",
+      "startSecond": 74.84300231933594,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 76.98300170898438,
+      "position": -0.07938988506793976,
+      "side": "RIGHT",
+      "startSecond": 76.98300170898438,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 78.58899688720703,
+      "position": 0.5966152548789978,
+      "side": "RIGHT",
+      "startSecond": 78.58899688720703,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 79.16600036621094,
+      "position": 0.5966152548789978,
+      "side": "RIGHT",
+      "startSecond": 79.16600036621094,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 80.67500305175781,
+      "position": 0.9015692472457886,
+      "side": "RIGHT",
+      "startSecond": 80.3290023803711,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 81.77899932861328,
+      "position": 0.622227668762207,
+      "side": "RIGHT",
+      "startSecond": 81.77899932861328,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 83.49400329589844,
+      "position": -0.9343652725219727,
+      "side": "RIGHT",
+      "startSecond": 83.49400329589844,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 84.38500213623047,
+      "position": -0.7180182933807373,
+      "side": "RIGHT",
+      "startSecond": 84.38500213623047,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 85.43299865722656,
+      "position": -0.7180182933807373,
+      "side": "RIGHT",
+      "startSecond": 85.00399780273438,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 86.24099731445312,
+      "position": -0.7997258305549622,
+      "side": "RIGHT",
+      "startSecond": 86.24099731445312,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 86.81300354003906,
+      "position": -0.7997258305549622,
+      "side": "RIGHT",
+      "startSecond": 86.81300354003906,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 87.58899688720703,
+      "position": -0.008997100405395031,
+      "side": "RIGHT",
+      "startSecond": 87.58899688720703,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 88.69499969482422,
+      "position": -0.008997100405395031,
+      "side": "RIGHT",
+      "startSecond": 88.26899719238281,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 89.30500030517578,
+      "position": -0.008997100405395031,
+      "side": "RIGHT",
+      "startSecond": 89.30500030517578,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 90.04199981689453,
+      "position": -0.008997100405395031,
+      "side": "RIGHT",
+      "startSecond": 90.04199981689453,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 91.2959976196289,
+      "position": 0.7863975763320923,
+      "side": "RIGHT",
+      "startSecond": 90.84100341796875,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 91.97899627685547,
+      "position": 0.7863975763320923,
+      "side": "RIGHT",
+      "startSecond": 91.97899627685547,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 92.56900024414062,
+      "position": 0.7863975763320923,
+      "side": "RIGHT",
+      "startSecond": 92.56900024414062,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 93.35600280761719,
+      "position": -0.721821665763855,
+      "side": "RIGHT",
+      "startSecond": 93.35600280761719,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 94.12300109863281,
+      "position": -0.5251582264900208,
+      "side": "RIGHT",
+      "startSecond": 94.12300109863281,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 95.24600219726562,
+      "position": -0.5251582264900208,
+      "side": "RIGHT",
+      "startSecond": 94.81500244140625,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 99.90699768066406,
+      "position": -0.8979237079620361,
+      "side": "RIGHT",
+      "startSecond": 99.90699768066406,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 101.43099975585938,
+      "position": -0.8320736289024353,
+      "side": "RIGHT",
+      "startSecond": 101.43099975585938,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 103.41300201416016,
+      "position": -0.7482085824012756,
+      "side": "RIGHT",
+      "startSecond": 103.41300201416016,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 111.25,
+      "position": -0.5426100492477417,
+      "side": "RIGHT",
+      "startSecond": 111.25,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 112.39800262451172,
+      "position": -0.8713992238044739,
+      "side": "RIGHT",
+      "startSecond": 112.39800262451172,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 112.88700103759766,
+      "position": -0.8713992238044739,
+      "side": "RIGHT",
+      "startSecond": 112.88700103759766,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 113.77999877929688,
+      "position": -0.8713992238044739,
+      "side": "RIGHT",
+      "startSecond": 113.49199676513672,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 114.52400207519531,
+      "position": -0.8875447511672974,
+      "side": "RIGHT",
+      "startSecond": 114.52400207519531,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 115.44100189208984,
+      "position": -0.8875447511672974,
+      "side": "RIGHT",
+      "startSecond": 115.12899780273438,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 116.15899658203125,
+      "position": -0.8875447511672974,
+      "side": "RIGHT",
+      "startSecond": 116.15899658203125,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 116.9209976196289,
+      "position": 0.336537629365921,
+      "side": "RIGHT",
+      "startSecond": 116.9209976196289,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 117.80000305175781,
+      "position": 0.11271944642066956,
+      "side": "RIGHT",
+      "startSecond": 117.80000305175781,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 118.44499969482422,
+      "position": 0.11271944642066956,
+      "side": "RIGHT",
+      "startSecond": 118.44499969482422,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 118.94200134277344,
+      "position": 0.11271944642066956,
+      "side": "RIGHT",
+      "startSecond": 118.94200134277344,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 120.02799987792969,
+      "position": 0.47510090470314026,
+      "side": "RIGHT",
+      "startSecond": 120.02799987792969,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 121.20500183105469,
+      "position": 0.13456350564956665,
+      "side": "RIGHT",
+      "startSecond": 121.20500183105469,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 121.72100067138672,
+      "position": 0.13456350564956665,
+      "side": "RIGHT",
+      "startSecond": 121.72100067138672,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 122.49099731445312,
+      "position": 0.05629401281476021,
+      "side": "RIGHT",
+      "startSecond": 122.49099731445312,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 123.04499816894531,
+      "position": 0.05629401281476021,
+      "side": "RIGHT",
+      "startSecond": 123.04499816894531,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 123.56400299072266,
+      "position": 0.05629401281476021,
+      "side": "RIGHT",
+      "startSecond": 123.56400299072266,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 124.49600219726562,
+      "position": 0.18899443745613098,
+      "side": "RIGHT",
+      "startSecond": 124.49600219726562,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 128.25100708007812,
+      "position": 0.4828678071498871,
+      "side": "RIGHT",
+      "startSecond": 127.96099853515625,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 129.3509979248047,
+      "position": -0.27813810110092163,
+      "side": "RIGHT",
+      "startSecond": 129.3509979248047,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 130.88499450683594,
+      "position": 0.9109303951263428,
+      "side": "RIGHT",
+      "startSecond": 130.88499450683594,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 131.54100036621094,
+      "position": 0.9109303951263428,
+      "side": "RIGHT",
+      "startSecond": 131.54100036621094,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 132.6280059814453,
+      "position": -0.2638667821884155,
+      "side": "RIGHT",
+      "startSecond": 132.6280059814453,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 134.4759979248047,
+      "position": -0.08979541808366776,
+      "side": "RIGHT",
+      "startSecond": 134.16200256347656,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 135.86900329589844,
+      "position": -0.6680571436882019,
+      "side": "RIGHT",
+      "startSecond": 135.86900329589844,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 138.08200073242188,
+      "position": -0.5374491810798645,
+      "side": "RIGHT",
+      "startSecond": 137.76300048828125,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 139.14199829101562,
+      "position": 0.40389665961265564,
+      "side": "RIGHT",
+      "startSecond": 139.14199829101562,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 141.05499267578125,
+      "position": -0.1687883585691452,
+      "side": "RIGHT",
+      "startSecond": 140.73800659179688,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 142.41000366210938,
+      "position": 0.871169924736023,
+      "side": "RIGHT",
+      "startSecond": 142.41000366210938,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 143.2220001220703,
+      "position": 0.871169924736023,
+      "side": "RIGHT",
+      "startSecond": 142.91099548339844,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 144.04400634765625,
+      "position": 0.1417379081249237,
+      "side": "RIGHT",
+      "startSecond": 144.04400634765625,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 145.08599853515625,
+      "position": 0.1417379081249237,
+      "side": "RIGHT",
+      "startSecond": 144.62899780273438,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 145.66700744628906,
+      "position": 0.1417379081249237,
+      "side": "RIGHT",
+      "startSecond": 145.66700744628906,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 146.2169952392578,
+      "position": 0.1417379081249237,
+      "side": "RIGHT",
+      "startSecond": 146.2169952392578,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 148.2220001220703,
+      "position": 0.3024200201034546,
+      "side": "RIGHT",
+      "startSecond": 147.52499389648438,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 148.7570037841797,
+      "position": 0.3024200201034546,
+      "side": "RIGHT",
+      "startSecond": 148.7570037841797,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 149.875,
+      "position": 0.5282893180847168,
+      "side": "RIGHT",
+      "startSecond": 149.875,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 150.8780059814453,
+      "position": 0.04663783684372902,
+      "side": "RIGHT",
+      "startSecond": 150.8780059814453,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 151.55599975585938,
+      "position": 0.04663783684372902,
+      "side": "RIGHT",
+      "startSecond": 151.55599975585938,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 153.03199768066406,
+      "position": 0.36535394191741943,
+      "side": "RIGHT",
+      "startSecond": 153.03199768066406,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 154.19400024414062,
+      "position": 0.5682388544082642,
+      "side": "RIGHT",
+      "startSecond": 153.79800415039062,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 154.7169952392578,
+      "position": 0.5682388544082642,
+      "side": "RIGHT",
+      "startSecond": 154.7169952392578,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 156.45899963378906,
+      "position": 0.40527424216270447,
+      "side": "RIGHT",
+      "startSecond": 156.45899963378906,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 157.46200561523438,
+      "position": -0.6754876971244812,
+      "side": "RIGHT",
+      "startSecond": 157.46200561523438,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 158.59500122070312,
+      "position": -0.6754876971244812,
+      "side": "RIGHT",
+      "startSecond": 158.13099670410156,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 160.072998046875,
+      "position": 0.6932759881019592,
+      "side": "RIGHT",
+      "startSecond": 159.67300415039062,
+      "type": "PICKUP_LINE"
+    },
+    {
+      "endSecond": 163.54600524902344,
+      "position": -0.8109946250915527,
+      "side": "RIGHT",
+      "startSecond": 163.54600524902344,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 164.73199462890625,
+      "position": -0.1550004929304123,
+      "side": "RIGHT",
+      "startSecond": 164.73199462890625,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 169.23399353027344,
+      "position": 0.2586163878440857,
+      "side": "RIGHT",
+      "startSecond": 169.23399353027344,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 170.03599548339844,
+      "position": -0.5827661752700806,
+      "side": "RIGHT",
+      "startSecond": 170.03599548339844,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 171.2830047607422,
+      "position": 0.90036541223526,
+      "side": "RIGHT",
+      "startSecond": 171.2830047607422,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 171.83999633789062,
+      "position": 0.90036541223526,
+      "side": "RIGHT",
+      "startSecond": 171.83999633789062,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 172.36199951171875,
+      "position": 0.90036541223526,
+      "side": "RIGHT",
+      "startSecond": 172.36199951171875,
+      "type": "PICKUP"
+    },
+    {
+      "endSecond": 173.50900268554688,
+      "position": -0.25943922996520996,
+      "side": "RIGHT",
+      "startSecond": 173.50900268554688,
+      "type": "PICKUP"
+    }
+  ]
+}
