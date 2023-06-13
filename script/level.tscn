@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0lqr5lwvvwls"]
+[gd_scene load_steps=13 format=3 uid="uid://ceyq6i67lbv24"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
 [ext_resource type="Script" path="res://script/level_area.gd" id="1_oc85r"]
 [ext_resource type="PackedScene" uid="uid://bidwcal4tbx3i" path="res://script/game/area/finger/finger_area.tscn" id="2_1whnv"]
 [ext_resource type="Texture2D" uid="uid://2sqsefu6vkpm" path="res://asset/image/sprite/level/split_line.png" id="4_d6jht"]
-[ext_resource type="PackedScene" uid="uid://cr0wlbjxe2xr3" path="res://script/game/timer/countdown/resume/resume_countdown.tscn" id="4_lgf8t"]
-[ext_resource type="Script" path="res://script/game/timer/countdown/resume/resume_countdown.gd" id="5_2nget"]
+[ext_resource type="Script" path="res://script/common/timer/countdown.gd" id="4_rwcip"]
+[ext_resource type="Script" path="res://script/common/tween/value_tween.gd" id="5_b1ko4"]
 [ext_resource type="Script" path="res://script/level_interface.gd" id="6_gml3b"]
 [ext_resource type="PackedScene" uid="uid://bkgouo6ryi7nd" path="res://script/interface/button/pause/pause_button.tscn" id="7_8dwq4"]
 [ext_resource type="PackedScene" uid="uid://ddi0bgike8mdc" path="res://script/interface/button/power/power_button.tscn" id="9_b6clh"]
@@ -34,6 +34,7 @@ script = ExtResource("1_oc85r")
 _left_finger_area_path = NodePath("LeftFingerArea")
 _right_finger_area_path = NodePath("RightFingerArea")
 _resume_countdown_path = NodePath("ResumeCountdown")
+_resume_tween_path = NodePath("ResumeTween")
 _song_player_path = NodePath("SongPlayer")
 _max_score_multiplier = 4
 _power_score_multiplier = 2
@@ -52,12 +53,18 @@ position = Vector2(270, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_d6jht")
 
-[node name="ResumeCountdown" parent="LevelAreaLevel/LevelArea" instance=ExtResource("4_lgf8t")]
+[node name="SongPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]
+
+[node name="ResumeCountdown" type="Node" parent="LevelAreaLevel/LevelArea"]
 process_mode = 2
-script = ExtResource("5_2nget")
+script = ExtResource("4_rwcip")
 _duration = 3
 
-[node name="SongPlayer" type="AudioStreamPlayer" parent="LevelAreaLevel/LevelArea"]
+[node name="ResumeTween" type="Node" parent="LevelAreaLevel/LevelArea"]
+process_mode = 2
+script = ExtResource("5_b1ko4")
+_duration = 0.5
+_delta = -1.0
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 layer = 2

@@ -11,7 +11,6 @@ size = Vector2(540, 1920)
 script = ExtResource("1_b4t7l")
 _catch_area_path = NodePath("CatchArea")
 _spawn_area_path = NodePath("SpawnArea")
-_pickups_path = null
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u2cqf")

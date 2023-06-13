@@ -27,10 +27,34 @@ func init(timings: Array[SongTiming.Timing]) -> void:
 	self._half_body_size = _body.shape.size.x * _body.global_scale.x / 2.0
 
 
-func check_timing(
+func sound_process(
 	current_second: float, 
 	distance_to_catch_zone: float
 ) -> void:
+	_sound_process_pickups(current_second)
+	_try_spawn_pickup(current_second, distance_to_catch_zone)
+
+
+func clear_pickups() -> void:
+	for pickup in _pickups.get_children():
+		_pickups.remove_child(pickup)
+		pickup.queue_free()
+
+
+func _on_pickup_caught(pickup: BasePickup) -> void:
+	emit_signal("pickup_caught", pickup)
+
+
+func _on_pickup_lost(pickup: BasePickup) -> void:
+	emit_signal("pickup_lost", pickup)
+
+
+func _sound_process_pickups(current_second: float) -> void:
+	for pickup in _pickups.get_children():
+		pickup.sound_process(current_second)
+
+
+func _try_spawn_pickup(current_second: float, distance_to_catch_zone: float) -> void:
 	var spawn_to_catch_seconds: float = distance_to_catch_zone / _pickup_velocity
 	var catch_second: float = current_second + spawn_to_catch_seconds
 	if _last_timing_start_second < 0 or _last_timing_start_second > catch_second:
@@ -39,7 +63,7 @@ func check_timing(
 	var timing: SongTiming.Timing = _timings.pop_front()
 	var pickup_position: float = _half_body_size * timing.position
 	if timing.type == SongTiming.TimingType.PICKUP:
-		var pickup: Pickup = spawn_pickup(_pickup_scene)
+		var pickup: Pickup = _spawn_pickup(_pickup_scene)
 		pickup.init(
 			current_second,
 			timing.start_second, 
@@ -50,7 +74,7 @@ func check_timing(
 		)
 	elif timing.type == SongTiming.TimingType.PICKUP_LINE:
 		var length: float = _pickup_velocity * timing.duration
-		var pickup: PickupLine = spawn_pickup(_pickup_line_scene)
+		var pickup: PickupLine = _spawn_pickup(_pickup_line_scene)
 		pickup.init(
 			current_second,
 			timing.start_second, 
@@ -66,23 +90,9 @@ func check_timing(
 	_last_timing_start_second = -1.0 if _timings.is_empty() else _timings[0].start_second
 
 
-func spawn_pickup(_scene: PackedScene) -> BasePickup:
+func _spawn_pickup(_scene: PackedScene) -> BasePickup:
 	var pickup: BasePickup = _scene.instantiate()
 	_pickups.add_child(pickup)
 	pickup.caught.connect(Callable(_on_pickup_caught).bind(pickup))
 	pickup.lost.connect(Callable(_on_pickup_lost).bind(pickup))
 	return pickup
-
-
-func clear_pickups() -> void:
-	for pickup in _pickups.get_children():
-		_pickups.remove_child(pickup)
-		pickup.queue_free()
-
-
-func _on_pickup_caught(pickup: BasePickup) -> void:
-	emit_signal("pickup_caught", pickup)
-
-
-func _on_pickup_lost(pickup: BasePickup) -> void:
-	emit_signal("pickup_lost", pickup)

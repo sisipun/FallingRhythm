@@ -3,7 +3,8 @@ extends Node2D
 
 @export_node_path("FingerArea") var _left_finger_area_path: NodePath
 @export_node_path("FingerArea") var _right_finger_area_path: NodePath
-@export_node_path("ResumeCountdown") var _resume_countdown_path: NodePath 
+@export_node_path("Countdown") var _resume_countdown_path: NodePath
+@export_node_path("ValueTween") var _resume_tween_path: NodePath
 @export_node_path("AudioStreamPlayer") var _song_player_path: NodePath
 
 @export var _max_score_multiplier: int
@@ -15,7 +16,8 @@ extends Node2D
 
 @onready var _left_finger: FingerArea = get_node(_left_finger_area_path)
 @onready var _right_finger: FingerArea = get_node(_right_finger_area_path)
-@onready var _resume_countdown: ResumeCountdown = get_node(_resume_countdown_path)
+@onready var _resume_countdown: Countdown = get_node(_resume_countdown_path)
+@onready var _resume_tween: ValueTween = get_node(_resume_tween_path)
 @onready var _song_player: AudioStreamPlayer = get_node(_song_player_path)
 
 var _song_timing: SongTiming
@@ -44,6 +46,8 @@ var _pickups_without_fail: int
 var _pickups_count_to_increase_multiplier: int
 var _power_increase_on_pickup_value: float
 var _power_on: bool = false
+var v: float
+var c: int = 0
 
 
 func _ready() -> void:
@@ -61,15 +65,19 @@ func _ready() -> void:
 	_right_finger.pickup_lost.connect(_on_pickup_lost)
 	_resume_countdown.updated.connect(_on_resume_countdown_updated)
 	_resume_countdown.finished.connect(_on_resume_countdown_finished)
+	_resume_tween.updated.connect(_on_resume_tween_updated)
 	_song_player.finished.connect(_on_song_finished)
 	
 	pause()
 
 
 func _process(_delta: float) -> void:
-	var playback_position: float = _song_player.get_playback_position()
-	_left_finger.check_timing(playback_position)
-	_right_finger.check_timing(playback_position)
+	sound_process(get_playback_position())
+
+
+func sound_process(current_second: float) -> void:
+	_left_finger.sound_process(current_second)
+	_right_finger.sound_process(current_second)
 
 
 func start(song_id: String) -> void:
@@ -114,6 +122,14 @@ func unpause() -> void:
 	get_tree().paused = false
 
 
+func get_playback_position() -> float:
+	return (
+		_song_player.get_playback_position() 
+		+ AudioServer.get_time_since_last_mix() 
+		- AudioServer.get_output_latency()
+	)
+
+
 func _on_window_size_changed() -> void:
 	position = get_viewport_rect().size / 2
 
@@ -135,6 +151,7 @@ func _on_level_pause_request() -> void:
 
 func _on_level_resume_request() -> void:
 	_resume_countdown.start()
+	_resume_tween.start(_song_player.get_playback_position())
 
 
 func _on_level_start_power_request() -> void:
@@ -172,6 +189,11 @@ func _on_pickup_lost(_pickup: BasePickup) -> void:
 	_score_multiplier = 1
 
 
+func _on_resume_tween_updated(value: float) -> void:
+	if (value >= 0):
+		sound_process(value)
+
+
 func _on_resume_countdown_updated(value: int) -> void:
 	EventStorage.emit_signal("level_resume_countdown_updated", value)
 
@@ -179,6 +201,7 @@ func _on_resume_countdown_updated(value: int) -> void:
 func _on_resume_countdown_finished() -> void:
 	unpause()
 	EventStorage.emit_signal("level_resumed")
+	_song_player.play(_resume_tween.value)
 
 
 func _on_song_finished() -> void:

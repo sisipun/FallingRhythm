@@ -27,8 +27,8 @@ func _ready() -> void:
 	_spawn_area.pickup_lost.connect(_on_pickup_lost)
 
 
-func check_timing(current_timing: float) -> void:
-	_spawn_area.check_timing(current_timing, spawn_to_catch_distance)
+func sound_process(current_second: float) -> void:
+	_spawn_area.sound_process(current_second, spawn_to_catch_distance)
 
 
 func clear_pickups() -> void:

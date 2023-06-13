@@ -12,7 +12,6 @@ signal lost
 
 var spawn_second: float
 var catch_second: float
-var inverse_period: float
 var duration: float
 var velocity: float
 var spawn_position: Vector2
@@ -21,6 +20,8 @@ var score: int
 var body_size: float
 var half_body_size: float
 var has_caught: bool
+
+var _spawn_to_catch_inverse_period: float
 
 
 func base_init(
@@ -34,7 +35,6 @@ func base_init(
 ) -> void:
 	self.spawn_second = _spawn_second
 	self.catch_second = _catch_second
-	self.inverse_period = 1 / (_catch_second - _spawn_second)
 	self.duration = _duration
 	self.velocity = _velocity
 	self.position = _spawn_position
@@ -44,6 +44,8 @@ func base_init(
 	self.body_size = _body.shape.get_rect().size.x * _body.global_scale.x
 	self.half_body_size = body_size / 2.0
 	self.has_caught = false
+	
+	self._spawn_to_catch_inverse_period = 1 / (_catch_second - _spawn_second)
 
 
 func _ready() -> void:
@@ -51,16 +53,18 @@ func _ready() -> void:
 	area_exited.connect(_on_area_exited)
 
 
-func move(current_second: float) -> void:
-	self.position.y = lerp(
-		spawn_position.y,
-		catch_position.y,
-		(current_second - spawn_second) * inverse_period
+func sound_process(current_second: float) -> void:
+	self.position = lerp(
+		spawn_position,
+		catch_position,
+		(current_second - spawn_second) * _spawn_to_catch_inverse_period
 	)
 
 
-func _process(delta: float) -> void:
-	translate(Vector2(0, velocity) * delta)
+func _process(_delta: float) -> void:
+	pass
+	# More smooth way to moving pickups. Maybe return it later after testing move approach
+	# translate(Vector2(0, velocity) * delta)
 
 
 func _on_area_entered(_area: Area2D) -> void:
