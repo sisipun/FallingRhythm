@@ -6,4 +6,4 @@
 script = ExtResource("1_pdwgm")
 _save_path = "user://saves/"
 _save_file = "game.json"
-_current_version = "1.0.1"
+_current_version = "1.0.3"

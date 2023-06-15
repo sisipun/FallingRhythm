@@ -5,11 +5,12 @@ extends Node
 @export var _save_file: String
 @export var _current_version: String
 
-var game: GameData = GameData.new([]) 
+var game: GameData = GameData.new([], "") 
 
 
 func _ready() -> void:
-	EventStorage.level_finished.connect(_on_level_finished)
+	EventStorage.level_completed.connect(_on_level_completed)
+	EventStorage.level_started.connect(_on_level_started)
 	
 	if not FileAccess.file_exists(_save_path + _save_file):
 		EventStorage.emit_signal("game_updated", game)
@@ -22,10 +23,16 @@ func _ready() -> void:
 	var version: String = data["version"]
 	if version == _current_version:
 		game = GameDataParser.read(data)
-		EventStorage.emit_signal("game_updated", game)
+	
+	EventStorage.emit_signal("game_updated", game)
 
 
-func _on_level_finished(song_id: String, score: int) -> void:
+func _on_level_started(song_id: String) -> void:
+	game.current_song_id = song_id
+	save()
+
+
+func _on_level_completed(song_id: String, score: int) -> void:
 	var songs = game.songs.filter(func(song): return song.id == song_id)
 	if songs.size() == 0:
 		game.songs.push_back(SongData.new(song_id, score))

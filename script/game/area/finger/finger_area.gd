@@ -4,6 +4,7 @@ extends Area2D
 
 signal pickup_caught(pickup)
 signal pickup_lost(pickup)
+signal player_moved(relative_x)
 
 
 @export_node_path("CatchArea") var _catch_area_path: NodePath
@@ -45,6 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		touch_event_index = -1
 	elif event is InputEventScreenDrag and touch_event_index == event.index:
 		_catch_area.move_player(event.relative.x)
+		emit_signal("player_moved", event.relative.x)
 
 
 func _on_pickup_caught(pickup: BasePickup) -> void:

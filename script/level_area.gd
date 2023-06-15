@@ -1,6 +1,14 @@
 class_name LevelArea
 extends Node2D
 
+enum State {
+	MENU,
+	STARTED,
+	PAUSED,
+	RESUMED,
+	COMPLETED
+}
+
 @export_node_path("FingerArea") var _left_finger_area_path: NodePath
 @export_node_path("FingerArea") var _right_finger_area_path: NodePath
 @export_node_path("Countdown") var _resume_countdown_path: NodePath
@@ -46,8 +54,7 @@ var _pickups_without_fail: int
 var _pickups_count_to_increase_multiplier: int
 var _power_increase_on_pickup_value: float
 var _power_on: bool = false
-var v: float
-var c: int = 0
+var _state: State
 
 
 func _ready() -> void:
@@ -61,14 +68,16 @@ func _ready() -> void:
 	EventStorage.level_start_power_request.connect(_on_level_start_power_request)
 	_left_finger.pickup_caught.connect(_on_pickup_caught)
 	_left_finger.pickup_lost.connect(_on_pickup_lost)
+	_left_finger.player_moved.connect(_on_player_moved)
 	_right_finger.pickup_caught.connect(_on_pickup_caught)
 	_right_finger.pickup_lost.connect(_on_pickup_lost)
+	_right_finger.player_moved.connect(_on_player_moved)
 	_resume_countdown.updated.connect(_on_resume_countdown_updated)
 	_resume_countdown.finished.connect(_on_resume_countdown_finished)
 	_resume_tween.updated.connect(_on_resume_tween_updated)
 	_song_player.finished.connect(_on_song_finished)
 	
-	pause()
+	_state = State.MENU
 
 
 func _process(_delta: float) -> void:
@@ -104,22 +113,38 @@ func start(song_id: String) -> void:
 	_right_finger.init(right_finger_timings)
 	
 	_song_player.play()
-	unpause()
-
-
-func finish() -> void:
-	pause()
+	_state = State.STARTED
 	
-	_left_finger.clear_pickups()
-	_right_finger.clear_pickups()
+	EventStorage.emit_signal("level_started", song_id)
 
 
 func pause() -> void:
 	get_tree().paused = true
+	_state = State.PAUSED
+	EventStorage.emit_signal("level_paused")
 
 
-func unpause() -> void:
+func resume_start() -> void:
+	_resume_countdown.start()
+	_resume_tween.start(_song_player.get_playback_position())
+	_state = State.RESUMED
+
+
+func resume_complete() -> void:
 	get_tree().paused = false
+	_song_player.play(_resume_tween.value)
+	_state = State.STARTED
+	EventStorage.emit_signal("level_resumed")
+
+
+func complete() -> void:
+	_song_player.stop()
+	_state = State.COMPLETED
+	
+	_left_finger.clear_pickups()
+	_right_finger.clear_pickups()
+	
+	EventStorage.emit_signal("level_completed", _song_timing.id, _score)
 
 
 func get_playback_position() -> float:
@@ -136,22 +161,26 @@ func _on_window_size_changed() -> void:
 
 func _on_level_start_request(song_id: String) -> void:
 	start(song_id)
-	EventStorage.emit_signal("level_started", song_id)
 
 
 func _on_level_restart_request() -> void:
 	start(_song_timing.id)
-	EventStorage.emit_signal("level_started", _song_timing.id)
 
 
 func _on_level_pause_request() -> void:
 	pause()
-	EventStorage.emit_signal("level_paused")
 
 
 func _on_level_resume_request() -> void:
-	_resume_countdown.start()
-	_resume_tween.start(_song_player.get_playback_position())
+	resume_start()
+
+
+func _on_resume_countdown_finished() -> void:
+	resume_complete()
+
+
+func _on_song_finished() -> void:
+	complete()
 
 
 func _on_level_start_power_request() -> void:
@@ -189,6 +218,11 @@ func _on_pickup_lost(_pickup: BasePickup) -> void:
 	_score_multiplier = 1
 
 
+func _on_player_moved(_relative_x: float) -> void:
+	if _state == State.MENU:
+		start(SongStorage.get_current_song_id())
+
+
 func _on_resume_tween_updated(value: float) -> void:
 	if (value >= 0):
 		sound_process(value)
@@ -196,14 +230,3 @@ func _on_resume_tween_updated(value: float) -> void:
 
 func _on_resume_countdown_updated(value: int) -> void:
 	EventStorage.emit_signal("level_resume_countdown_updated", value)
-
-
-func _on_resume_countdown_finished() -> void:
-	unpause()
-	EventStorage.emit_signal("level_resumed")
-	_song_player.play(_resume_tween.value)
-
-
-func _on_song_finished() -> void:
-	finish()
-	EventStorage.emit_signal("level_finished", _song_timing.id, _score)

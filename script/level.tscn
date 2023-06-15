@@ -87,9 +87,11 @@ _resume_countdown_path = NodePath("ResumeCountdown")
 _complete_popup_path = NodePath("CompletePopup")
 
 [node name="StatsPanel" parent="InterfaceLayer/Interface" instance=ExtResource("10_14i1d")]
+visible = false
 layout_mode = 1
 
 [node name="PauseButton" parent="InterfaceLayer/Interface" instance=ExtResource("7_8dwq4")]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -141,5 +143,6 @@ visible = false
 layout_mode = 1
 
 [node name="CompletePopup" parent="InterfaceLayer/Interface" instance=ExtResource("11_mgxtu")]
+process_mode = 0
 visible = false
 layout_mode = 1

@@ -18,7 +18,7 @@ extends Control
 
 
 func _ready() -> void:
-	EventStorage.level_finished.connect(_on_level_finished)
+	EventStorage.level_completed.connect(_on_level_completed)
 	EventStorage.level_started.connect(_on_level_started)
 	EventStorage.level_score_updated.connect(_on_level_score_updated)
 	EventStorage.level_score_multiplier_updated.connect(_on_level_score_multiplier_updated)
@@ -38,7 +38,7 @@ func _on_level_started(_song_id: String) -> void:
 	_pause_button.show()
 
 
-func _on_level_finished(song_id: String, score: int) -> void:
+func _on_level_completed(song_id: String, score: int) -> void:
 	_stats_panel.hide()
 	_pause_button.hide()
 	_power_button.hide()

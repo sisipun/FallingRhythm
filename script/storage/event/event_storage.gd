@@ -9,8 +9,8 @@ signal scene_switch_home
 signal scene_switch_level(song_id)
 
 # LEVEL
-signal level_finished(song_id, score)
 signal level_started(song_id)
+signal level_completed(song_id, score)
 signal level_pickup_caught(pickup)
 signal level_pickup_lost(pickup)
 signal level_score_updated(score)
