@@ -2,7 +2,7 @@ class_name LevelArea
 extends Node2D
 
 enum State {
-	MENU,
+	HOME,
 	STARTED,
 	PAUSED,
 	RESUMED,
@@ -61,6 +61,8 @@ func _ready() -> void:
 	_on_window_size_changed()
 	
 	get_viewport().size_changed.connect(_on_window_size_changed)
+	EventStorage.home_return_request.connect(_on_home_return_request)
+	EventStorage.home_level_list_show_request.connect(_on_home_level_list_show_request)
 	EventStorage.level_start_request.connect(_on_level_start_request)
 	EventStorage.level_restart_request.connect(_on_level_restart_request)
 	EventStorage.level_pause_request.connect(_on_level_pause_request)
@@ -77,7 +79,7 @@ func _ready() -> void:
 	_resume_tween.updated.connect(_on_resume_tween_updated)
 	_song_player.finished.connect(_on_song_finished)
 	
-	_state = State.MENU
+	_state = State.HOME
 
 
 func _process(_delta: float) -> void:
@@ -112,6 +114,7 @@ func start(song_id: String) -> void:
 	_left_finger.init(left_finger_timings)
 	_right_finger.init(right_finger_timings)
 	
+	get_tree().paused = false
 	_song_player.play()
 	_state = State.STARTED
 	
@@ -124,26 +127,39 @@ func pause() -> void:
 	EventStorage.emit_signal("level_paused")
 
 
+func home() -> void:
+	get_tree().paused = false
+	_song_player.stop()
+	
+	_left_finger.reset_area()
+	_right_finger.reset_area()
+	
+	_state = State.HOME
+	EventStorage.emit_signal("home_returned")
+
+
 func resume_start() -> void:
 	_resume_countdown.start()
 	_resume_tween.start(_song_player.get_playback_position())
+	
 	_state = State.RESUMED
 
 
 func resume_complete() -> void:
 	get_tree().paused = false
 	_song_player.play(_resume_tween.value)
+	
 	_state = State.STARTED
 	EventStorage.emit_signal("level_resumed")
 
 
 func complete() -> void:
 	_song_player.stop()
+	
+	_left_finger.reset_area()
+	_right_finger.reset_area()
+	
 	_state = State.COMPLETED
-	
-	_left_finger.clear_pickups()
-	_right_finger.clear_pickups()
-	
 	EventStorage.emit_signal("level_completed", _song_timing.id, _score)
 
 
@@ -157,6 +173,16 @@ func get_playback_position() -> float:
 
 func _on_window_size_changed() -> void:
 	position = get_viewport_rect().size / 2
+
+
+func _on_home_return_request() -> void:
+	home()
+
+
+func _on_home_level_list_show_request() -> void:
+	get_tree().paused = true
+	
+	EventStorage.emit_signal("home_level_list_shown")
 
 
 func _on_level_start_request(song_id: String) -> void:
@@ -219,7 +245,7 @@ func _on_pickup_lost(_pickup: BasePickup) -> void:
 
 
 func _on_player_moved(_relative_x: float) -> void:
-	if _state == State.MENU:
+	if _state == State.HOME:
 		start(SongStorage.get_current_song_id())
 
 

@@ -2,6 +2,9 @@ class_name LevelPreview
 extends ColorRect
 
 
+signal pressed
+
+
 @export_node_path("Label") var _level_name_path: NodePath
 
 @onready var _level_name: Label = get_node(_level_name_path)
@@ -16,4 +19,4 @@ func init(_song_id: String) -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch and !event.is_pressed():
-		EventStorage.emit_signal("level_change_request", song_id)
+		emit_signal("pressed")

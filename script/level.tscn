@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ceyq6i67lbv24"]
+[gd_scene load_steps=15 format=3 uid="uid://ceyq6i67lbv24"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_6kpxg"]
 [ext_resource type="Script" path="res://script/level_area.gd" id="1_oc85r"]
@@ -9,9 +9,11 @@
 [ext_resource type="Script" path="res://script/level_interface.gd" id="6_gml3b"]
 [ext_resource type="PackedScene" uid="uid://bkgouo6ryi7nd" path="res://script/interface/button/pause/pause_button.tscn" id="7_8dwq4"]
 [ext_resource type="PackedScene" uid="uid://ddi0bgike8mdc" path="res://script/interface/button/power/power_button.tscn" id="9_b6clh"]
+[ext_resource type="PackedScene" uid="uid://dcqphpl44cy72" path="res://script/interface/button/levellist/level_list_button.tscn" id="9_hlm5u"]
 [ext_resource type="PackedScene" uid="uid://cowgymf7mujm7" path="res://script/interface/popup/pause/pause_popup.tscn" id="10_0q1jc"]
 [ext_resource type="PackedScene" uid="uid://byt4qrlflwxoj" path="res://script/interface/panel/stats_panel.tscn" id="10_14i1d"]
 [ext_resource type="PackedScene" uid="uid://dly4vbys0h7dk" path="res://script/interface/popup/complete/complete_popup.tscn" id="11_mgxtu"]
+[ext_resource type="PackedScene" uid="uid://c6cmxts7ddxqs" path="res://script/interface/popup/levellist/level_list_popup.tscn" id="13_vesfa"]
 
 [node name="Level" type="Node"]
 
@@ -79,16 +81,52 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_6kpxg")
 script = ExtResource("6_gml3b")
+_level_list_button_path = NodePath("LevelListButton")
+_level_list_popup_path = NodePath("LevelListPopup")
 _stats_panel_path = NodePath("StatsPanel")
-_pause_button_path = NodePath("PauseButton")
 _power_button_path = NodePath("PowerButton")
+_pause_button_path = NodePath("PauseButton")
 _pause_popup_path = NodePath("PausePopup")
 _resume_countdown_path = NodePath("ResumeCountdown")
 _complete_popup_path = NodePath("CompletePopup")
 
+[node name="LevelListButton" parent="InterfaceLayer/Interface" instance=ExtResource("9_hlm5u")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -170.0
+offset_right = -80.0
+offset_bottom = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="LevelListPopup" parent="InterfaceLayer/Interface" instance=ExtResource("13_vesfa")]
+process_mode = 2
+visible = false
+layout_mode = 1
+
 [node name="StatsPanel" parent="InterfaceLayer/Interface" instance=ExtResource("10_14i1d")]
 visible = false
 layout_mode = 1
+
+[node name="PowerButton" parent="InterfaceLayer/Interface" instance=ExtResource("9_b6clh")]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -420.0
+offset_right = 100.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="PauseButton" parent="InterfaceLayer/Interface" instance=ExtResource("7_8dwq4")]
 visible = false
@@ -105,20 +143,9 @@ offset_bottom = -70.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="PowerButton" parent="InterfaceLayer/Interface" instance=ExtResource("9_b6clh")]
+[node name="PausePopup" parent="InterfaceLayer/Interface" instance=ExtResource("10_0q1jc")]
 visible = false
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -420.0
-offset_right = 100.0
-offset_bottom = -220.0
-grow_horizontal = 2
-grow_vertical = 0
 
 [node name="ResumeCountdown" type="Label" parent="InterfaceLayer/Interface"]
 process_mode = 2
@@ -137,10 +164,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 160
 text = "0"
-
-[node name="PausePopup" parent="InterfaceLayer/Interface" instance=ExtResource("10_0q1jc")]
-visible = false
-layout_mode = 1
 
 [node name="CompletePopup" parent="InterfaceLayer/Interface" instance=ExtResource("11_mgxtu")]
 process_mode = 0

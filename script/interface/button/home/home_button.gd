@@ -7,4 +7,4 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	EventStorage.emit_signal("scene_switch_home")
+	EventStorage.emit_signal("home_return_request")

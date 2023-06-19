@@ -4,10 +4,6 @@ extends Node
 signal game_updated(game)
 signal game_best_score_updated(song_id, score)
 
-# SCENE
-signal scene_switch_home
-signal scene_switch_level(song_id)
-
 # LEVEL
 signal level_started(song_id)
 signal level_completed(song_id, score)
@@ -29,4 +25,8 @@ signal level_resume_request
 signal level_start_power_request
 
 # HOME
-signal level_change_request(song_id)
+signal home_returned
+signal home_level_list_shown
+
+signal home_return_request
+signal home_level_list_show_request

@@ -32,8 +32,9 @@ func sound_process(current_second: float) -> void:
 	_spawn_area.sound_process(current_second, spawn_to_catch_distance)
 
 
-func clear_pickups() -> void:
+func reset_area() -> void:
 	_spawn_area.clear_pickups()
+	_catch_area.reset_player_position()
 
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcqphpl44cy72"]
+
+[ext_resource type="Texture2D" uid="uid://bnupdbgsvoy8b" path="res://asset/image/texture/button/level_list_button.png" id="1_r48fx"]
+[ext_resource type="Script" path="res://script/interface/button/levellist/level_list_button.gd" id="1_whtfr"]
+
+[node name="LevelListButton" type="TextureButton"]
+offset_right = 100.0
+offset_bottom = 100.0
+texture_normal = ExtResource("1_r48fx")
+stretch_mode = 5
+script = ExtResource("1_whtfr")

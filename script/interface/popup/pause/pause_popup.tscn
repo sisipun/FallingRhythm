@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://script/interface/popup/pause/pause_popup.gd" id="1_svnpp"]
 [ext_resource type="Texture2D" uid="uid://dtxmgyagn5soi" path="res://asset/image/texture/label/pause_label_background.png" id="3_1nmmy"]
 [ext_resource type="PackedScene" path="res://script/interface/button/resume/resume_button.tscn" id="4_agkmg"]
-[ext_resource type="PackedScene" path="res://script/interface/button/home/home_button.tscn" id="5_bmaig"]
+[ext_resource type="PackedScene" uid="uid://dfeiu4usjyx8j" path="res://script/interface/button/home/home_button.tscn" id="5_bmaig"]
 
 [node name="PausePopup" type="Control"]
 process_mode = 2
