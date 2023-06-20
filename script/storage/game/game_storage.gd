@@ -30,6 +30,7 @@ func _ready() -> void:
 func _on_level_started(song_id: String) -> void:
 	game.current_song_id = song_id
 	save()
+	EventStorage.emit_signal("game_updated", game)
 
 
 func _on_level_completed(song_id: String, score: int) -> void:

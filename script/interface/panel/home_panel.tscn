@@ -1,0 +1,160 @@
+[gd_scene load_steps=10 format=3 uid="uid://cqcivvjho1fkx"]
+
+[ext_resource type="Texture2D" uid="uid://bljmmkque801y" path="res://asset/image/texture/background/home_panel_song_background.png" id="1_cow7k"]
+[ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_gh4s1"]
+[ext_resource type="Script" path="res://script/interface/panel/home_panel.gd" id="1_y3s03"]
+[ext_resource type="PackedScene" uid="uid://cief25woemq6u" path="res://script/interface/common/component/valuelabel/value_label.tscn" id="2_6k64l"]
+[ext_resource type="Texture2D" uid="uid://bek7bpk6iemqo" path="res://asset/image/texture/background/home_panel_left_hand_background.png" id="3_c73gh"]
+[ext_resource type="Texture2D" uid="uid://cf82886b3y82v" path="res://asset/image/texture/background/home_panel_right_hand_background.png" id="4_ncw7f"]
+[ext_resource type="PackedScene" uid="uid://dcqphpl44cy72" path="res://script/interface/button/levellist/level_list_button.tscn" id="5_rvyut"]
+[ext_resource type="PackedScene" uid="uid://c6cmxts7ddxqs" path="res://script/interface/popup/levellist/level_list_popup.tscn" id="6_jcuxp"]
+[ext_resource type="Texture2D" uid="uid://dcf2c21w2w5ob" path="res://asset/image/texture/button/level_list_button_arrow.png" id="7_go4og"]
+
+[node name="HomePanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gh4s1")
+script = ExtResource("1_y3s03")
+_song_name_label_path = NodePath("Song/Name")
+_song_best_score_label_path = NodePath("Song/BestScore")
+_level_list_button_path = NodePath("LevelListButton")
+_level_list_popup_path = NodePath("LevelListPopup")
+
+[node name="Song" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -460.0
+offset_right = 300.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="NinePatchRect" parent="Song"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cow7k")
+
+[node name="Name" type="Label" parent="Song"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -230.0
+offset_right = 150.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestScore" parent="Song" instance=ExtResource("2_6k64l")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -130.0
+offset_right = 202.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+text = "Best: "
+
+[node name="StartLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -173.5
+offset_top = -620.0
+offset_right = 173.5
+offset_bottom = -531.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Tap To Start!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftHandBackground" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -420.0
+offset_right = 250.0
+offset_bottom = -120.0
+grow_vertical = 0
+texture = ExtResource("3_c73gh")
+
+[node name="RightHandBackground" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -420.0
+offset_bottom = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_ncw7f")
+
+[node name="LevelListButton" parent="." instance=ExtResource("5_rvyut")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -170.0
+offset_right = -80.0
+offset_bottom = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Arrow" type="NinePatchRect" parent="LevelListButton"]
+layout_mode = 1
+offset_left = -110.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = 35.0
+texture = ExtResource("7_go4og")
+
+[node name="Label" type="Label" parent="LevelListButton"]
+layout_mode = 0
+offset_left = -238.0
+offset_top = -6.0
+offset_right = -116.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 55
+text = "Songs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelListPopup" parent="." instance=ExtResource("6_jcuxp")]
+process_mode = 2
+visible = false
+layout_mode = 1

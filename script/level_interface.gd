@@ -2,8 +2,7 @@ class_name LevelInterface
 extends Control
 
 
-@export_node_path("LevelListButton") var _level_list_button_path: NodePath
-@export_node_path("LevelListPopup") var _level_list_popup_path: NodePath
+@export_node_path("HomePanel") var _home_panel_path: NodePath
 
 @export_node_path("StatsPanel") var _stats_panel_path: NodePath
 @export_node_path("PowerButton") var _power_button_path: NodePath
@@ -14,8 +13,7 @@ extends Control
 
 @export_node_path("CompletePopup") var _complete_popup_path: NodePath
 
-@onready var _level_list_button: LevelListButton = get_node(_level_list_button_path)
-@onready var _level_list_popup: LevelListPopup = get_node(_level_list_popup_path)
+@onready var _home_panel: HomePanel = get_node(_home_panel_path)
 
 @onready var _stats_panel: StatsPanel = get_node(_stats_panel_path)
 @onready var _power_button: PowerButton = get_node(_power_button_path)
@@ -29,7 +27,6 @@ extends Control
 
 func _ready() -> void:
 	EventStorage.home_returned.connect(_on_home_returned)
-	EventStorage.home_level_list_shown.connect(_on_home_level_list_shown)
 	EventStorage.level_started.connect(_on_level_started)
 	EventStorage.level_completed.connect(_on_level_completed)
 	EventStorage.level_score_updated.connect(_on_level_score_updated)
@@ -44,26 +41,18 @@ func _ready() -> void:
 
 
 func _on_home_returned() -> void:
-	_level_list_popup.hide()
 	_stats_panel.hide()
 	_power_button.hide()
 	_pause_button.hide()
 	_pause_popup.hide()
 	_complete_popup.hide()
 	
-	_level_list_button.show()
-
-
-func _on_home_level_list_shown() -> void:
-	_level_list_button.hide()
-	
-	_level_list_popup.show()
+	_home_panel.show()
 
 
 func _on_level_started(_song_id: String) -> void:
 	_complete_popup.hide()
-	_level_list_button.hide()
-	_level_list_popup.hide()
+	_home_panel.hide()
 	
 	_stats_panel.show()
 	_pause_button.show()
