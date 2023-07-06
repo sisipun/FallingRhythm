@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://i0oxmq3cxv8o"]
+[gd_scene load_steps=10 format=3 uid="uid://i0oxmq3cxv8o"]
 
 [ext_resource type="Script" path="res://script/game/actor/player/player.gd" id="1_fo2y6"]
 [ext_resource type="Texture2D" uid="uid://c5dp8vrj5dare" path="res://asset/image/sprite/player/player_happy_2.png" id="2_fb6ys"]
 [ext_resource type="Texture2D" uid="uid://d1d82qtnoe5v1" path="res://asset/image/sprite/player/player_normal.png" id="2_hhl8b"]
 [ext_resource type="Texture2D" uid="uid://dxvulf8hkhe8e" path="res://asset/image/sprite/player/player_happy_1.png" id="3_uy8tp"]
 [ext_resource type="Texture2D" uid="uid://dx5i5hcglrpm7" path="res://asset/image/sprite/player/player_sad_2.png" id="4_5aq7v"]
-[ext_resource type="Texture2D" uid="uid://cvcchngvpn4dg" path="res://asset/image/sprite/player/player_sad_1.png" id="6_bqntv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yx5so"]
 radius = 68.3384
@@ -36,10 +35,10 @@ tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("4_5aq7v"), ExtResource("6_bqntv"), ExtResource("2_hhl8b")]
+"values": [ExtResource("4_5aq7v"), ExtResource("2_hhl8b")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vir2c"]
