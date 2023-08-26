@@ -1,10 +1,23 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://dje208ovmur6p"]
 
 [ext_resource type="Script" path="res://script/interface/popup/levellist/level_preview.gd" id="1_0xu5h"]
 
-[node name="LevelPreview" type="ColorRect"]
-custom_minimum_size = Vector2(605, 125)
-color = Color(0.816667, 0.5, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rsl3i"]
+bg_color = Color(0.894118, 0.756863, 0.976471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="LevelPreview" type="Panel"]
+custom_minimum_size = Vector2(800, 200)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rsl3i")
 script = ExtResource("1_0xu5h")
 _level_name_path = NodePath("Label")
 
@@ -13,6 +26,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 19.0
+offset_right = -21.0
+offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Level"

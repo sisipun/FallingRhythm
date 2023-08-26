@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://script/interface/popup/levellist/level_list_popup.gd" id="2_shb8p"]
 [ext_resource type="PackedScene" uid="uid://b4he24d83acd8" path="res://script/interface/common/component/dragscroll/drag_scroll.tscn" id="3_ba5rm"]
 [ext_resource type="Script" path="res://script/interface/popup/levellist/level_list.gd" id="4_4yd6p"]
-[ext_resource type="PackedScene" path="res://script/interface/popup/levellist/level_preview.tscn" id="5_mj7q6"]
+[ext_resource type="PackedScene" uid="uid://dje208ovmur6p" path="res://script/interface/popup/levellist/level_preview.tscn" id="5_mj7q6"]
 [ext_resource type="PackedScene" uid="uid://dfeiu4usjyx8j" path="res://script/interface/button/home/home_button.tscn" id="6_c87x2"]
 
 [node name="LevelListPopup" type="Control"]
@@ -50,6 +50,9 @@ theme_override_constants/separation = 36
 alignment = 1
 script = ExtResource("4_4yd6p")
 level_preview_scene = ExtResource("5_mj7q6")
+
+[node name="LevelPreview" parent="DragScroll/Center/LevelList" instance=ExtResource("5_mj7q6")]
+layout_mode = 2
 
 [node name="HomeButton" parent="." instance=ExtResource("6_c87x2")]
 layout_mode = 1

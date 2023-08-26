@@ -1,5 +1,5 @@
 class_name LevelPreview
-extends ColorRect
+extends Panel
 
 
 signal pressed
