@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6cmxts7ddxqs"]
+[gd_scene load_steps=8 format=3 uid="uid://c6cmxts7ddxqs"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_pygcn"]
 [ext_resource type="Script" path="res://script/interface/popup/levellist/level_list_popup.gd" id="2_shb8p"]
+[ext_resource type="Texture2D" uid="uid://dtxmgyagn5soi" path="res://asset/image/texture/background/pause_label_background.png" id="3_1nqya"]
 [ext_resource type="PackedScene" uid="uid://b4he24d83acd8" path="res://script/interface/common/component/dragscroll/drag_scroll.tscn" id="3_ba5rm"]
 [ext_resource type="Script" path="res://script/interface/popup/levellist/level_list.gd" id="4_4yd6p"]
 [ext_resource type="PackedScene" uid="uid://dje208ovmur6p" path="res://script/interface/popup/levellist/level_preview.tscn" id="5_mj7q6"]
@@ -27,6 +28,36 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.870588, 0.756863, 0.960784, 1)
 
+[node name="Title" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(420, 240)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -210.0
+offset_top = 230.0
+offset_right = 210.0
+offset_bottom = 470.0
+grow_horizontal = 2
+texture = ExtResource("3_1nqya")
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -55.0
+offset_right = 80.5
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Songs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="DragScroll" parent="." instance=ExtResource("3_ba5rm")]
 layout_mode = 1
 anchors_preset = 15
@@ -34,10 +65,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 60.0
-offset_top = 60.0
-offset_right = -60.0
-offset_bottom = -210.0
+offset_left = 40.0
+offset_top = 605.0
+offset_right = -40.0
+offset_bottom = -307.0
 
 [node name="Center" type="CenterContainer" parent="DragScroll"]
 layout_mode = 2
@@ -45,25 +76,47 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="LevelList" type="VBoxContainer" parent="DragScroll/Center"]
+custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
 theme_override_constants/separation = 36
 alignment = 1
 script = ExtResource("4_4yd6p")
 level_preview_scene = ExtResource("5_mj7q6")
+_play_button_path = NodePath("../../../ButtonBackground/Buttons/PlayButton")
 
-[node name="LevelPreview" parent="DragScroll/Center/LevelList" instance=ExtResource("5_mj7q6")]
-layout_mode = 2
-
-[node name="HomeButton" parent="." instance=ExtResource("6_c87x2")]
+[node name="ButtonBackground" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -107.5
-offset_top = -170.0
-offset_right = 107.5
-offset_bottom = -51.0
+offset_top = -306.0
 grow_horizontal = 2
 grow_vertical = 0
+color = Color(0.870588, 0.756863, 0.960784, 1)
+
+[node name="Buttons" type="HBoxContainer" parent="ButtonBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 141.0
+offset_right = -141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="HomeButton" parent="ButtonBackground/Buttons" instance=ExtResource("6_c87x2")]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Cancel"
+
+[node name="PlayButton" type="Button" parent="ButtonBackground/Buttons"]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Play
+"

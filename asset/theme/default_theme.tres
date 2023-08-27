@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cf7c3hdl46qbr"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cf7c3hdl46qbr"]
 
 [ext_resource type="StyleBox" uid="uid://cc0vbbtbfteh" path="res://asset/theme/default_button_style.tres" id="1_e6n7i"]
 [ext_resource type="FontFile" uid="uid://byoyrfr1ymiyt" path="res://asset/text/default_font.ttf" id="1_tij0p"]
+[ext_resource type="StyleBox" uid="uid://dsb3yun4sgbms" path="res://asset/theme/default_panel_style.tres" id="2_nohaw"]
 
 [resource]
 default_font = ExtResource("1_tij0p")
@@ -22,3 +23,4 @@ Button/styles/pressed = ExtResource("1_e6n7i")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 72
+Panel/styles/panel = ExtResource("2_nohaw")
