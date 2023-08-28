@@ -10,12 +10,11 @@ theme = ExtResource("1_aic4g")
 script = ExtResource("2_uaibg")
 _text_label_path = NodePath("Text")
 _value_label_path = NodePath("Value")
-_value_change_duration = 0.2
 
 [node name="Text" type="Label" parent="."]
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
-text = "Placeholder: "
+text = ": "
 horizontal_alignment = 1
 vertical_alignment = 1
 

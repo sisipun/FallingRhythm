@@ -16,7 +16,7 @@ func _ready() -> void:
 	for song_timing in SongStorage.song_timings:
 		var level_preview: LevelPreview = level_preview_scene.instantiate()
 		add_child(level_preview)
-		level_preview.init(song_timing.id)
+		level_preview.init(song_timing.id, SongStorage.get_best_score(song_timing.id))
 		level_preview.pressed.connect(Callable(_on_level_pressed).bind(level_preview))
 
 

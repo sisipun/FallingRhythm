@@ -1,28 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://dje208ovmur6p"]
+[gd_scene load_steps=4 format=3 uid="uid://dje208ovmur6p"]
 
 [ext_resource type="Script" path="res://script/interface/popup/levellist/level_preview.gd" id="1_0xu5h"]
-[ext_resource type="StyleBox" uid="uid://dsb3yun4sgbms" path="res://asset/theme/default_panel_style.tres" id="3_rp7q6"]
+[ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_f8opd"]
+[ext_resource type="PackedScene" uid="uid://cief25woemq6u" path="res://script/interface/common/component/valuelabel/value_label.tscn" id="3_203vi"]
 
 [node name="LevelPreview" type="Panel"]
 custom_minimum_size = Vector2(500, 200)
 size_flags_horizontal = 3
+theme = ExtResource("1_f8opd")
 script = ExtResource("1_0xu5h")
-_level_name_path = NodePath("Label")
+_name_label_path = NodePath("Name")
+_best_score_label_path = NodePath("BestScore")
 _selected_color = Color(0.853333, 0.6, 1, 1)
 _unselected_color = Color(0.894118, 0.756863, 0.976471, 1)
-_style = ExtResource("3_rp7q6")
 
-[node name="Label" type="Label" parent="."]
+[node name="Name" type="Label" parent="."]
+custom_minimum_size = Vector2(420, 60)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 20.0
+offset_right = -40.0
+offset_bottom = 30.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 90
+text = "Level"
+vertical_alignment = 1
+
+[node name="BestScore" parent="." instance=ExtResource("3_203vi")]
+custom_minimum_size = Vector2(420, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.0
-offset_top = 19.0
-offset_right = -21.0
-offset_bottom = -19.0
+offset_left = 40.0
+offset_top = 10.0
+offset_right = -40.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "Best: "
+
+[node name="Text" parent="BestScore" index="0"]
+theme_override_font_sizes/font_size = 50
+
+[node name="Value" parent="BestScore" index="1"]
+theme_override_font_sizes/font_size = 50
+
+[editable path="BestScore"]
