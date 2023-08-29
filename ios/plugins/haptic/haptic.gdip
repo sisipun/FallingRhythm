@@ -1,0 +1,9 @@
+[config]
+name="Haptic"
+binary="haptic/bin/haptic.a"
+
+initialization="register_haptic_types"
+deinitialization="unregister_haptic_types"
+
+[dependencies]
+linker_flags=["-ObjC"]

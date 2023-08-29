@@ -55,6 +55,7 @@ var _pickups_count_to_increase_multiplier: int
 var _power_increase_on_pickup_value: float
 var _power_on: bool = false
 var _state: State
+var haptic = null
 
 
 func _ready() -> void:
@@ -80,6 +81,9 @@ func _ready() -> void:
 	_song_player.finished.connect(_on_song_finished)
 	
 	_state = State.HOME
+	
+	if Engine.has_singleton("Haptic"):
+		haptic = Engine.get_singleton("Haptic")
 
 
 func _process(_delta: float) -> void:
@@ -224,6 +228,9 @@ func _on_level_start_power_request() -> void:
 
 func _on_pickup_caught(pickup: BasePickup) -> void:
 	print('(', pickup.catch_second, ',', _song_player.get_playback_position(), ')=', pickup.catch_second - _song_player.get_playback_position())
+	if haptic != null:
+		haptic.impact(1)
+	
 	_pickups_without_fail += 1
 	if not _power_on:
 		_score += pickup.score * _score_multiplier
