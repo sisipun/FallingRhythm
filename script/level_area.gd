@@ -87,7 +87,8 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	sound_process(get_playback_position())
+	if _state in [State.STARTED, State.PAUSED, State.RESUMED]:
+		sound_process(get_playback_position())
 
 
 func sound_process(current_second: float) -> void:
@@ -227,7 +228,6 @@ func _on_level_start_power_request() -> void:
 
 
 func _on_pickup_caught(pickup: BasePickup) -> void:
-	print('(', pickup.catch_second, ',', _song_player.get_playback_position(), ')=', pickup.catch_second - _song_player.get_playback_position())
 	if haptic != null:
 		haptic.impact(1)
 	
