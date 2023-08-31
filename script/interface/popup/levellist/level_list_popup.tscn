@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6cmxts7ddxqs"]
+[gd_scene load_steps=7 format=3 uid="uid://c6cmxts7ddxqs"]
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_pygcn"]
 [ext_resource type="Script" path="res://script/interface/popup/levellist/level_list_popup.gd" id="2_shb8p"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b4he24d83acd8" path="res://script/interface/common/component/dragscroll/drag_scroll.tscn" id="3_ba5rm"]
 [ext_resource type="Script" path="res://script/interface/popup/levellist/level_list.gd" id="4_4yd6p"]
 [ext_resource type="PackedScene" uid="uid://dje208ovmur6p" path="res://script/interface/popup/levellist/level_preview.tscn" id="5_mj7q6"]
-[ext_resource type="PackedScene" uid="uid://dfeiu4usjyx8j" path="res://script/interface/button/home/home_button.tscn" id="6_c87x2"]
 
 [node name="LevelListPopup" type="Control"]
 layout_mode = 3
@@ -82,6 +81,7 @@ theme_override_constants/separation = 36
 alignment = 1
 script = ExtResource("4_4yd6p")
 level_preview_scene = ExtResource("5_mj7q6")
+_home_button_path = NodePath("../../../ButtonBackground/Buttons/HomeButton")
 _play_button_path = NodePath("../../../ButtonBackground/Buttons/PlayButton")
 
 [node name="ButtonBackground" type="ColorRect" parent="."]
@@ -106,12 +106,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
-[node name="HomeButton" parent="ButtonBackground/Buttons" instance=ExtResource("6_c87x2")]
+[node name="HomeButton" type="Button" parent="ButtonBackground/Buttons"]
 custom_minimum_size = Vector2(350, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-text = "Cancel"
+text = "Cancel
+"
 
 [node name="PlayButton" type="Button" parent="ButtonBackground/Buttons"]
 custom_minimum_size = Vector2(350, 150)
