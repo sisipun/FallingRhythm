@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://byt4qrlflwxoj"]
 
 [ext_resource type="Script" path="res://script/interface/panel/stats_panel.gd" id="1_hv54f"]
-[ext_resource type="Texture2D" uid="uid://dm5vfukqs160x" path="res://asset/image/texture/score/score_background.png" id="2_b5257"]
+[ext_resource type="Texture2D" uid="uid://dm5vfukqs160x" path="res://asset/image/interface/score/score_background.png" id="2_b5257"]
 [ext_resource type="PackedScene" uid="uid://cief25woemq6u" path="res://script/interface/common/component/valuelabel/value_label.tscn" id="3_2o2ve"]
 [ext_resource type="PackedScene" uid="uid://pxvwc7ovjn5" path="res://script/interface/progress_bar/power_bar.tscn" id="4_6wh4e"]
 

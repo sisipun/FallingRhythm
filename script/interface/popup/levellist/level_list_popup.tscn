@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_pygcn"]
 [ext_resource type="Script" path="res://script/interface/popup/levellist/level_list_popup.gd" id="2_shb8p"]
-[ext_resource type="Texture2D" uid="uid://dtxmgyagn5soi" path="res://asset/image/texture/background/pause_label_background.png" id="3_1nqya"]
 [ext_resource type="PackedScene" uid="uid://b4he24d83acd8" path="res://script/interface/common/component/dragscroll/drag_scroll.tscn" id="3_ba5rm"]
+[ext_resource type="Texture2D" uid="uid://dtxmgyagn5soi" path="res://asset/image/interface/background/pause_label_background.png" id="3_vprw5"]
 [ext_resource type="Script" path="res://script/interface/popup/levellist/level_list.gd" id="4_4yd6p"]
 [ext_resource type="PackedScene" uid="uid://dje208ovmur6p" path="res://script/interface/popup/levellist/level_preview.tscn" id="5_mj7q6"]
 
@@ -38,7 +38,7 @@ offset_top = 300.0
 offset_right = 210.0
 offset_bottom = 540.0
 grow_horizontal = 2
-texture = ExtResource("3_1nqya")
+texture = ExtResource("3_vprw5")
 
 [node name="Label" type="Label" parent="Title"]
 layout_mode = 1

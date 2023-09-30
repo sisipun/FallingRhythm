@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://pxvwc7ovjn5"]
 
-[ext_resource type="Texture2D" uid="uid://bd0tnoj05bagi" path="res://asset/image/texture/progress_bar/power/power_progress_bar_back.png" id="1_miwng"]
-[ext_resource type="Texture2D" uid="uid://cset0i71r6fat" path="res://asset/image/texture/progress_bar/power/power_progress_bar_front.png" id="2_im8dm"]
+[ext_resource type="Texture2D" uid="uid://bd0tnoj05bagi" path="res://asset/image/interface/progress_bar/power/power_progress_bar_back.png" id="1_miwng"]
+[ext_resource type="Texture2D" uid="uid://cset0i71r6fat" path="res://asset/image/interface/progress_bar/power/power_progress_bar_front.png" id="2_im8dm"]
 [ext_resource type="Script" path="res://script/interface/progress_bar/power_bar.gd" id="3_h4l2t"]
 
 [node name="PowerBar" type="TextureProgressBar"]

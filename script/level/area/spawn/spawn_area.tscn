@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dorrpbu02odoj"]
+
+[ext_resource type="Script" path="res://script/level/area/spawn/spawn_area.gd" id="1_3mwfm"]
+[ext_resource type="PackedScene" uid="uid://rh0p3rfxtgbv" path="res://script/level/actor/pickup/pickup.tscn" id="2_tp2mc"]
+[ext_resource type="PackedScene" uid="uid://dtqaiyjypm72q" path="res://script/level/actor/pickup/pickup_line.tscn" id="3_5lawc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_343pm"]
+size = Vector2(400, 20)
+
+[node name="SpawnArea" type="Area2D"]
+script = ExtResource("1_3mwfm")
+_body_path = NodePath("Body")
+_pickups_path = NodePath("Pickups")
+_pickup_scene = ExtResource("2_tp2mc")
+_pickup_line_scene = ExtResource("3_5lawc")
+_pickup_velocity = 500.0
+
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_343pm")
+
+[node name="Pickups" type="Node2D" parent="."]

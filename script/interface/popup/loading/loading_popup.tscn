@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dd7r336uuo6rx"]
 
 [ext_resource type="Script" path="res://script/interface/popup/loading/loading_popup.gd" id="1_q60f2"]
-[ext_resource type="Texture2D" uid="uid://cykeavjjoi6y3" path="res://asset/image/texture/loading/loading_background.png" id="1_rlq4k"]
+[ext_resource type="Texture2D" uid="uid://cykeavjjoi6y3" path="res://asset/image/interface/loading/loading_background.png" id="1_rlq4k"]
 
 [node name="LoadingPopup" type="Control"]
 layout_mode = 3

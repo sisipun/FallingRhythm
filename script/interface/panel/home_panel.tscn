@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://cqcivvjho1fkx"]
 
-[ext_resource type="Texture2D" uid="uid://bljmmkque801y" path="res://asset/image/texture/background/home_panel_song_background.png" id="1_cow7k"]
+[ext_resource type="Texture2D" uid="uid://bljmmkque801y" path="res://asset/image/interface/background/home_panel_song_background.png" id="1_cow7k"]
 [ext_resource type="Theme" uid="uid://cf7c3hdl46qbr" path="res://asset/theme/default_theme.tres" id="1_gh4s1"]
 [ext_resource type="Script" path="res://script/interface/panel/home_panel.gd" id="1_y3s03"]
 [ext_resource type="PackedScene" uid="uid://cief25woemq6u" path="res://script/interface/common/component/valuelabel/value_label.tscn" id="2_6k64l"]
-[ext_resource type="Texture2D" uid="uid://bek7bpk6iemqo" path="res://asset/image/texture/background/home_panel_left_hand_background.png" id="3_c73gh"]
-[ext_resource type="Texture2D" uid="uid://cf82886b3y82v" path="res://asset/image/texture/background/home_panel_right_hand_background.png" id="4_ncw7f"]
+[ext_resource type="Texture2D" uid="uid://bek7bpk6iemqo" path="res://asset/image/interface/background/home_panel_left_hand_background.png" id="3_c73gh"]
+[ext_resource type="Texture2D" uid="uid://cf82886b3y82v" path="res://asset/image/interface/background/home_panel_right_hand_background.png" id="4_ncw7f"]
 [ext_resource type="PackedScene" uid="uid://dcqphpl44cy72" path="res://script/interface/button/levellist/level_list_button.tscn" id="5_rvyut"]
 [ext_resource type="PackedScene" uid="uid://c6cmxts7ddxqs" path="res://script/interface/popup/levellist/level_list_popup.tscn" id="6_jcuxp"]
-[ext_resource type="Texture2D" uid="uid://dcf2c21w2w5ob" path="res://asset/image/texture/button/level_list_button_arrow.png" id="7_go4og"]
+[ext_resource type="Texture2D" uid="uid://dcf2c21w2w5ob" path="res://asset/image/interface/button/level_list_button_arrow.png" id="7_go4og"]
 
 [node name="HomePanel" type="Control"]
 layout_mode = 3

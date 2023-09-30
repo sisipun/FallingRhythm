@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddi0bgike8mdc"]
 
-[ext_resource type="Texture2D" uid="uid://kyf1p07kricy" path="res://asset/image/texture/button/power_button.png" id="1_blju7"]
+[ext_resource type="Texture2D" uid="uid://kyf1p07kricy" path="res://asset/image/interface/button/power_button.png" id="1_md374"]
 [ext_resource type="Script" path="res://script/interface/button/power/power_button.gd" id="1_v74m7"]
 
 [node name="PowerButton" type="TextureButton"]
 offset_right = 200.0
 offset_bottom = 200.0
-texture_normal = ExtResource("1_blju7")
+texture_normal = ExtResource("1_md374")
 stretch_mode = 5
 script = ExtResource("1_v74m7")

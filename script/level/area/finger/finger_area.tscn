@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bidwcal4tbx3i"]
+
+[ext_resource type="PackedScene" uid="uid://bh56qnsykldf" path="res://script/level/area/catch/catch_area.tscn" id="1_6r1mg"]
+[ext_resource type="Script" path="res://script/level/area/finger/finger_area.gd" id="1_b4t7l"]
+[ext_resource type="PackedScene" uid="uid://dorrpbu02odoj" path="res://script/level/area/spawn/spawn_area.tscn" id="2_624ca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2cqf"]
+size = Vector2(540, 1920)
+
+[node name="FingerArea" type="Area2D"]
+script = ExtResource("1_b4t7l")
+_catch_area_path = NodePath("CatchArea")
+_spawn_area_path = NodePath("SpawnArea")
+
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u2cqf")
+
+[node name="SpawnArea" parent="." instance=ExtResource("2_624ca")]
+position = Vector2(0, -960)
+
+[node name="CatchArea" parent="." instance=ExtResource("1_6r1mg")]
+position = Vector2(0, 150)
+
+[node name="Pickups" type="Node2D" parent="."]
